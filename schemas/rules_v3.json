@@ -1,0 +1,178 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "schema_id": "rules_v3",
+  "title": "Unified Clinical Eligibility Rule Tree Schema",
+  "description": "Hierarchical logical rule-tree representation for clinical eligibility criteria with integrated provenance for verification.",
+  "type": "object",
+  "properties": {
+    "trial_id": { 
+      "type": "string" 
+    },
+    "inclusion_criteria": { 
+      "anyOf": [
+        { "$ref": "#/definitions/logical_node" },
+        { "type": "null" }
+      ]
+    },
+    "exclusion_criteria": { 
+      "anyOf": [
+        { "$ref": "#/definitions/logical_node" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "required": ["trial_id"],
+  "definitions": {
+    "logical_node": {
+      "type": "object",
+      "description": "A node in the logical rule tree. Strictly enforced as either a group OR a criterion leaf.",
+      "oneOf": [
+        {
+          "properties": {
+            "node_type": { "const": "group" },
+            "group_operator": { "enum": ["AND", "OR", "NOT"] },
+            "polarity": {
+              "type": ["string", "null"],
+              "enum": ["include", "exclude", null]
+            },
+            "group_quantifier": {
+              "type": ["object", "null"],
+              "properties": {
+                "quantifier_type": { "enum": ["AT_LEAST", "AT_MOST", "EXACTLY"] },
+                "value": { "type": "integer", "minimum": 0 }
+              },
+              "required": ["quantifier_type", "value"]
+            },
+            "children": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/logical_node" },
+              "minItems": 1
+            }
+          },
+          "required": ["node_type", "group_operator", "children"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "node_type": { "const": "criterion" },
+            "criterion": { "$ref": "#/definitions/criterion_leaf" }
+          },
+          "required": ["node_type", "criterion"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "criterion_leaf": {
+      "type": "object",
+      "description": "The atomic clinical rule containing strict attribute logic and verification provenance.",
+      "properties": {
+        "criterion_id": {
+          "type": "string"
+        },
+        "entity_type": { 
+          "type": "string", 
+          "enum": [
+            "condition", "drug", "procedure", "lab", "demographic", 
+            "therapy", "biomarker", "vital", "observation", "stage", "line_of_therapy", "other"
+          ] 
+        },
+        "entity_text": { 
+          "type": "string", 
+          "description": "Raw extracted text ONLY. Normalization happens downstream." 
+        },
+        "normalized_concept": {
+          "type": ["object", "null"],
+          "description": "Populated by a deterministic downstream mapper, not the initial LLM extraction.",
+          "properties": {
+            "code": { "type": ["string", "null"] },
+            "system": { "type": ["string","null"], "enum": ["SNOMED-CT","RxNorm","LOINC","ICD-10-CM","UCUM",null] },
+            "display": { "type": ["string", "null"] }
+          }
+        },
+        "operator": { 
+          "type": "string", 
+          "enum": ["exists", "not_exists", "=", "!=", "<", "<=", ">", ">=", "between", "in", "not_in", "contains", "matches"] 
+        },
+        "value_type": {
+          "type": "string",
+          "enum": ["scalar", "list", "range", "null"]
+        },
+        "value": {
+          "oneOf": [
+            { "type": ["number", "string", "null"] },
+            {
+              "type": "array",
+              "items": { "type": ["number", "string"] },
+              "minItems": 1
+            },
+            {
+              "type": "object",
+              "properties": {
+                "min": { "type": ["number", "string", "null"] },
+                "max": { "type": ["number", "string", "null"] }
+              },
+              "required": ["min", "max"]
+            }
+          ]
+        },
+        "unit": { 
+          "type": ["string", "null"]
+        },
+        "temporal_context": {
+          "type": ["object", "null"],
+          "properties": {
+            "relation": { 
+              "type": "string", 
+              "enum": ["before", "after", "during", "within", "since"] 
+            },
+            "value": { "type": ["number", "string", "null"] },
+            "unit": {
+              "type": ["string", "null"],
+              "enum": ["hour", "day", "week", "month", "year", null]
+            },
+            "anchor_event": { 
+              "type": "string", 
+              "enum": ["screening", "randomization", "treatment_start", "diagnosis", "index_date", "surgery", "procedure", "baseline", "other"] 
+            }
+          },
+          "required": ["relation", "anchor_event"]
+        },
+        "computability": {
+          "type": "string",
+          "enum": ["computable", "non_computable", "partial"]
+        },
+        "non_computable_reason": {
+          "type": ["string", "null"]
+        },
+        "evidence_text": { 
+          "type": "string",
+          "description": "Exact substring from source text to prove grounding."
+        },
+        "provenance": {
+          "type": ["object", "null"],
+          "description": "Preserved extraction nuance for verification and error analysis. Ignored by downstream execution engines.",
+          "properties": {
+            "source_modifier_text": { "type": ["string", "null"] },
+            "source_condition_text": { "type": ["string", "null"] },
+            "source_exception_context": { "type": ["string", "null"] },
+            "history_context_hint": { "type": ["string", "null"] }
+          }
+        },
+        "history_context": {
+          "type": ["string", "null"],
+          "enum": [
+            "current",
+            "prior",
+            "previously_treated",
+            "stable_dose",
+            "investigational_use",
+            "other",
+            null
+          ]
+        }
+      },
+      "required": ["entity_type", "entity_text", "operator", "evidence_text", "criterion_id", "computability", "value_type"],
+      "additionalProperties": false
+    }
+  }
+}

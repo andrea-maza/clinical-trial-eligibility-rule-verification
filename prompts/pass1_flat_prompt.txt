@@ -1,0 +1,176 @@
+You are extracting the logical decomposition of one clinical trial eligibility item.
+
+Task:
+Given ONE top-level eligibility item, split it into the smallest meaningful atomic clauses while preserving the original logical meaning.
+
+Important:
+- The input is ONE top-level item only, not a whole multi-line section.
+- This is Pass 1 only.
+- Do NOT infer logical connectors across unrelated top-level items.
+- Do NOT extract entity_type, operator, value, unit, temporal_context, normalized_concept, computability, provenance, or history_context.
+- criterion_type must follow the Criterion Type Hint from the input.
+- evidence_text must be copied verbatim from the source text.
+- connector_to_next describes how this clause connects to the NEXT clause in the list.
+- For the LAST clause in the list, connector_to_next MUST be null.
+- Use quantifier only when the text explicitly expresses cardinality, such as:
+  - "at least two of the following"
+  - "at most one"
+  - "exactly three"
+- Use is_negated=true for explicitly negated clauses such as "no prior treatment..." or "without evidence of..."
+- connector_to_next should represent the logical relationship between the resulting atomic clauses after negation has been applied.
+- When a negation word such as "no", "neither", or "without" scopes over multiple conditions joined by "or", set is_negated=true for each affected clause and use connector_to_next="AND" between the negated clauses. This represents NOT A AND NOT B. Do not copy the surface "or" as the connector in this case.
+- Given ONE top-level eligibility item, split it into the smallest clinically complete atomic clauses while preserving the original logical meaning.
+- Do not normalize concepts, invent medical facts, or infer information not present in the source text.
+- If the sentence contains a difficult exception that cannot be safely decomposed without guessing, keep the clause shallow and preserve only directly segmentable logic.
+- evidence_text must be an exact verbatim substring from the source text. It may be shared across clauses when the source uses coordination, shared negation, a quantifier list, or a shared clinical head noun. The selected span should support the full clause_text.
+- If safe decomposition would require inventing missing words or losing the shared clinical head noun, keep the phrase as one shallow clause.
+
+Return ONE valid JSON object with exactly this structure:
+
+{
+  "trial_id": "string",
+  "criterion_type": "inclusion" | "exclusion",
+  "clauses": [
+    {
+      "clause_text": "atomic clause text",
+      "evidence_text": "exact substring from source text",
+      "is_negated": boolean,
+      "connector_to_next": "AND" | "OR" | null,
+      "quantifier": null or {
+        "quantifier_type": "AT_LEAST" | "AT_MOST" | "EXACTLY",
+        "value": integer
+      }
+    }
+  ]
+}
+
+Examples:
+
+Example 1
+Input:
+Trial ID: NCT00000001
+Criterion Type Hint: inclusion
+Criteria Text:
+Age at least 18 years and Karnofsky Performance Status > 60.
+
+Output:
+{
+  "trial_id": "NCT00000001",
+  "criterion_type": "inclusion",
+  "clauses": [
+    {
+      "clause_text": "age at least 18 years",
+      "evidence_text": "Age at least 18 years",
+      "is_negated": false,
+      "connector_to_next": "AND",
+      "quantifier": null
+    },
+    {
+      "clause_text": "Karnofsky Performance Status > 60",
+      "evidence_text": "Karnofsky Performance Status > 60",
+      "is_negated": false,
+      "connector_to_next": null,
+      "quantifier": null
+    }
+  ]
+}
+
+Example 2
+Input:
+Trial ID: NCT00000002
+Criterion Type Hint: exclusion
+Criteria Text:
+Pregnant or lactating females.
+
+Output:
+{
+  "trial_id": "NCT00000002",
+  "criterion_type": "exclusion",
+  "clauses": [
+    {
+      "clause_text": "pregnant",
+      "evidence_text": "Pregnant",
+      "is_negated": false,
+      "connector_to_next": "OR",
+      "quantifier": null
+    },
+    {
+      "clause_text": "lactating",
+      "evidence_text": "lactating females",
+      "is_negated": false,
+      "connector_to_next": null,
+      "quantifier": null
+    }
+  ]
+}
+
+Example 3
+Input:
+Trial ID: NCT00000003
+Criterion Type Hint: exclusion
+Criteria Text:
+No prior treatment with a PD-1 or PD-L1 inhibitor.
+
+Output:
+{
+  "trial_id": "NCT00000003",
+  "criterion_type": "exclusion",
+  "clauses": [
+    {
+      "clause_text": "prior treatment with PD-1 inhibitor",
+      "evidence_text": "No prior treatment with a PD-1 or PD-L1 inhibitor",
+      "is_negated": true,
+      "connector_to_next": "AND",
+      "quantifier": null
+    },
+    {
+      "clause_text": "prior treatment with PD-L1 inhibitor",
+      "evidence_text": "No prior treatment with a PD-1 or PD-L1 inhibitor",
+      "is_negated": true,
+      "connector_to_next": null,
+      "quantifier": null
+    }
+  ]
+}
+
+Example 4
+Input:
+Trial ID: NCT00000004
+Criterion Type Hint: inclusion
+Criteria Text:
+At least two of the following: fever, tachycardia, leukocytosis.
+
+Output:
+{
+  "trial_id": "NCT00000004",
+  "criterion_type": "inclusion",
+  "clauses": [
+    {
+      "clause_text": "fever",
+      "evidence_text": "fever, tachycardia, leukocytosis",
+      "is_negated": false,
+      "connector_to_next": "OR",
+      "quantifier": {
+        "quantifier_type": "AT_LEAST",
+        "value": 2
+      }
+    },
+    {
+      "clause_text": "tachycardia",
+      "evidence_text": "fever, tachycardia, leukocytosis",
+      "is_negated": false,
+      "connector_to_next": "OR",
+      "quantifier": null
+    },
+    {
+      "clause_text": "leukocytosis",
+      "evidence_text": "fever, tachycardia, leukocytosis",
+      "is_negated": false,
+      "connector_to_next": null,
+      "quantifier": null
+    }
+  ]
+}
+
+
+Return only valid JSON.

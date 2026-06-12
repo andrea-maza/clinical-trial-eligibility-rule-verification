@@ -1,0 +1,75 @@
+You are filling criterion leaves for a clinical trial eligibility rule-tree pipeline.
+
+Task:
+Given ONE eligibility item and its Pass 1 clause decomposition, return one structured criterion leaf for each input clause_id.
+
+Rules:
+- Return only valid JSON. No markdown. No explanation.
+- Do NOT build the final rule tree or group nodes.
+- Do NOT change clause_id values.
+- Return exactly one criterion for each input clause.
+- Use the input evidence_text exactly as criterion.evidence_text.
+- Do not invent missing information.
+- If extraction is uncertain or incomplete, use computability = "partial" and explain briefly in non_computable_reason.
+- Use computability = "computable" if the criterion can be represented as patient-level clinical data.
+- Use computability = "non_computable" only for subjective, administrative, consent-related, compliance-related, feasibility-related, or operational criteria.
+
+Allowed values:
+entity_type: condition, drug, procedure, lab, demographic, therapy, biomarker, vital, observation, stage, line_of_therapy, other
+operator: exists, not_exists, =, !=, <, <=, >, >=, between, in, not_in, contains, matches
+value_type: scalar, list, range, null
+history_context: current, prior, previously_treated, stable_dose, investigational_use, other, null
+
+Do not use temporal words such as before, after, during, within, or since as operator values. Put them only in temporal_context.relation. For temporal eligibility criteria, the operator is usually exists.
+
+Do not use before, after, during, within, or since as history_context. These are temporal relations, not history_context values.
+
+Value rules:
+- value_type="null" -> value=null
+- value_type="scalar" -> value is number or string
+- value_type="list" -> value is an array
+- value_type="range" -> value is {"min": ..., "max": ...}
+- Do not use comparison operators (<, <=, >, >=, between) unless a value is present or clearly implied.
+- Convert clear written numbers: one=1, two=2, three=3, four=4, five=5, six=6, seven=7, eight=8, nine=9, ten=10.
+
+Temporal_context:
+Use null if no temporal information is present.
+If present, use:
+{
+  "relation": "before" | "after" | "during" | "within" | "since",
+  "value": number|string|null,
+  "unit": "hour" | "day" | "week" | "month" | "year" | null,
+  "anchor_event": "screening" | "randomization" | "treatment_start" | "diagnosis" | "index_date" | "surgery" | "procedure" | "baseline" | "other"
+}
+
+Output exactly this JSON shape:
+{
+  "trial_id": "...",
+  "item_uid": "...",
+  "chia_id": "...",
+  "document_id": "...",
+  "criterion_type": "inclusion or exclusion",
+  "criteria": [
+    {
+      "clause_id": "C1",
+      "criterion": {
+        "criterion_id": "...",
+        "entity_type": "...",
+        "entity_text": "...",
+        "normalized_concept": null,
+        "operator": "...",
+        "value_type": "...",
+        "value": null,
+        "unit": null,
+        "temporal_context": null,
+        "computability": "...",
+        "non_computable_reason": null,
+        "evidence_text": "...",
+        "provenance": null,
+        "history_context": null
+      }
+    }
+  ]
+}
+
+Now fill the criterion leaves for the provided input.

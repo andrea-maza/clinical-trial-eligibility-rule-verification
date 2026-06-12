@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "schema_id": "rules_v3_pass2_leaf",
+  "title": "Pass 2 Leaf Completion Schema",
+  "description": "Intermediate schema for clause-level leaf completion before deterministic rule-tree assembly into rules_v3.",
+  "type": "object",
+  "properties": {
+    "trial_id": {
+      "type": "string"
+    },
+    "item_uid": {
+      "type": "string"
+    },
+    "chia_id": {
+      "type": ["string", "null"]
+    },
+    "document_id": {
+      "type": ["string", "null"]
+    },
+    "criterion_type": {
+      "type": ["string", "null"],
+      "enum": ["inclusion", "exclusion", null]
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/pass2_clause_output"
+      }
+    }
+  },
+  "required": ["trial_id", "item_uid", "criteria"],
+  "additionalProperties": false,
+  "definitions": {
+    "pass2_clause_output": {
+      "type": "object",
+      "properties": {
+        "clause_id": {
+          "type": "string"
+        },
+        "criterion": {
+          "$ref": "#/definitions/criterion_leaf"
+        }
+      },
+      "required": ["clause_id", "criterion"],
+      "additionalProperties": false
+    },
+    "criterion_leaf": {
+      "type": "object",
+      "properties": {
+        "criterion_id": {
+          "type": "string"
+        },
+        "entity_type": {
+          "type": "string",
+          "enum": [
+            "condition",
+            "drug",
+            "procedure",
+            "lab",
+            "demographic",
+            "therapy",
+            "biomarker",
+            "vital",
+            "observation",
+            "stage",
+            "line_of_therapy",
+            "other"
+          ]
+        },
+        "entity_text": {
+          "type": "string"
+        },
+        "normalized_concept": {
+          "type": ["object", "null"],
+          "properties": {
+            "code": {
+              "type": ["string", "null"]
+            },
+            "system": {
+              "type": ["string", "null"],
+              "enum": ["SNOMED-CT", "RxNorm", "LOINC", "ICD-10-CM", "UCUM", null]
+            },
+            "display": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "operator": {
+          "type": "string",
+          "enum": [
+            "exists",
+            "not_exists",
+            "=",
+            "!=",
+            "<",
+            "<=",
+            ">",
+            ">=",
+            "between",
+            "in",
+            "not_in",
+            "contains",
+            "matches"
+          ]
+        },
+        "value_type": {
+          "type": "string",
+          "enum": ["scalar", "list", "range", "null"]
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": ["number", "string", "null"]
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": ["number", "string"]
+              },
+              "minItems": 1
+            },
+            {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": ["number", "string", "null"]
+                },
+                "max": {
+                  "type": ["number", "string", "null"]
+                }
+              },
+              "required": ["min", "max"],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "unit": {
+          "type": ["string", "null"]
+        },
+        "temporal_context": {
+          "type": ["object", "null"],
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": ["before", "after", "during", "within", "since"]
+            },
+            "value": {
+              "type": ["number", "string", "null"]
+            },
+            "unit": {
+              "type": ["string", "null"],
+              "enum": ["hour", "day", "week", "month", "year", null]
+            },
+            "anchor_event": {
+              "type": "string",
+              "enum": [
+                "screening",
+                "randomization",
+                "treatment_start",
+                "diagnosis",
+                "index_date",
+                "surgery",
+                "procedure",
+                "baseline",
+                "other"
+              ]
+            }
+          },
+          "required": ["relation", "anchor_event"],
+          "additionalProperties": false
+        },
+        "computability": {
+          "type": "string",
+          "enum": ["computable", "non_computable", "partial"]
+        },
+        "non_computable_reason": {
+          "type": ["string", "null"]
+        },
+        "evidence_text": {
+          "type": "string"
+        },
+        "provenance": {
+          "type": ["object", "null"],
+          "properties": {
+            "source_modifier_text": {
+              "type": ["string", "null"]
+            },
+            "source_condition_text": {
+              "type": ["string", "null"]
+            },
+            "source_exception_context": {
+              "type": ["string", "null"]
+            },
+            "history_context_hint": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "history_context": {
+          "type": ["string", "null"],
+          "enum": [
+            "current",
+            "prior",
+            "previously_treated",
+            "stable_dose",
+            "investigational_use",
+            "other",
+            null
+          ]
+        }
+      },
+      "required": [
+        "criterion_id",
+        "entity_type",
+        "entity_text",
+        "operator",
+        "value_type",
+        "evidence_text",
+        "computability"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
