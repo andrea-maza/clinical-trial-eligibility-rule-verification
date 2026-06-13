@@ -1,0 +1,11 @@
+datasets
+pandas
+numpy
+scikit-learn
+jsonschema
+tqdm
+openai
+tiktoken
+torch
+transformers
+seqeval
