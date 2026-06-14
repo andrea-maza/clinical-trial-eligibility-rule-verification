@@ -5,7 +5,7 @@ from jsonschema import Draft7Validator
 
 
 # Repository root:
-# scripts/00_setup/validate_schema.py -> repository root
+# scripts/01_setup/validate_schema.py -> repository root
 ROOT = Path(__file__).resolve().parents[2]
 
 SCHEMA_PATH = ROOT / "schemas" / "rules_v3.json"

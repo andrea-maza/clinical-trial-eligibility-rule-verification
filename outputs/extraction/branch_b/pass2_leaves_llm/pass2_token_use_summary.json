@@ -1,0 +1,18 @@
+{
+  "stage": "pass2_llm_leaf_extraction",
+  "branch": "B_llm_pass2",
+  "file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass2_leaves_llm\\chia_text_only_200_pass2_leaves_llm.jsonl",
+  "n_rows_total": 1159,
+  "n_ok_rows": 1159,
+  "n_error_rows": 0,
+  "input_tokens_total": 1200558,
+  "output_tokens_total": 507955,
+  "total_tokens_sum": 1708513,
+  "weighted_token_burden": 5264198,
+  "input_tokens_mean": 1035.86,
+  "input_tokens_median": 991,
+  "output_tokens_mean": 438.27,
+  "output_tokens_median": 365,
+  "total_tokens_mean": 1474.13,
+  "total_tokens_median": 1356
+}

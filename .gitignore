@@ -8,3 +8,6 @@ outputs/raw/
 outputs/tmp/
 data/raw/
 *.log
+*.bak
+models/
+.vscode/

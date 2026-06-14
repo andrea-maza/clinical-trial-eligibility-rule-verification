@@ -1,0 +1,18 @@
+{
+  "stage": "pass1_logical_decomposition",
+  "file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass1_flat\\chia_text_only_200_pass1_flat.jsonl",
+  "n_rows_total": 1159,
+  "n_ok_rows": 1159,
+  "n_error_rows": 0,
+  "input_tokens_total": 1712054,
+  "cached_input_tokens_total": 0,
+  "output_tokens_total": 196168,
+  "total_tokens_sum": 1908222,
+  "weighted_token_burden": 3281398.0,
+  "input_tokens_mean": 1477.18,
+  "input_tokens_median": 1472,
+  "output_tokens_mean": 169.26,
+  "output_tokens_median": 134,
+  "total_tokens_mean": 1646.44,
+  "total_tokens_median": 1603
+}
