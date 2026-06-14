@@ -1,0 +1,5 @@
+﻿branch_to_update,rescue_strategy,n_plan_rows,n_with_manual_label,manual_label_coverage_pct,correct_n,partial_n,incorrect_n,partial_or_incorrect_n,correct_pct_among_labeled,partial_or_incorrect_pct_among_labeled
+A,targeted_field_recovery_with_candidate_check,441,129,29.25,33,56,40,96,25.58,74.42
+A,entity_candidate_selection_not_anchor_only,320,102,31.88,30,39,33,72,29.41,70.59
+A,recover_structural_information_or_abstain,34,6,17.65,6,0,0,0,100.0,0.0
+B,branch_b_dejure_judge_repair_loop,430,115,26.74,100,12,3,15,86.96,13.04

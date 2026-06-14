@@ -1,0 +1,125 @@
+{
+  "stage": "layer1d_pass1_pass2_consistency_inventory",
+  "description": "Deterministic Pass 1 to Pass 2 consistency inventory. No repair is applied. Checks missing/extra leaves, evidence grounding against Pass 1 clause text and item text, negation/operator consistency, and exception/condition context handling.",
+  "inputs": {
+    "pass1_path": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\pass1_flat\\chia_text_only_200_pass1_flat.jsonl",
+    "raw_ast_branches": {
+      "A_post_rescue": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+      "B_post_rescue": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl"
+    }
+  },
+  "outputs": {
+    "audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\pass1_pass2_consistency\\layer1d_pass1_pass2_consistency_audit.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\pass1_pass2_consistency\\layer1d_pass1_pass2_consistency_summary.json"
+  },
+  "pass1_extraction": {
+    "pass1_rows": 1159,
+    "pass1_clauses_extracted": 2402,
+    "pass1_unique_clause_keys": 2402
+  },
+  "branches": {
+    "A_post_rescue": {
+      "branch": "A_post_rescue",
+      "input_raw_ast_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+      "total_documents": 100,
+      "total_pass1_clauses": 2402,
+      "total_pass2_leaves": 2402,
+      "pass1_clauses_without_pass2_leaf": 0,
+      "pass2_leaves_without_pass1_clause": 0,
+      "evidence_text_not_substring_of_pass1_source_text": 0,
+      "evidence_text_not_substring_of_atomic_clause_but_in_item_text": 1432,
+      "negation_clause_with_exists_operator": 7,
+      "exception_or_condition_clause_without_context_handling": 12,
+      "positive_clause_with_not_exists_operator": 2,
+      "exception_or_condition_clause_with_computable_status": 11,
+      "negative_entity_with_not_exists_operator": 3,
+      "exception_clause_computable_despite_context": 0,
+      "layer1d_flagged_pass2_leaves": 23,
+      "percentages": {
+        "pass1_clause_missing_pass2_leaf_rate": 0.0,
+        "pass2_leaf_without_pass1_clause_rate": 0.0,
+        "evidence_text_not_in_pass1_source_rate": 0.0,
+        "evidence_text_in_item_only_rate": 59.62,
+        "negation_operator_mismatch_leaf_rate": 0.29,
+        "exception_context_missing_leaf_rate": 0.5,
+        "positive_not_exists_mismatch_leaf_rate": 0.08,
+        "exception_computable_status_leaf_rate": 0.46,
+        "negative_entity_not_exists_leaf_rate": 0.12,
+        "exception_computable_despite_context_leaf_rate": 0.0,
+        "layer1d_flagged_pass2_leaf_rate": 0.96
+      },
+      "issue_counts": {
+        "exception_or_condition_clause_without_context_handling": 12,
+        "exception_or_condition_clause_with_computable_status": 11,
+        "negation_clause_with_exists_operator": 7,
+        "negative_entity_with_not_exists_operator": 3,
+        "positive_clause_with_not_exists_operator": 2
+      }
+    },
+    "B_post_rescue": {
+      "branch": "B_post_rescue",
+      "input_raw_ast_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+      "total_documents": 100,
+      "total_pass1_clauses": 2402,
+      "total_pass2_leaves": 2402,
+      "pass1_clauses_without_pass2_leaf": 0,
+      "pass2_leaves_without_pass1_clause": 0,
+      "evidence_text_not_substring_of_pass1_source_text": 0,
+      "evidence_text_not_substring_of_atomic_clause_but_in_item_text": 1432,
+      "negation_clause_with_exists_operator": 7,
+      "exception_or_condition_clause_without_context_handling": 15,
+      "positive_clause_with_not_exists_operator": 18,
+      "exception_or_condition_clause_with_computable_status": 0,
+      "negative_entity_with_not_exists_operator": 2,
+      "exception_clause_computable_despite_context": 0,
+      "layer1d_flagged_pass2_leaves": 42,
+      "percentages": {
+        "pass1_clause_missing_pass2_leaf_rate": 0.0,
+        "pass2_leaf_without_pass1_clause_rate": 0.0,
+        "evidence_text_not_in_pass1_source_rate": 0.0,
+        "evidence_text_in_item_only_rate": 59.62,
+        "negation_operator_mismatch_leaf_rate": 0.29,
+        "exception_context_missing_leaf_rate": 0.62,
+        "positive_not_exists_mismatch_leaf_rate": 0.75,
+        "exception_computable_status_leaf_rate": 0.0,
+        "negative_entity_not_exists_leaf_rate": 0.08,
+        "exception_computable_despite_context_leaf_rate": 0.0,
+        "layer1d_flagged_pass2_leaf_rate": 1.75
+      },
+      "issue_counts": {
+        "positive_clause_with_not_exists_operator": 18,
+        "exception_or_condition_clause_without_context_handling": 15,
+        "negation_clause_with_exists_operator": 7,
+        "negative_entity_with_not_exists_operator": 2
+      }
+    }
+  },
+  "combined": {
+    "total_pass1_clauses": 4804,
+    "total_pass2_leaves": 4804,
+    "pass1_clauses_without_pass2_leaf": 0,
+    "pass2_leaves_without_pass1_clause": 0,
+    "evidence_text_not_substring_of_pass1_source_text": 0,
+    "evidence_text_not_substring_of_atomic_clause_but_in_item_text": 2864,
+    "negation_clause_with_exists_operator": 14,
+    "exception_or_condition_clause_without_context_handling": 27,
+    "positive_clause_with_not_exists_operator": 20,
+    "negative_entity_with_not_exists_operator": 5,
+    "exception_or_condition_clause_with_computable_status": 11,
+    "exception_clause_computable_despite_context": 0,
+    "layer1d_flagged_pass2_leaves": 65,
+    "percentages": {
+      "pass1_clause_missing_pass2_leaf_rate": 0.0,
+      "pass2_leaf_without_pass1_clause_rate": 0.0,
+      "evidence_text_not_in_pass1_source_rate": 0.0,
+      "evidence_text_in_item_only_rate": 59.62,
+      "negation_operator_mismatch_leaf_rate": 0.29,
+      "exception_context_missing_leaf_rate": 0.56,
+      "positive_not_exists_mismatch_leaf_rate": 0.42,
+      "exception_computable_status_leaf_rate": 0.23,
+      "negative_entity_not_exists_leaf_rate": 0.1,
+      "exception_computable_despite_context_leaf_rate": 0.0,
+      "layer1d_flagged_pass2_leaf_rate": 1.35
+    }
+  }
+}

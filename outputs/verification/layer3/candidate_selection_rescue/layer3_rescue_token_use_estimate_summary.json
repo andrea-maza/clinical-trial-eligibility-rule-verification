@@ -1,0 +1,43 @@
+{
+  "stage": "layer3_candidate_selection_rescue_estimated_token_use",
+  "important_note": "This is a retrospective estimate from saved prompts and raw responses. It does not make new LLM calls and may differ slightly from exact API accounting.",
+  "source_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\candidate_selection_rescue\\candidate_selection_rescue_results.jsonl",
+  "n_result_rows": 1225,
+  "n_llm_calls_est": 1912,
+  "by_branch": {
+    "B": {
+      "llm_calls_est": 1912,
+      "input_tokens_est": 2589599,
+      "output_tokens_est": 496881,
+      "total_tokens_est": 3086480,
+      "weighted_token_burden_est": 6564647
+    }
+  },
+  "by_call_kind": {
+    "branch_b_judge": {
+      "llm_calls_est": 1033,
+      "input_tokens_est": 1185784,
+      "output_tokens_est": 284825,
+      "total_tokens_est": 1470609,
+      "weighted_token_burden_est": 3464384
+    },
+    "branch_b_repair": {
+      "llm_calls_est": 879,
+      "input_tokens_est": 1403815,
+      "output_tokens_est": 212056,
+      "total_tokens_est": 1615871,
+      "weighted_token_burden_est": 3100263
+    }
+  },
+  "overall": {
+    "llm_calls_est": 1912,
+    "input_tokens_est": 2589599,
+    "output_tokens_est": 496881,
+    "total_tokens_est": 3086480,
+    "weighted_token_burden_est": 6564647,
+    "input_tokens_mean_est": 1354.39,
+    "input_tokens_median_est": 1255.5,
+    "output_tokens_mean_est": 259.88,
+    "output_tokens_median_est": 268.0
+  }
+}

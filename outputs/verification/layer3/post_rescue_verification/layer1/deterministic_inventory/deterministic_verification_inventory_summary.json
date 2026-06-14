@@ -1,0 +1,270 @@
+{
+  "stage": "06g_post_rescue_layer1_common",
+  "description": "Post-rescue Layer 1 common deterministic inventory.",
+  "inputs": {
+    "schema": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\schemas\\rules_v3.json",
+    "A_post_rescue": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+    "B_post_rescue": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl"
+  },
+  "outputs": {
+    "leaf_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "ast_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_ast_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_summary.json"
+  },
+  "branches": {
+    "A_post_rescue": {
+      "branch": "A_post_rescue",
+      "ast_path": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+      "n_documents": 100,
+      "n_documents_with_schema_errors": 0,
+      "n_leaves": 2402,
+      "leaf_flag_summary": {
+        "n_total_leaves": 2402,
+        "n_layer1a_hard_issue_leaves": 11,
+        "pct_layer1a_hard_issue_leaves": 0.46,
+        "n_layer1c_warning_leaves": 297,
+        "pct_layer1c_warning_leaves": 12.36,
+        "n_any_layer1a_or_layer1c_flagged_leaves": 307,
+        "pct_any_layer1a_or_layer1c_flagged_leaves": 12.78,
+        "n_both_layer1a_and_layer1c_flagged_leaves": 1,
+        "pct_both_layer1a_and_layer1c_flagged_leaves": 0.04,
+        "n_layer1b_ast_warning_rows": 164
+      },
+      "layer1a_hard_leaf_issue_counts": {
+        "entity_text_empty": 0,
+        "evidence_text_empty": 0,
+        "operator_missing": 0,
+        "comparison_without_scalar_value": 0,
+        "equality_without_value": 0,
+        "pattern_operator_without_scalar_value": 0,
+        "between_without_range_value": 0,
+        "range_with_both_bounds_missing": 1,
+        "range_with_missing_bound": 0,
+        "list_operator_without_list_value": 7,
+        "existence_operator_with_non_null_value": 0,
+        "null_value_type_with_non_null_value": 0,
+        "scalar_value_type_with_complex_value": 0,
+        "list_value_type_without_list_value": 0,
+        "range_value_type_without_dict_value": 0,
+        "temporal_context_missing_relation": 0,
+        "temporal_context_invalid_relation": 0,
+        "temporal_context_missing_anchor_event": 0,
+        "temporal_context_invalid_anchor_event": 0,
+        "temporal_context_invalid_unit": 0,
+        "temporal_context_missing_value": 2,
+        "temporal_context_missing_unit": 0,
+        "computable_with_non_computable_reason": 1,
+        "non_computable_without_reason": 0,
+        "computable_with_exception_context": 0,
+        "unit_present_without_value": 0,
+        "entity_type_invalid_enum": 0,
+        "history_context_invalid_enum": 0,
+        "criterion_id_missing": 0,
+        "criterion_id_malformed": 0,
+        "operator_invalid_enum": 0,
+        "value_type_invalid_enum": 0,
+        "computability_invalid_enum": 0,
+        "normalized_concept_invalid_system": 0,
+        "normalized_concept_system_without_code": 0,
+        "range_min_greater_than_max": 0,
+        "comparison_value_is_numeric_string": 0
+      },
+      "layer1b_ast_integrity_issue_counts": {
+        "duplicate_criterion_id": 0,
+        "duplicate_identical_leaf": 164
+      },
+      "layer1c_source_text_warning_counts": {
+        "comparison_with_non_quantitative_entity": 73,
+        "comparison_entity_mismatch_from_source": 6,
+        "categorical_value_missing": 24,
+        "temporal_marker_without_temporal_context": 33,
+        "duration_marker_missing_from_temporal_context": 26,
+        "critical_qualifier_missing_from_entity": 95,
+        "requirement_object_inversion": 14,
+        "condition_context_present_without_handling": 12,
+        "temporal_anchor_mismatch_from_source": 24,
+        "existence_operator_on_quantitative_phrase": 39,
+        "entity_text_too_generic": 1
+      },
+      "leaf_action_category_counts": {
+        "no_action": 2391,
+        "conservative_rewrite_candidate": 8,
+        "flag_only": 2,
+        "safe_normalization_candidate": 1
+      },
+      "ast_action_category_counts": {
+        "flag_only": 164
+      },
+      "action_category_counts": {
+        "no_action": 2391,
+        "flag_only": 166,
+        "conservative_rewrite_candidate": 8,
+        "safe_normalization_candidate": 1
+      },
+      "layer1c_action_counts": {
+        "no_action": 2105,
+        "flag_only": 297
+      }
+    },
+    "B_post_rescue": {
+      "branch": "B_post_rescue",
+      "ast_path": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+      "n_documents": 100,
+      "n_documents_with_schema_errors": 0,
+      "n_leaves": 2402,
+      "leaf_flag_summary": {
+        "n_total_leaves": 2402,
+        "n_layer1a_hard_issue_leaves": 67,
+        "pct_layer1a_hard_issue_leaves": 2.79,
+        "n_layer1c_warning_leaves": 188,
+        "pct_layer1c_warning_leaves": 7.83,
+        "n_any_layer1a_or_layer1c_flagged_leaves": 246,
+        "pct_any_layer1a_or_layer1c_flagged_leaves": 10.24,
+        "n_both_layer1a_and_layer1c_flagged_leaves": 9,
+        "pct_both_layer1a_and_layer1c_flagged_leaves": 0.37,
+        "n_layer1b_ast_warning_rows": 18
+      },
+      "layer1a_hard_leaf_issue_counts": {
+        "entity_text_empty": 0,
+        "evidence_text_empty": 0,
+        "operator_missing": 0,
+        "comparison_without_scalar_value": 0,
+        "equality_without_value": 0,
+        "pattern_operator_without_scalar_value": 1,
+        "between_without_range_value": 0,
+        "range_with_both_bounds_missing": 0,
+        "range_with_missing_bound": 0,
+        "list_operator_without_list_value": 0,
+        "existence_operator_with_non_null_value": 58,
+        "null_value_type_with_non_null_value": 0,
+        "scalar_value_type_with_complex_value": 0,
+        "list_value_type_without_list_value": 0,
+        "range_value_type_without_dict_value": 0,
+        "temporal_context_missing_relation": 0,
+        "temporal_context_invalid_relation": 0,
+        "temporal_context_missing_anchor_event": 0,
+        "temporal_context_invalid_anchor_event": 0,
+        "temporal_context_invalid_unit": 0,
+        "temporal_context_missing_value": 5,
+        "temporal_context_missing_unit": 3,
+        "computable_with_non_computable_reason": 3,
+        "non_computable_without_reason": 0,
+        "computable_with_exception_context": 0,
+        "unit_present_without_value": 0,
+        "entity_type_invalid_enum": 0,
+        "history_context_invalid_enum": 0,
+        "criterion_id_missing": 0,
+        "criterion_id_malformed": 0,
+        "operator_invalid_enum": 0,
+        "value_type_invalid_enum": 0,
+        "computability_invalid_enum": 0,
+        "normalized_concept_invalid_system": 0,
+        "normalized_concept_system_without_code": 0,
+        "range_min_greater_than_max": 0,
+        "comparison_value_is_numeric_string": 0
+      },
+      "layer1b_ast_integrity_issue_counts": {
+        "duplicate_criterion_id": 0,
+        "duplicate_identical_leaf": 18
+      },
+      "layer1c_source_text_warning_counts": {
+        "comparison_with_non_quantitative_entity": 20,
+        "comparison_entity_mismatch_from_source": 7,
+        "categorical_value_missing": 14,
+        "temporal_marker_without_temporal_context": 15,
+        "duration_marker_missing_from_temporal_context": 14,
+        "critical_qualifier_missing_from_entity": 40,
+        "requirement_object_inversion": 15,
+        "condition_context_present_without_handling": 37,
+        "temporal_anchor_mismatch_from_source": 25,
+        "existence_operator_on_quantitative_phrase": 22,
+        "entity_text_too_generic": 0
+      },
+      "leaf_action_category_counts": {
+        "no_action": 2335,
+        "flag_only": 64,
+        "safe_normalization_candidate": 3
+      },
+      "ast_action_category_counts": {
+        "flag_only": 18
+      },
+      "action_category_counts": {
+        "no_action": 2335,
+        "flag_only": 82,
+        "safe_normalization_candidate": 3
+      },
+      "layer1c_action_counts": {
+        "no_action": 2214,
+        "flag_only": 188
+      }
+    }
+  },
+  "combined": {
+    "layer1a_hard_leaf_issue_counts": {
+      "existence_operator_with_non_null_value": 58,
+      "list_operator_without_list_value": 7,
+      "temporal_context_missing_value": 7,
+      "computable_with_non_computable_reason": 4,
+      "temporal_context_missing_unit": 3,
+      "pattern_operator_without_scalar_value": 1,
+      "range_with_both_bounds_missing": 1,
+      "entity_text_empty": 0,
+      "evidence_text_empty": 0,
+      "operator_missing": 0,
+      "comparison_without_scalar_value": 0,
+      "equality_without_value": 0,
+      "between_without_range_value": 0,
+      "range_with_missing_bound": 0,
+      "null_value_type_with_non_null_value": 0,
+      "scalar_value_type_with_complex_value": 0,
+      "list_value_type_without_list_value": 0,
+      "range_value_type_without_dict_value": 0,
+      "temporal_context_missing_relation": 0,
+      "temporal_context_invalid_relation": 0,
+      "temporal_context_missing_anchor_event": 0,
+      "temporal_context_invalid_anchor_event": 0,
+      "temporal_context_invalid_unit": 0,
+      "non_computable_without_reason": 0,
+      "computable_with_exception_context": 0,
+      "unit_present_without_value": 0,
+      "entity_type_invalid_enum": 0,
+      "history_context_invalid_enum": 0,
+      "criterion_id_missing": 0,
+      "criterion_id_malformed": 0,
+      "operator_invalid_enum": 0,
+      "value_type_invalid_enum": 0,
+      "computability_invalid_enum": 0,
+      "normalized_concept_invalid_system": 0,
+      "normalized_concept_system_without_code": 0,
+      "range_min_greater_than_max": 0,
+      "comparison_value_is_numeric_string": 0
+    },
+    "layer1b_ast_integrity_issue_counts": {
+      "duplicate_identical_leaf": 182,
+      "duplicate_criterion_id": 0
+    },
+    "layer1c_source_text_warning_counts": {
+      "critical_qualifier_missing_from_entity": 135,
+      "comparison_with_non_quantitative_entity": 93,
+      "existence_operator_on_quantitative_phrase": 61,
+      "condition_context_present_without_handling": 49,
+      "temporal_anchor_mismatch_from_source": 49,
+      "temporal_marker_without_temporal_context": 48,
+      "duration_marker_missing_from_temporal_context": 40,
+      "categorical_value_missing": 38,
+      "requirement_object_inversion": 29,
+      "comparison_entity_mismatch_from_source": 13,
+      "entity_text_too_generic": 1
+    },
+    "action_category_counts": {
+      "no_action": 4726,
+      "flag_only": 248,
+      "conservative_rewrite_candidate": 8,
+      "safe_normalization_candidate": 4
+    },
+    "layer1c_action_counts": {
+      "no_action": 4319,
+      "flag_only": 485
+    }
+  }
+}

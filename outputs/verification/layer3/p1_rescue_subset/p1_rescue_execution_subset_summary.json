@@ -1,0 +1,248 @@
+{
+  "description": "Selection of the first P1 rescue execution subset. This script only selects candidates and does not call the LLM.",
+  "n_total_candidates_from_06d": 2664,
+  "n_selected_for_p1_execution": 465,
+  "n_p1_conservative_structural_recovery": 35,
+  "n_p1_branch_b_mandatory_llm_judge": 430,
+  "n_duplicate_review_only": 3,
+  "n_not_selected_for_p1": 2196,
+  "duplicate_candidate_ids_in_input_count": 0,
+  "duplicate_candidate_ids_in_input_examples": [],
+  "repeated_branch_criterion_ids_in_selected_count": 0,
+  "repeated_branch_criterion_ids_in_selected_examples": {},
+  "validation_errors_count": 0,
+  "validation_errors_examples": [],
+  "counts_by_p1_group": {
+    "p1_branch_b_mandatory_llm_judge": 430,
+    "p1_conservative_structural_recovery": 35
+  },
+  "counts_by_run_stage": {
+    "P1_run_now_branch_b_mandatory_judge": 430,
+    "P1_run_now_conservative_structural_recovery": 35
+  },
+  "counts_by_branch": {
+    "B": 430,
+    "A": 35
+  },
+  "counts_by_rescue_task_type": {
+    "entity_regrounding": 223,
+    "value_or_operator_recovery": 66,
+    "temporal_context_recovery": 36,
+    "branch_b_field_level_semantic_judge": 34,
+    "condition_exception_context_recovery": 30,
+    "list_value_recovery": 27,
+    "polarity_negation_repair": 24,
+    "history_context_recovery": 17,
+    "range_bounds_recovery": 7,
+    "scalar_value_recovery": 1
+  },
+  "counts_by_requires_judge_first": {
+    "1": 430,
+    "0": 35
+  },
+  "outputs": {
+    "p1_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_rescue_execution_subset.jsonl",
+    "p1_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_rescue_execution_subset.csv",
+    "p1_conservative_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_conservative_structural_recovery.jsonl",
+    "p1_conservative_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_conservative_structural_recovery.csv",
+    "p1_branch_b_judge_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_branch_b_mandatory_llm_judge.jsonl",
+    "p1_branch_b_judge_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_branch_b_mandatory_llm_judge.csv",
+    "duplicate_review_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_duplicate_prune_candidates_review_only.csv",
+    "not_selected_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\not_selected_for_p1_execution.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_rescue_execution_subset_summary.json"
+  },
+  "execution_notes": [
+    "Run the conservative structural recovery queue first or together with Branch B mandatory judge, but keep outputs separate.",
+    "Branch B mandatory candidates should go to LLM-as-judge before repair.",
+    "Conservative structural candidates can go directly to targeted field recovery.",
+    "Do not run P2, P3, or P4 yet.",
+    "Do not execute duplicate-prune candidates as blind LLM rescue; handle duplicates separately.",
+    "Any LLM output must be re-run through Layer 1 and Layer 2 before final acceptance."
+  ],
+  "preview_selected_first_5": [
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C1__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C1",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "epithelial ovarian cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C2__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C2",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "fallopian tube cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C3__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C3",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "primary peritoneal cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00917891_exc__item5_C1__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00917891_exc__item5_C1",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "urogenital infections",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Untreated urogenital infections (either symptomatic or asymptomatic) within 2 weeks prior to enrollment"
+    },
+    {
+      "candidate_id": "A__NCT00917891_exc__item5_C2__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00917891_exc__item5_C2",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "urogenital infections are symptomatic",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "(either symptomatic or asymptomatic)"
+    }
+  ],
+  "preview_conservative_first_5": [
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C1__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C1",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "epithelial ovarian cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C2__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C2",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "fallopian tube cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00319748_inc__item15_C3__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00319748_inc__item15_C3",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "primary peritoneal cancer",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Primary tumor must have been diagnosed histologically as either epithelial ovarian cancer, fallopian tube cancer, or primary peritoneal cancer"
+    },
+    {
+      "candidate_id": "A__NCT00917891_exc__item5_C1__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00917891_exc__item5_C1",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "urogenital infections",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "Untreated urogenital infections (either symptomatic or asymptomatic) within 2 weeks prior to enrollment"
+    },
+    {
+      "candidate_id": "A__NCT00917891_exc__item5_C2__list_value_recovery",
+      "branch": "A",
+      "criterion_id": "NCT00917891_exc__item5_C2",
+      "run_stage": "P1_run_now_conservative_structural_recovery",
+      "rescue_task_type": "list_value_recovery",
+      "entity_text": "urogenital infections are symptomatic",
+      "operator": "in",
+      "value_type": "null",
+      "value": "null",
+      "evidence_text": "(either symptomatic or asymptomatic)"
+    }
+  ],
+  "preview_branch_b_judge_first_5": [
+    {
+      "candidate_id": "B__NCT00319748_exc__item13_C2__branch_b_field_level_semantic_judge",
+      "branch": "B",
+      "criterion_id": "NCT00319748_exc__item13_C2",
+      "run_stage": "P1_run_now_branch_b_mandatory_judge",
+      "rescue_task_type": "branch_b_field_level_semantic_judge",
+      "entity_text": "immunosuppressive therapy",
+      "operator": "exists",
+      "value_type": "null",
+      "value": "",
+      "evidence_text": "requiring immunosuppressive therapy within 30 days"
+    },
+    {
+      "candidate_id": "B__NCT00319748_exc__item16_C1__value_or_operator_recovery",
+      "branch": "B",
+      "criterion_id": "NCT00319748_exc__item16_C1",
+      "run_stage": "P1_run_now_branch_b_mandatory_judge",
+      "rescue_task_type": "value_or_operator_recovery",
+      "entity_text": "concurrent malignancy",
+      "operator": "exists",
+      "value_type": "null",
+      "value": "",
+      "evidence_text": "Concurrent malignancy (if in remission, at least 5 years disease free) except for localized (in-situ) disease, basal carcinomas and cutaneous squamous cell carcinomas that have been adequately treated"
+    },
+    {
+      "candidate_id": "B__NCT00319748_exc__item16_C2__entity_regrounding",
+      "branch": "B",
+      "criterion_id": "NCT00319748_exc__item16_C2",
+      "run_stage": "P1_run_now_branch_b_mandatory_judge",
+      "rescue_task_type": "entity_regrounding",
+      "entity_text": "malignancy in remission with less than 5 years disease free",
+      "operator": "exists",
+      "value_type": "range",
+      "value": "{\"min\": null, \"max\": 5}",
+      "evidence_text": "if in remission, at least 5 years disease free"
+    },
+    {
+      "candidate_id": "B__NCT00319748_exc__item4_C1__temporal_context_recovery",
+      "branch": "B",
+      "criterion_id": "NCT00319748_exc__item4_C1",
+      "run_stage": "P1_run_now_branch_b_mandatory_judge",
+      "rescue_task_type": "temporal_context_recovery",
+      "entity_text": "immunosuppressive therapy",
+      "operator": "exists",
+      "value_type": "null",
+      "value": "",
+      "evidence_text": "Immunosuppressive therapy, including cytotoxic agents within 14 days of first dose of 852A (nitrosoureas within 30 days of first dose)"
+    },
+    {
+      "candidate_id": "B__NCT00319748_exc__item5_C1__condition_exception_context_recovery",
+      "branch": "B",
+      "criterion_id": "NCT00319748_exc__item5_C1",
+      "run_stage": "P1_run_now_branch_b_mandatory_judge",
+      "rescue_task_type": "condition_exception_context_recovery",
+      "entity_text": "drugs known to induce QT interval prolongation and/or induce Torsades de pointes unless best available drug required to treat life-threatening conditions",
+      "operator": "exists",
+      "value_type": "null",
+      "value": "",
+      "evidence_text": "Drugs known to induce QT interval prolongation and/or induce Torsades de pointes unless best available drug required to treat life-threatening conditions"
+    }
+  ]
+}

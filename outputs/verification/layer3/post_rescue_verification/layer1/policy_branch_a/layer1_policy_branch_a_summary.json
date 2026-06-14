@@ -1,0 +1,51 @@
+{
+  "stage": "layer1_policy_branch_a",
+  "description": "Branch-specific interpretation of common deterministic Layer 1 issue codes. No new issues are detected and no rule-tree modification is applied. Branch A uses PubMedBERT-supported extraction with deterministic rules, so deterministic semantic warnings are treated more aggressively.",
+  "inputs": {
+    "leaf_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "ast_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_ast_level.csv",
+    "layer1d_audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\pass1_pass2_consistency\\layer1d_pass1_pass2_consistency_audit.csv"
+  },
+  "outputs": {
+    "leaf_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_a\\layer1_policy_branch_a_leaf_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_a\\layer1_policy_branch_a_summary.json"
+  },
+  "branch": "A",
+  "n_policy_rows": 2402,
+  "action_hint_counts": {
+    "continue_to_layer2": 2088,
+    "mandatory_rescue_or_review_candidate": 314
+  },
+  "bucket_counts": {
+    "no_layer1_issue": 2088,
+    "hard_or_semantic_layer1_issue": 314
+  },
+  "severity_counts": {
+    "none": 2088,
+    "high": 314
+  },
+  "top_layer1_codes": {
+    "layer1b:duplicate_identical_leaf": 402,
+    "layer1c:critical_qualifier_missing_from_entity": 95,
+    "layer1c:comparison_with_non_quantitative_entity": 73,
+    "layer1c:existence_operator_on_quantitative_phrase": 39,
+    "layer1c:temporal_marker_without_temporal_context": 33,
+    "layer1c:duration_marker_missing_from_temporal_context": 26,
+    "layer1c:temporal_anchor_mismatch_from_source": 24,
+    "layer1c:categorical_value_missing": 24,
+    "layer1c:requirement_object_inversion": 14,
+    "layer1c:condition_context_present_without_handling": 12,
+    "layer1d:exception_or_condition_clause_without_context_handling": 12,
+    "layer1d:exception_or_condition_clause_with_computable_status": 11,
+    "layer1d:negation_clause_with_exists_operator": 7,
+    "layer1a:list_operator_without_list_value": 7,
+    "layer1c:comparison_entity_mismatch_from_source": 6,
+    "layer1d:negative_entity_with_not_exists_operator": 3,
+    "layer1d:positive_clause_with_not_exists_operator": 2,
+    "layer1a:temporal_context_missing_value": 2,
+    "layer1c:entity_text_too_generic": 1,
+    "layer1a:computable_with_non_computable_reason": 1,
+    "layer1a:range_with_both_bounds_missing": 1
+  },
+  "method_note": "This is a policy layer, not a detector. Actual repair/rescue decisions should be made in Layer 3."
+}

@@ -1,0 +1,192 @@
+{
+  "stage": "06f_layer3_literature_aligned_rescue_plan",
+  "description": "Strict rescue planning. High risk alone is not enough. Manual labels are not used as the repair baseline. Branch A rescue is limited to actionable failures. Branch B routes the full mandatory verifier subset to candidate-selection checking, not forced repair.",
+  "inputs": {
+    "queue_06d_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\targeted_rescue_candidates\\layer3_targeted_llm_rescue_candidates.jsonl",
+    "decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\decision_inventory\\layer3_decision_inventory_leaf_level.csv",
+    "conservative_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\conservative_downgrade_inspection\\layer3_conservative_downgrade_candidates.csv",
+    "branch_b_mandatory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\p1_rescue_subset\\p1_branch_b_mandatory_llm_judge.csv"
+  },
+  "outputs": {
+    "main_llm_rescue_plan_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\main_llm_rescue_plan.jsonl",
+    "main_llm_rescue_plan_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\main_llm_rescue_plan.csv",
+    "all_plan_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\layer3_literature_aligned_rescue_plan_all.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\literature_aligned_rescue_plan_summary.json",
+    "manual_overlap_diagnostic_summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\rescue_manual_overlap_summary.json"
+  },
+  "counts": {
+    "input_06d_rows": 2664,
+    "input_branch_b_mandatory_rows": 430,
+    "input_branch_b_mandatory_unique_criteria": 430,
+    "input_06d_grouped_branch_a_criteria": 1457,
+    "input_06d_grouped_branch_b_criteria": 1207,
+    "main_rescue_plan_rows": 1225,
+    "main_rescue_plan_by_branch": {
+      "A": 795,
+      "B": 430
+    },
+    "main_rescue_plan_requires_llm_rows": 430,
+    "main_rescue_plan_non_llm_rows": 795,
+    "main_llm_execution_rows_by_branch": {
+      "B": 430
+    },
+    "branch_a_main_llm_rescue_rows": 795,
+    "branch_a_deferred_diagnostic_rows": 625,
+    "branch_a_status_or_review_rows": 37,
+    "branch_b_main_llm_rescue_rows": 430,
+    "branch_b_safe_non_llm_reference_rows": 0,
+    "branch_b_accept_no_change_reference_rows": 0,
+    "branch_b_blocked_or_manual_review_rows": 777,
+    "all_plan_rows": 2664,
+    "counts_by_group": {
+      "A_main_llm_rescue": 795,
+      "A_status_or_review": 37,
+      "B_main_llm_rescue": 430,
+      "A_deferred_diagnostic": 625,
+      "B_blocked_or_manual_review": 777
+    },
+    "counts_by_branch": {
+      "A": 1457,
+      "B": 1207
+    },
+    "counts_by_strategy": {
+      "recover_structural_information_or_abstain": 34,
+      "branch_a_needs_rescue_but_branch_b_not_usable": 15,
+      "targeted_field_recovery_with_candidate_check": 441,
+      "entity_candidate_selection_not_anchor_only": 320,
+      "branch_b_dejure_judge_repair_loop": 430,
+      "abstain_or_human_review_for_context_logic": 22,
+      "defer_no_bert_anchor_only": 358,
+      "optional_branch_b_review_not_main_rescue": 777,
+      "defer_broad_or_duplicate_task": 267
+    },
+    "main_rescue_task_counts": {
+      "conservative_structural_recovery": 34,
+      "value_or_operator_recovery": 322,
+      "history_context_recovery": 56,
+      "temporal_context_recovery": 170,
+      "polarity_negation_repair": 36,
+      "entity_regrounding": 526,
+      "entity_type_reclassification": 17,
+      "branch_b_field_level_semantic_judge": 34,
+      "condition_exception_context_recovery": 30
+    }
+  },
+  "manual_overlap_diagnostic": {
+    "enabled": true,
+    "important_warning": "Manual labels are used only for retrospective sanity checking. They are not used to decide rescue, calibrate thresholds, or select candidates. The plan has already been created before this diagnostic runs.",
+    "manual_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv",
+    "detected_columns": {
+      "manual_A_label_column_detected": "manual_A_leaf_label",
+      "manual_B_label_column_detected": "manual_B_leaf_label",
+      "manual_A_issue_column_detected": "manual_A_issue_type",
+      "manual_B_issue_column_detected": "manual_B_issue_type"
+    },
+    "outputs": {
+      "main_annotated": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_plan_with_pre_manual_labels.csv",
+      "all_annotated": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\all_rescue_plan_with_pre_manual_labels.csv",
+      "by_branch_task": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_manual_label_summary_by_branch_task.csv",
+      "by_branch_strategy": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_manual_label_summary_by_branch_strategy.csv",
+      "manual_error_coverage": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\manual_error_coverage_by_branch.csv",
+      "branch_a_b_candidate_diagnostic": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\branch_a_rescue_b_candidate_manual_diagnostic.csv",
+      "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\rescue_manual_overlap_summary.json"
+    },
+    "main_plan_counts": {
+      "rows_total": 1225,
+      "rows_by_branch": {
+        "A": 795,
+        "B": 430
+      },
+      "rows_with_any_manual_label": 352,
+      "rows_with_target_branch_manual_label": 352,
+      "target_branch_pre_label_counts": {
+        "correct": 169,
+        "missing": 873,
+        "incorrect": 76,
+        "partial": 107
+      },
+      "rescue_task_counts": {
+        "conservative_structural_recovery": 34,
+        "value_or_operator_recovery": 322,
+        "history_context_recovery": 56,
+        "temporal_context_recovery": 170,
+        "polarity_negation_repair": 36,
+        "entity_regrounding": 526,
+        "entity_type_reclassification": 17,
+        "branch_b_field_level_semantic_judge": 34,
+        "condition_exception_context_recovery": 30
+      },
+      "rescue_strategy_counts": {
+        "recover_structural_information_or_abstain": 34,
+        "targeted_field_recovery_with_candidate_check": 441,
+        "entity_candidate_selection_not_anchor_only": 320,
+        "branch_b_dejure_judge_repair_loop": 430
+      }
+    },
+    "branch_a_main_rescue_manual_diagnostic": {
+      "rows_total": 795,
+      "rows_with_A_and_B_manual_labels": 237,
+      "manual_B_vs_A_pre_counts": {
+        "B_pre_worse_than_A_pre": 10,
+        "B_pre_same_as_A_pre": 67,
+        "missing": 558,
+        "B_pre_better_than_A_pre": 160
+      },
+      "A_pre_label_counts": {
+        "correct": 69,
+        "missing": 558,
+        "incorrect": 73,
+        "partial": 95
+      },
+      "B_pre_label_counts": {
+        "partial": 14,
+        "correct": 220,
+        "missing": 558,
+        "incorrect": 3
+      }
+    },
+    "manual_error_coverage_by_branch": [
+      {
+        "branch": "A",
+        "manual_labeled_rows": 524,
+        "manual_error_rows_partial_or_incorrect": 322,
+        "manual_error_rows_in_main_rescue": 168,
+        "manual_error_coverage_pct": 52.17,
+        "manual_correct_rows": 202,
+        "manual_correct_rows_in_main_rescue": 69,
+        "manual_correct_routed_pct": 34.16,
+        "main_rescue_rows_for_branch": 795,
+        "main_rescue_rows_with_manual_label": 237,
+        "main_rescue_rows_pre_correct": 69,
+        "main_rescue_rows_pre_partial": 95,
+        "main_rescue_rows_pre_incorrect": 73
+      },
+      {
+        "branch": "B",
+        "manual_labeled_rows": 524,
+        "manual_error_rows_partial_or_incorrect": 36,
+        "manual_error_rows_in_main_rescue": 15,
+        "manual_error_coverage_pct": 41.67,
+        "manual_correct_rows": 488,
+        "manual_correct_rows_in_main_rescue": 100,
+        "manual_correct_routed_pct": 20.49,
+        "main_rescue_rows_for_branch": 430,
+        "main_rescue_rows_with_manual_label": 115,
+        "main_rescue_rows_pre_correct": 100,
+        "main_rescue_rows_pre_partial": 12,
+        "main_rescue_rows_pre_incorrect": 3
+      }
+    ]
+  },
+  "method_notes": [
+    "Manual labels are read only after the plan is created, for retrospective overlap diagnostics.",
+    "Manual labels are not used as a baseline, driver, threshold, or candidate selector.",
+    "Branch A high-risk leaves are not automatically rescued.",
+    "No-BERT-anchor-only Branch A cases are deferred because that is uncertainty, not an actionable repair target.",
+    "Condition/exception cases are not blindly repaired into computable leaves.",
+    "Branch B rescue no longer depends on 06e/06e2. The full 06d mandatory verifier subset is routed to 06f2 candidate-selection checking.",
+    "Branch B candidate selection is not forced repair: 06f2 may keep B_current, generate a better candidate, mark partial/non-computable, or abstain.",
+    "06f only prepares the plan. It does not call the LLM and does not modify ASTs.",
+    "All later applied changes must be re-run through Layer 1 and Layer 2."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "enabled": true,
+  "important_warning": "Manual labels are used only for retrospective sanity checking. They are not used to decide rescue, calibrate thresholds, or select candidates. The plan has already been created before this diagnostic runs.",
+  "manual_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv",
+  "detected_columns": {
+    "manual_A_label_column_detected": "manual_A_leaf_label",
+    "manual_B_label_column_detected": "manual_B_leaf_label",
+    "manual_A_issue_column_detected": "manual_A_issue_type",
+    "manual_B_issue_column_detected": "manual_B_issue_type"
+  },
+  "outputs": {
+    "main_annotated": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_plan_with_pre_manual_labels.csv",
+    "all_annotated": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\all_rescue_plan_with_pre_manual_labels.csv",
+    "by_branch_task": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_manual_label_summary_by_branch_task.csv",
+    "by_branch_strategy": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\main_rescue_manual_label_summary_by_branch_strategy.csv",
+    "manual_error_coverage": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\manual_error_coverage_by_branch.csv",
+    "branch_a_b_candidate_diagnostic": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\branch_a_rescue_b_candidate_manual_diagnostic.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\rescue_plan\\manual_overlap_diagnostic\\rescue_manual_overlap_summary.json"
+  },
+  "main_plan_counts": {
+    "rows_total": 1225,
+    "rows_by_branch": {
+      "A": 795,
+      "B": 430
+    },
+    "rows_with_any_manual_label": 352,
+    "rows_with_target_branch_manual_label": 352,
+    "target_branch_pre_label_counts": {
+      "correct": 169,
+      "missing": 873,
+      "incorrect": 76,
+      "partial": 107
+    },
+    "rescue_task_counts": {
+      "conservative_structural_recovery": 34,
+      "value_or_operator_recovery": 322,
+      "history_context_recovery": 56,
+      "temporal_context_recovery": 170,
+      "polarity_negation_repair": 36,
+      "entity_regrounding": 526,
+      "entity_type_reclassification": 17,
+      "branch_b_field_level_semantic_judge": 34,
+      "condition_exception_context_recovery": 30
+    },
+    "rescue_strategy_counts": {
+      "recover_structural_information_or_abstain": 34,
+      "targeted_field_recovery_with_candidate_check": 441,
+      "entity_candidate_selection_not_anchor_only": 320,
+      "branch_b_dejure_judge_repair_loop": 430
+    }
+  },
+  "branch_a_main_rescue_manual_diagnostic": {
+    "rows_total": 795,
+    "rows_with_A_and_B_manual_labels": 237,
+    "manual_B_vs_A_pre_counts": {
+      "B_pre_worse_than_A_pre": 10,
+      "B_pre_same_as_A_pre": 67,
+      "missing": 558,
+      "B_pre_better_than_A_pre": 160
+    },
+    "A_pre_label_counts": {
+      "correct": 69,
+      "missing": 558,
+      "incorrect": 73,
+      "partial": 95
+    },
+    "B_pre_label_counts": {
+      "partial": 14,
+      "correct": 220,
+      "missing": 558,
+      "incorrect": 3
+    }
+  },
+  "manual_error_coverage_by_branch": [
+    {
+      "branch": "A",
+      "manual_labeled_rows": 524,
+      "manual_error_rows_partial_or_incorrect": 322,
+      "manual_error_rows_in_main_rescue": 168,
+      "manual_error_coverage_pct": 52.17,
+      "manual_correct_rows": 202,
+      "manual_correct_rows_in_main_rescue": 69,
+      "manual_correct_routed_pct": 34.16,
+      "main_rescue_rows_for_branch": 795,
+      "main_rescue_rows_with_manual_label": 237,
+      "main_rescue_rows_pre_correct": 69,
+      "main_rescue_rows_pre_partial": 95,
+      "main_rescue_rows_pre_incorrect": 73
+    },
+    {
+      "branch": "B",
+      "manual_labeled_rows": 524,
+      "manual_error_rows_partial_or_incorrect": 36,
+      "manual_error_rows_in_main_rescue": 15,
+      "manual_error_coverage_pct": 41.67,
+      "manual_correct_rows": 488,
+      "manual_correct_rows_in_main_rescue": 100,
+      "manual_correct_routed_pct": 20.49,
+      "main_rescue_rows_for_branch": 430,
+      "main_rescue_rows_with_manual_label": 115,
+      "main_rescue_rows_pre_correct": 100,
+      "main_rescue_rows_pre_partial": 12,
+      "main_rescue_rows_pre_incorrect": 3
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "stage": "08_apply_candidate_selection_rescue",
+  "description": "Applies previously generated and validated candidate-selection rescue proposals. This script does not call the LLM and does not use manual labels.",
+  "inputs": {
+    "rescue_results": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\candidate_selection_rescue\\candidate_selection_rescue_results.jsonl",
+    "branch_a_input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+    "branch_b_input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl"
+  },
+  "outputs": {
+    "branch_a_output_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+    "branch_b_output_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+    "audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\layer3_candidate_selection_apply_audit.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\layer3_candidate_selection_apply_summary.json"
+  },
+  "counts": {
+    "rescue_results": 1225,
+    "audit_rows": 1225,
+    "apply_status_counts": {
+      "skipped": 536,
+      "applied": 680,
+      "no_change": 9
+    },
+    "apply_action_counts": {
+      "no_update": 545,
+      "apply_selected_candidate_leaf": 680
+    },
+    "counts_by_branch": {
+      "B": 430,
+      "A": 795
+    },
+    "counts_by_final_decision": {
+      "human_review": 507,
+      "select_candidate": 689,
+      "no_change": 29
+    },
+    "counts_by_selected_source": {
+      "none": 301,
+      "LLM_candidate_1": 62,
+      "B_current": 779,
+      "LLM_candidate_2": 26,
+      "LLM_candidate_3": 12,
+      "B_dejure_best": 45
+    },
+    "changed_field_counts": {
+      "entity_text": 419,
+      "computability": 351,
+      "non_computable_reason": 498,
+      "history_context": 372,
+      "temporal_context": 214,
+      "operator": 153,
+      "value": 124,
+      "value_type": 117,
+      "unit": 76,
+      "evidence_text": 17,
+      "entity_type": 277
+    },
+    "skipped_reasons": {
+      "not_applicable_final_decision:human_review": 507,
+      "not_applicable_final_decision:no_change": 29
+    }
+  },
+  "method_notes": [
+    "Only validated selected_leaf outputs are applied.",
+    "Human-review rows are not applied.",
+    "Failed-validation rows are not applied.",
+    "No-change rows remain unchanged and are retained as audit evidence.",
+    "criterion_id is preserved from the target rule tree.",
+    "Tree structure is not changed; only leaf fields can be updated.",
+    "Layer 1 and Layer 2 must be rerun after this step."
+  ]
+}

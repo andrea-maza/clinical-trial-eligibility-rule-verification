@@ -1,0 +1,3 @@
+﻿branch,manual_labeled_rows,manual_error_rows_partial_or_incorrect,manual_error_rows_in_main_rescue,manual_error_coverage_pct,manual_correct_rows,manual_correct_rows_in_main_rescue,manual_correct_routed_pct,main_rescue_rows_for_branch,main_rescue_rows_with_manual_label,main_rescue_rows_pre_correct,main_rescue_rows_pre_partial,main_rescue_rows_pre_incorrect
+A,524,322,168,52.17,202,69,34.16,795,237,69,95,73
+B,524,36,15,41.67,488,100,20.49,430,115,100,12,3

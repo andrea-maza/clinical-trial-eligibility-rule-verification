@@ -1,0 +1,98 @@
+{
+  "description": "Layer 3 decision inventory. This file assigns actions but does not repair, modify ASTs, or call the LLM.",
+  "inputs": {
+    "layer1_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "branch_a_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\policy_branch_a\\layer1_policy_branch_a_leaf_level.csv",
+    "branch_a_layer2_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+    "branch_b_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\policy_branch_b\\layer1_policy_branch_b_leaf_level.csv",
+    "branch_b_layer2_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_leaf_level.csv",
+    "branch_a_validation_summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_manual_validation_summary.json"
+  },
+  "outputs": {
+    "leaf_level_decision_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\decision_inventory\\layer3_decision_inventory_leaf_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\decision_inventory\\layer3_decision_summary.json"
+  },
+  "n_rows_total": 4804,
+  "n_rows_by_branch": {
+    "A": 2402,
+    "B": 2402
+  },
+  "layer3_primary_action_counts_by_branch": {
+    "A": {
+      "targeted_llm_rescue_candidate": 1052,
+      "branch_a_diagnostic_only_not_auto_accept": 926,
+      "optional_targeted_rescue_or_review": 370,
+      "conservative_downgrade_candidate": 33,
+      "safe_structural_repair_candidate": 21
+    },
+    "B": {
+      "optional_targeted_rescue_or_review": 774,
+      "computability_review_or_partial": 641,
+      "keep_without_layer2_action_candidate": 554,
+      "targeted_llm_rescue_candidate": 433
+    }
+  },
+  "layer3_action_family_counts_by_branch": {
+    "A": {
+      "llm_rescue_or_review": 1052,
+      "diagnostic_only": 926,
+      "optional_review": 370,
+      "conservative_downgrade": 33,
+      "structural_repair": 21
+    },
+    "B": {
+      "optional_review": 774,
+      "computability_review": 641,
+      "keep_no_action_reference": 554,
+      "llm_rescue_or_review": 433
+    }
+  },
+  "layer3_priority_counts_by_branch": {
+    "A": {
+      "40": 1052,
+      "90": 926,
+      "60": 370,
+      "30": 33,
+      "20": 21
+    },
+    "B": {
+      "60": 774,
+      "50": 641,
+      "80": 554,
+      "40": 433
+    }
+  },
+  "suggested_rescue_task_counts_by_branch": {
+    "A": {
+      "none": 926,
+      "structured_llm_rescue_branch_a": 559,
+      "entity_regrounding": 326,
+      "value_or_operator_recovery": 285,
+      "temporal_context_recovery": 142,
+      "history_context_recovery": 57,
+      "deterministic_conservative_downgrade": 33,
+      "entity_type_reclassification": 21,
+      "deterministic_safe_normalization": 21,
+      "condition_exception_context_recovery": 18,
+      "polarity_negation_repair": 14
+    },
+    "B": {
+      "entity_regrounding": 856,
+      "computability_review": 641,
+      "none": 554,
+      "structured_llm_judge_branch_b": 180,
+      "value_or_operator_recovery": 61,
+      "temporal_context_recovery": 39,
+      "condition_exception_context_recovery": 30,
+      "polarity_negation_repair": 24,
+      "history_context_recovery": 17
+    }
+  },
+  "method_notes": [
+    "Branch A targeted_llm_rescue_candidate is a broad upstream candidate label. It does not mean all Branch A candidates will be sent to the LLM. Later 06f/06f2 refines this set using Branch B substitution, actionable rescue rules, and human-review fallbacks.Branch A low-risk leaves are not automatically accepted because the pilot threshold analysis found no safe Branch A accept threshold.",
+    "Branch B keep-without-action candidates come from the Branch B grounding/routing screen and are not calibrated automatic accepts.",
+    "Any leaf changed by deterministic repair or LLM rescue must be re-verified by Layer 1 and Layer 2.",
+    "This script is decision-only. It does not apply repairs."
+  ],
+  "branch_a_validation_summary_loaded": true
+}

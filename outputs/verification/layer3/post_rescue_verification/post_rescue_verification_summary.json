@@ -1,0 +1,190 @@
+{
+  "stage": "11_rerun_verification_after_rescue",
+  "description": "Reruns Layer 1 and Layer 2 verification after validated candidate-selection rescue was applied. This step does not call the LLM, modify rule trees, or use manual labels.",
+  "inputs": {
+    "branch_a_post_rescue_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+    "branch_b_post_rescue_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+    "pass2_inputs": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\pass2_inputs\\chia_text_only_200_pass2_inputs.jsonl"
+  },
+  "output_root": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification",
+  "outputs": {
+    "layer1_common_leaf_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "layer1_common_ast_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_ast_level.csv",
+    "layer1d_audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\pass1_pass2_consistency\\layer1d_pass1_pass2_consistency_audit.csv",
+    "layer1_policy_a_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_a\\layer1_policy_branch_a_leaf_level.csv",
+    "layer1_policy_b_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_b\\layer1_policy_branch_b_leaf_level.csv",
+    "layer2_a_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_a\\layer2_branch_a_support_inventory_leaf_level.csv",
+    "layer2_a_score_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+    "layer2_b_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_b\\layer2_branch_b_support_inventory_leaf_level.csv",
+    "layer2_b_screen_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_leaf_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\post_rescue_verification_summary.json"
+  },
+  "row_counts": {
+    "layer1_common_leaf_rows": 4804,
+    "layer1d_audit_rows": 4804,
+    "layer1_policy_a_rows": 2402,
+    "layer1_policy_b_rows": 2402,
+    "layer2_a_score_rows": 2402,
+    "layer2_b_screen_rows": 2402
+  },
+  "key_post_rescue_summaries": {
+    "layer1_common": {
+      "layer1a_hard_leaf_issue_counts": {
+        "existence_operator_with_non_null_value": 58,
+        "list_operator_without_list_value": 7,
+        "temporal_context_missing_value": 7,
+        "computable_with_non_computable_reason": 4,
+        "temporal_context_missing_unit": 3,
+        "pattern_operator_without_scalar_value": 1,
+        "range_with_both_bounds_missing": 1,
+        "entity_text_empty": 0,
+        "evidence_text_empty": 0,
+        "operator_missing": 0,
+        "comparison_without_scalar_value": 0,
+        "equality_without_value": 0,
+        "between_without_range_value": 0,
+        "range_with_missing_bound": 0,
+        "null_value_type_with_non_null_value": 0,
+        "scalar_value_type_with_complex_value": 0,
+        "list_value_type_without_list_value": 0,
+        "range_value_type_without_dict_value": 0,
+        "temporal_context_missing_relation": 0,
+        "temporal_context_invalid_relation": 0,
+        "temporal_context_missing_anchor_event": 0,
+        "temporal_context_invalid_anchor_event": 0,
+        "temporal_context_invalid_unit": 0,
+        "non_computable_without_reason": 0,
+        "computable_with_exception_context": 0,
+        "unit_present_without_value": 0,
+        "entity_type_invalid_enum": 0,
+        "history_context_invalid_enum": 0,
+        "criterion_id_missing": 0,
+        "criterion_id_malformed": 0,
+        "operator_invalid_enum": 0,
+        "value_type_invalid_enum": 0,
+        "computability_invalid_enum": 0,
+        "normalized_concept_invalid_system": 0,
+        "normalized_concept_system_without_code": 0,
+        "range_min_greater_than_max": 0,
+        "comparison_value_is_numeric_string": 0
+      },
+      "layer1b_ast_integrity_issue_counts": {
+        "duplicate_identical_leaf": 182,
+        "duplicate_criterion_id": 0
+      },
+      "layer1c_source_text_warning_counts": {
+        "critical_qualifier_missing_from_entity": 135,
+        "comparison_with_non_quantitative_entity": 93,
+        "existence_operator_on_quantitative_phrase": 61,
+        "condition_context_present_without_handling": 49,
+        "temporal_anchor_mismatch_from_source": 49,
+        "temporal_marker_without_temporal_context": 48,
+        "duration_marker_missing_from_temporal_context": 40,
+        "categorical_value_missing": 38,
+        "requirement_object_inversion": 29,
+        "comparison_entity_mismatch_from_source": 13,
+        "entity_text_too_generic": 1
+      },
+      "action_category_counts": {
+        "no_action": 4726,
+        "flag_only": 248,
+        "conservative_rewrite_candidate": 8,
+        "safe_normalization_candidate": 4
+      },
+      "layer1c_action_counts": {
+        "no_action": 4319,
+        "flag_only": 485
+      }
+    },
+    "layer1d": {
+      "total_pass1_clauses": 4804,
+      "total_pass2_leaves": 4804,
+      "pass1_clauses_without_pass2_leaf": 0,
+      "pass2_leaves_without_pass1_clause": 0,
+      "evidence_text_not_substring_of_pass1_source_text": 0,
+      "evidence_text_not_substring_of_atomic_clause_but_in_item_text": 2864,
+      "negation_clause_with_exists_operator": 14,
+      "exception_or_condition_clause_without_context_handling": 27,
+      "positive_clause_with_not_exists_operator": 20,
+      "negative_entity_with_not_exists_operator": 5,
+      "exception_or_condition_clause_with_computable_status": 11,
+      "exception_clause_computable_despite_context": 0,
+      "layer1d_flagged_pass2_leaves": 65,
+      "percentages": {
+        "pass1_clause_missing_pass2_leaf_rate": 0.0,
+        "pass2_leaf_without_pass1_clause_rate": 0.0,
+        "evidence_text_not_in_pass1_source_rate": 0.0,
+        "evidence_text_in_item_only_rate": 59.62,
+        "negation_operator_mismatch_leaf_rate": 0.29,
+        "exception_context_missing_leaf_rate": 0.56,
+        "positive_not_exists_mismatch_leaf_rate": 0.42,
+        "exception_computable_status_leaf_rate": 0.23,
+        "negative_entity_not_exists_leaf_rate": 0.1,
+        "exception_computable_despite_context_leaf_rate": 0.0,
+        "layer1d_flagged_pass2_leaf_rate": 1.35
+      }
+    },
+    "branch_a_layer2_risk_counts": {
+      "review_priority": 989,
+      "intermediate_support": 451,
+      "high_support_not_auto_accept": 962
+    },
+    "branch_b_semantic_grounding_risk_counts": {
+      "reference_high_support_not_auto_accept": 1219,
+      "reference_intermediate_support": 648,
+      "reference_review_priority": 535
+    },
+    "branch_b_final_routing_counts": {
+      "optional_llm_verifier_or_review": 784,
+      "computability_review": 658,
+      "keep_without_layer2_action": 561,
+      "llm_verifier": 399
+    }
+  },
+  "pre_post_comparison": {
+    "branch_a_risk_label_counts": {
+      "pre": {
+        "review_priority": 1101,
+        "high_support_not_auto_accept": 926,
+        "intermediate_support": 375
+      },
+      "post": {
+        "review_priority": 989,
+        "high_support_not_auto_accept": 962,
+        "intermediate_support": 451
+      }
+    },
+    "branch_b_semantic_grounding_risk_label_counts": {
+      "pre": {
+        "reference_high_support_not_auto_accept": 1195,
+        "reference_intermediate_support": 640,
+        "reference_review_priority": 567
+      },
+      "post": {
+        "reference_high_support_not_auto_accept": 1219,
+        "reference_intermediate_support": 648,
+        "reference_review_priority": 535
+      }
+    },
+    "branch_b_final_routing_decision_counts": {
+      "pre": {
+        "optional_llm_verifier_or_review": 774,
+        "computability_review": 641,
+        "keep_without_layer2_action": 554,
+        "llm_verifier": 433
+      },
+      "post": {
+        "optional_llm_verifier_or_review": 784,
+        "computability_review": 658,
+        "keep_without_layer2_action": 561,
+        "llm_verifier": 399
+      }
+    }
+  },
+  "method_notes": [
+    "No LLM calls are made in this script.",
+    "No rule-tree files are modified in this script.",
+    "These outputs are used by the final-decision script.",
+    "Manual evaluation is performed separately on post-rescue outputs."
+  ]
+}

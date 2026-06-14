@@ -1,0 +1,55 @@
+{
+  "description": "Checks that safe structural repairs changed only intended fields in the logical rule trees. This script does not modify them.",
+  "inputs": {
+    "repair_audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\layer3_safe_structural_repair_audit.csv",
+    "branch_a_raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+    "branch_a_repaired_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+    "branch_b_raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl",
+    "branch_b_repaired_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl"
+  },
+  "outputs": {
+    "diff_check_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repair_check\\layer3_safe_structural_repair_diff_check.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repair_check\\layer3_safe_structural_repair_check_summary.json"
+  },
+  "branch_summaries": {
+    "A": {
+      "branch": "A",
+      "raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+      "repaired_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+      "raw_leaf_count": 2402,
+      "repaired_leaf_count": 2402,
+      "repair_audit_rows_for_branch": 21,
+      "missing_audit_leaves_in_raw": [],
+      "missing_audit_leaves_in_repaired": [],
+      "missing_audit_leaves_in_raw_count": 0,
+      "missing_audit_leaves_in_repaired_count": 0,
+      "check_status_counts": {
+        "pass": 21
+      },
+      "pending_conservative_issue_after_safe_repair_count": 2
+    },
+    "B": {
+      "branch": "B",
+      "raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl",
+      "repaired_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl",
+      "raw_leaf_count": 2402,
+      "repaired_leaf_count": 2402,
+      "repair_audit_rows_for_branch": 0,
+      "missing_audit_leaves_in_raw": [],
+      "missing_audit_leaves_in_repaired": [],
+      "missing_audit_leaves_in_raw_count": 0,
+      "missing_audit_leaves_in_repaired_count": 0,
+      "check_status_counts": {},
+      "pending_conservative_issue_after_safe_repair_count": 0
+    }
+  },
+  "overall_check_status_counts": {
+    "pass": 21
+  },
+  "overall_pending_conservative_issue_after_safe_repair_count": 2,
+  "method_notes": [
+    "Pass means repaired leaves changed only expected fields.",
+    "Pending conservative issues are not failures; they are intentionally left for a later Layer 3 step.",
+    "After this check, repaired rule trees must still be re-run through Layer 1 and Layer 2 before final use."
+  ]
+}

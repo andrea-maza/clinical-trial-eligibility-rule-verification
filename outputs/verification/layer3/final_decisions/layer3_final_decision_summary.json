@@ -1,0 +1,136 @@
+{
+  "stage": "12_assign_final_decisions",
+  "description": "Assigns final leaf-level verification decisions after deterministic repair, candidate-selection rescue, and post-rescue verification.",
+  "inputs": {
+    "branch_a_layer1_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_a\\layer1_policy_branch_a_leaf_level.csv",
+    "branch_b_layer1_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_b\\layer1_policy_branch_b_leaf_level.csv",
+    "branch_a_layer2_score_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+    "branch_b_layer2_screen_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_leaf_level.csv",
+    "rescue_apply_audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\layer3_candidate_selection_apply_audit.csv"
+  },
+  "outputs": {
+    "all_leaf_final_decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\final_decisions\\layer3_final_decision_leaf_level.csv",
+    "branch_a_final_decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\final_decisions\\layer3_final_decision_branch_a.csv",
+    "branch_b_final_decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\final_decisions\\layer3_final_decision_branch_b.csv",
+    "cross_branch_final_decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\final_decisions\\layer3_final_decision_cross_branch_by_criterion.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\final_decisions\\layer3_final_decision_summary.json"
+  },
+  "row_counts": {
+    "all_leaf_rows": 4804,
+    "branch_a_rows": 2402,
+    "branch_b_rows": 2402,
+    "cross_branch_rows": 2402
+  },
+  "branch_summaries": {
+    "A": {
+      "n": 2402,
+      "final_decision_counts": {
+        "accept": 1043,
+        "human_review": 640,
+        "partial": 582,
+        "non_computable": 137
+      },
+      "final_decision_rule_counts": {
+        "A_low_risk_accept": 937,
+        "A_hybrid_from_B_partial": 270,
+        "A_rescue_unresolved": 206,
+        "A_layer1_hard_issue": 174,
+        "A_layer2_medium_risk": 160,
+        "A_partial_computability": 152,
+        "A_layer2_high_risk": 131,
+        "A_hybrid_from_B_human_review": 129,
+        "A_hybrid_from_B_accept": 106,
+        "A_hybrid_from_B_non_computable": 76,
+        "A_non_computable": 61
+      },
+      "rescue_final_decision_counts": {
+        "select_candidate": 589,
+        "human_review": 206
+      }
+    },
+    "B": {
+      "n": 2402,
+      "final_decision_counts": {
+        "partial": 1046,
+        "accept": 561,
+        "human_review": 535,
+        "non_computable": 260
+      },
+      "final_decision_rule_counts": {
+        "B_accept": 561,
+        "B_computability_review": 541,
+        "B_partial_computability": 375,
+        "B_rescue_unresolved": 301,
+        "B_non_computable": 260,
+        "B_semantic_high_risk": 136,
+        "B_optional_review_partial": 129,
+        "B_llm_verifier": 53,
+        "B_layer1_hard_issue": 45,
+        "B_execution_risk": 1
+      },
+      "rescue_final_decision_counts": {
+        "human_review": 301,
+        "select_candidate": 100,
+        "no_change": 29
+      }
+    }
+  },
+  "cross_branch_summary": {
+    "chosen_branch_counts": {
+      "B": 1700,
+      "A": 702
+    },
+    "chosen_branch_decision_counts": {
+      "accept": 1147,
+      "partial": 700,
+      "human_review": 362,
+      "non_computable": 193
+    },
+    "branch_a_vs_branch_b_decision_pairs": {
+      "A=accept|B=partial": 459,
+      "A=accept|B=accept": 457,
+      "A=partial|B=partial": 399,
+      "A=human_review|B=human_review": 362,
+      "A=human_review|B=partial": 183,
+      "A=non_computable|B=non_computable": 129,
+      "A=accept|B=human_review": 111,
+      "A=partial|B=accept": 70,
+      "A=human_review|B=non_computable": 61,
+      "A=partial|B=human_review": 59,
+      "A=partial|B=non_computable": 54,
+      "A=human_review|B=accept": 34,
+      "A=accept|B=non_computable": 16,
+      "A=non_computable|B=partial": 5,
+      "A=non_computable|B=human_review": 3
+    }
+  },
+  "decision_rules": {
+    "accept": [
+      "Branch A: low Layer 2 risk with no hard Layer 1 issue and computable status.",
+      "Branch B: accept routing with low semantic grounding risk."
+    ],
+    "partial": [
+      "Medium risk after rescue.",
+      "Computability review.",
+      "Partial computability.",
+      "Optional verifier/review for Branch B."
+    ],
+    "non_computable": [
+      "Explicit non_computable status after post-rescue verification."
+    ],
+    "human_review": [
+      "Hard Layer 1 issue remains.",
+      "High Layer 2 risk remains.",
+      "Mandatory verifier/rescue remains.",
+      "Targeted rescue returned human_review or no_repair_possible.",
+      "Targeted rescue failed local validation."
+    ]
+  },
+  "method_notes": [
+    "This script does not call the LLM.",
+    "This script does not modify rule-tree files.",
+    "This script does not evaluate against manual labels.",
+    "Manual pre/post evaluation is performed separately.",
+    "The cross-branch table is a comparison summary, not a third extraction branch."
+  ]
+}

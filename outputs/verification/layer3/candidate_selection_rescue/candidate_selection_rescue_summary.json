@@ -1,0 +1,73 @@
+{
+  "stage": "06f2_branch_specific_hybrid_and_dejure_rescue",
+  "token_usage": {
+    "layer3_llm_calls": 1912,
+    "layer3_prompt_tokens": 2604895,
+    "layer3_completion_tokens": 510268,
+    "layer3_total_tokens": 3115163
+  },
+  "description": "Branch-specific Layer 3 rescue. Manual labels are not used. Branch A makes no LLM calls and uses Branch B as semantic substitute. Branch B uses a De Jure-style judge/repair loop: judge B_current, repair up to three attempts if needed, keep the best validated candidate.",
+  "inputs": {
+    "plan": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f_layer3_literature_aligned_rescue_plan\\main_llm_rescue_plan.jsonl",
+    "branch_a_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06a_layer3_safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+    "branch_b_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06a_layer3_safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl",
+    "pass2_inputs": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass2_inputs\\chia_text_only_200_pass2_inputs.jsonl"
+  },
+  "outputs": {
+    "results_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f2_layer3_candidate_selection_rescue\\candidate_selection_rescue_results.jsonl",
+    "results_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f2_layer3_candidate_selection_rescue\\candidate_selection_rescue_results.csv",
+    "raw_prompts_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f2_layer3_candidate_selection_rescue\\candidate_selection_rescue_raw_prompts.jsonl",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f2_layer3_candidate_selection_rescue\\candidate_selection_rescue_summary.json"
+  },
+  "run_settings": {
+    "limit": null,
+    "branch": null,
+    "dry_run": false,
+    "overwrite": true,
+    "temperature": 0.0,
+    "max_tokens": 2500,
+    "sleep": 0.2,
+    "branch_b_dejure_always_enabled": true,
+    "branch_b_max_attempts": 3,
+    "branch_b_keep_threshold": 4.5,
+    "branch_b_candidate_threshold": 4.0,
+    "branch_b_min_improvement": 0.25
+  },
+  "counts": {
+    "plan_rows_total": 1225,
+    "selected_todo_rows": 1225,
+    "processed_this_run": 1225,
+    "total_results": 1225,
+    "branch_b_rescue_criteria_in_plan": 430,
+    "counts_by_branch_to_update": {
+      "B": 430,
+      "A": 795
+    },
+    "counts_by_final_decision": {
+      "human_review": 507,
+      "select_candidate": 689,
+      "no_change": 29
+    },
+    "counts_by_selected_source": {
+      "none": 301,
+      "LLM_candidate_1": 62,
+      "B_current": 779,
+      "LLM_candidate_2": 26,
+      "LLM_candidate_3": 12,
+      "B_dejure_best": 45
+    },
+    "counts_by_validation_status": {
+      "not_applicable": 243,
+      "pass": 718,
+      "fail": 264
+    },
+    "counts_by_parse_status": {
+      "dejure_loop": 430,
+      "deterministic_branch_a_substitution": 795
+    },
+    "validation_reasons": {
+      "entity_text_not_in_source_context": 246,
+      "existence_operator_with_non_null_value_type": 41
+    }
+  }
+}

@@ -1,0 +1,10 @@
+﻿manual_A_pre_label,manual_B_pre_label,manual_B_vs_A_pre,n
+missing,missing,missing,558
+partial,correct,B_pre_better_than_A_pre,88
+incorrect,correct,B_pre_better_than_A_pre,72
+correct,correct,B_pre_same_as_A_pre,60
+correct,partial,B_pre_worse_than_A_pre,8
+partial,partial,B_pre_same_as_A_pre,6
+partial,incorrect,B_pre_worse_than_A_pre,1
+incorrect,incorrect,B_pre_same_as_A_pre,1
+correct,incorrect,B_pre_worse_than_A_pre,1

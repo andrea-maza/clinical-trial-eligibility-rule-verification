@@ -1,0 +1,63 @@
+{
+  "description": "Layer 3 targeted LLM rescue candidate queue. This script only builds the queue and does not call the LLM.",
+  "inputs": {
+    "decision_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\decision_inventory\\layer3_decision_inventory_leaf_level.csv",
+    "conservative_inspection_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\conservative_downgrade_inspection\\layer3_conservative_downgrade_candidates.csv"
+  },
+  "outputs": {
+    "candidate_jsonl": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\targeted_rescue_candidates\\layer3_targeted_llm_rescue_candidates.jsonl",
+    "candidate_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\targeted_rescue_candidates\\layer3_targeted_llm_rescue_candidates.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\targeted_rescue_candidates\\layer3_targeted_llm_rescue_candidates_summary.json"
+  },
+  "total_candidates": 2664,
+  "counts_by_branch": {
+    "A": 1457,
+    "B": 1207
+  },
+  "counts_by_run_stage": {
+    "P3_branch_a_mandatory_diagnostic_rescue_or_ablation": 1052,
+    "P2_budget_allows_branch_b_optional_judge": 774,
+    "P1_run_now_branch_b_mandatory_judge": 433,
+    "P4_branch_a_optional_diagnostic_rescue": 370,
+    "P1_run_now_conservative_structural_recovery": 35
+  },
+  "counts_by_candidate_kind": {
+    "mandatory_llm_rescue_or_judge": 1485,
+    "optional_llm_rescue_or_review": 1144,
+    "conservative_structural_recovery_before_downgrade": 35
+  },
+  "counts_by_rescue_task_type": {
+    "entity_regrounding": 1532,
+    "value_or_operator_recovery": 326,
+    "branch_b_field_level_semantic_judge": 173,
+    "temporal_context_recovery": 170,
+    "branch_a_field_level_semantic_rescue": 152,
+    "duplicate_prune_or_merge_judge": 120,
+    "history_context_recovery": 56,
+    "condition_exception_context_recovery": 47,
+    "polarity_negation_repair": 36,
+    "list_value_recovery": 27,
+    "entity_type_reclassification": 17,
+    "range_bounds_recovery": 7,
+    "scalar_value_recovery": 1
+  },
+  "counts_by_requires_judge_first": {
+    "1": 1491,
+    "0": 1173
+  },
+  "recommended_execution_order": [
+    "P1_run_now_conservative_structural_recovery",
+    "P1_run_now_branch_b_mandatory_judge",
+    "P2_budget_allows_branch_b_optional_judge",
+    "P3_branch_a_mandatory_diagnostic_rescue_or_ablation",
+    "P4_branch_a_optional_diagnostic_rescue"
+  ],
+  "method_notes": [
+    "Branch B is treated as the main semantic branch; mandatory Branch B candidates should be judged first.",
+    "Conservative structural issues are sent to targeted recovery before any downgrade is considered.",
+    "Branch A candidates are kept for diagnostic rescue or ablation, not automatic acceptance.",
+    "Any future LLM repair must be re-run through Layer 1 and Layer 2 before final use.",
+    "This queue uses max_attempts: 3 if branch == B else 2, by default to keep rescue bounded and auditable.",
+    "This queue is broad and preliminary. Later Layer 3 scripts select the runnable subset and prepare the final rescue plan."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "description": "Layer 3 safe structural repair. This script applies only deterministic safe repairs and writes repaired rule-tree copies. Re-verification is required.",
+  "inputs": {
+    "decision_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\decision_inventory\\layer3_decision_inventory_leaf_level.csv",
+    "branch_a_raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+    "branch_b_raw_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl"
+  },
+  "outputs": {
+    "branch_a_safe_structural_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+    "branch_b_safe_structural_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl",
+    "audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\layer3_safe_structural_repair_audit.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\layer3_safe_structural_repair_summary.json"
+  },
+  "branch_summaries": {
+    "A": {
+      "branch": "A",
+      "input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+      "output_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_A_layer3_safe_structural.jsonl",
+      "visited_leaves": 2402,
+      "safe_repair_decisions_for_branch": 21,
+      "safe_repair_candidates_matched_in_ast": 21,
+      "repairs_applied": 21,
+      "repairs_skipped": 0,
+      "unmatched_decision_keys_count": 0,
+      "unmatched_decision_keys_examples": []
+    },
+    "B": {
+      "branch": "B",
+      "input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl",
+      "output_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\safe_structural_repairs\\chia_text_only_200_rules_v3_ast_B_layer3_safe_structural.jsonl",
+      "visited_leaves": 2402,
+      "safe_repair_decisions_for_branch": 0,
+      "safe_repair_candidates_matched_in_ast": 0,
+      "repairs_applied": 0,
+      "repairs_skipped": 0,
+      "unmatched_decision_keys_count": 0,
+      "unmatched_decision_keys_examples": []
+    }
+  },
+  "repair_action_counts": {
+    "computable_with_exception_context": 21
+  },
+  "applied_repair_counts": {
+    "A:computable_with_exception_context": 21
+  },
+  "skipped_repair_reasons": {},
+  "changed_field_counts": {
+    "computability": 21,
+    "non_computable_reason": 21
+  },
+  "supported_safe_repair_issues": [
+    "comparison_value_is_numeric_string",
+    "computable_with_exception_context",
+    "computable_with_non_computable_reason",
+    "non_computable_without_reason",
+    "temporal_context_missing_unit",
+    "temporal_context_missing_value"
+  ],
+  "conservative_repair_issues_not_applied_here": [
+    "comparison_without_scalar_value",
+    "list_operator_without_list_value",
+    "range_with_both_bounds_missing"
+  ],
+  "method_notes": [
+    "Only safe deterministic structural repairs are applied.",
+    "Conservative downgrade candidates are not applied in this script.",
+    "No LLM call is made.",
+    "The resulting AST files must be re-run through Layer 1 and Layer 2.",
+    "Issue-code prefixes such as layer1a: are normalized before repair matching."
+  ]
+}

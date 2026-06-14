@@ -1,0 +1,56 @@
+{
+  "stage": "layer1_policy_branch_b",
+  "description": "Branch-specific interpretation of common deterministic Layer 1 issue codes. No new issues are detected and no rule-tree modification is applied. Branch B uses LLM-based Pass 2 leaf extraction, so hard deterministic issues are separated from soft semantic warnings and execution/computability issues.",
+  "inputs": {
+    "leaf_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "ast_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_ast_level.csv",
+    "layer1d_audit_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\pass1_pass2_consistency\\layer1d_pass1_pass2_consistency_audit.csv"
+  },
+  "outputs": {
+    "leaf_policy_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_b\\layer1_policy_branch_b_leaf_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\post_rescue_verification\\layer1\\policy_branch_b\\layer1_policy_branch_b_summary.json"
+  },
+  "branch": "B",
+  "n_policy_rows": 2402,
+  "action_hint_counts": {
+    "continue_to_layer2": 2137,
+    "mandatory_verifier_candidate": 196,
+    "continue_to_layer2_grounding_screen": 67,
+    "computability_review_candidate": 2
+  },
+  "bucket_counts": {
+    "no_layer1_issue": 2137,
+    "hard_semantic_or_structural_issue": 196,
+    "soft_semantic_warning": 67,
+    "execution_or_computability_issue": 2
+  },
+  "severity_counts": {
+    "none": 2137,
+    "high": 196,
+    "low_to_medium": 67,
+    "medium": 2
+  },
+  "top_layer1_codes": {
+    "layer1a:existence_operator_with_non_null_value": 58,
+    "layer1c:critical_qualifier_missing_from_entity": 40,
+    "layer1c:condition_context_present_without_handling": 37,
+    "layer1b:duplicate_identical_leaf": 36,
+    "layer1c:temporal_anchor_mismatch_from_source": 25,
+    "layer1c:existence_operator_on_quantitative_phrase": 22,
+    "layer1c:comparison_with_non_quantitative_entity": 20,
+    "layer1d:positive_clause_with_not_exists_operator": 18,
+    "layer1c:temporal_marker_without_temporal_context": 15,
+    "layer1d:exception_or_condition_clause_without_context_handling": 15,
+    "layer1c:requirement_object_inversion": 15,
+    "layer1c:duration_marker_missing_from_temporal_context": 14,
+    "layer1c:categorical_value_missing": 14,
+    "layer1c:comparison_entity_mismatch_from_source": 7,
+    "layer1d:negation_clause_with_exists_operator": 7,
+    "layer1a:temporal_context_missing_value": 5,
+    "layer1a:computable_with_non_computable_reason": 3,
+    "layer1a:temporal_context_missing_unit": 3,
+    "layer1d:negative_entity_with_not_exists_operator": 2,
+    "layer1a:pattern_operator_without_scalar_value": 1
+  },
+  "method_note": "This is a policy layer, not a detector. Actual repair/rescue decisions should be made in Layer 3. Branch B Layer 2 can use these policy columns instead of treating every Layer 1 warning as mandatory LLM-verifier input."
+}

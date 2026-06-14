@@ -1,0 +1,16 @@
+{
+  "stage": "branch_a_hybrid_attributable_pass2_token_use",
+  "important_note": "Branch A made no new Layer 3 LLM calls. This retrospective calculation estimates the attributable Branch B Pass 2 token burden for Branch A leaves that reused Branch B as a semantic substitute. Because Branch B Pass 2 calls were made per item, tokens are allocated equally across the leaves returned for that item.",
+  "n_branch_a_hybrid_substituted_leaves": 589,
+  "selected_source_counts": {
+    "B_current": 544,
+    "B_dejure_best": 45
+  },
+  "allocation_status_counts": {
+    "allocated_from_branch_b_pass2_item_call": 589
+  },
+  "allocated_input_tokens": 282873.27,
+  "allocated_output_tokens": 129455.83,
+  "allocated_total_tokens": 412329.11,
+  "allocated_weighted_burden": 1318519.93
+}
