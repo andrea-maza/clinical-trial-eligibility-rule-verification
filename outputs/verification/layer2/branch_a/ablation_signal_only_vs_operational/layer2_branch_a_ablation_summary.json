@@ -1,0 +1,127 @@
+{
+  "description": "Ablation comparing Layer 2 signal-only risk with operational Layer 2 risk including Layer 1 support.",
+  "score_input": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+  "leaf_output": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\ablation_signal_only_vs_operational\\layer2_branch_a_ablation_leaf_level.csv",
+  "thresholds": {
+    "review_priority_if_leaf_support_below": 0.6,
+    "high_support_reference_if_leaf_support_at_least": 0.85,
+    "intermediate_support_if_leaf_support_between": [
+      0.6,
+      0.85
+    ]
+  },
+  "signal_only_components": [
+    "entity_support",
+    "operator_value_support",
+    "quantitative_completeness_support",
+    "temporal_support",
+    "history_support",
+    "context_support",
+    "computability_support"
+  ],
+  "operational_score_definition": "Current Branch A leaf_support and risk_label, including layer1_support as a support component.",
+  "overlap_summary": {
+    "signal_only_review_priority": 907,
+    "operational_review_priority": 1101,
+    "layer1_and_signal_only_review_priority": 309,
+    "layer1_and_operational_review_priority": 503,
+    "signal_only_review_priority_without_layer1": 598,
+    "operational_review_priority_without_layer1": 598,
+    "layer1_flagged_not_signal_only_review_priority": 215,
+    "layer1_flagged_not_operational_review_priority": 21,
+    "layer1_and_signal_only_intermediate_or_review": 370,
+    "layer1_and_operational_intermediate_or_review": 524
+  },
+  "risk_counts_signal_only": {
+    "high_support_not_auto_accept": 1080,
+    "review_priority": 907,
+    "intermediate_support": 415
+  },
+  "risk_counts_operational": {
+    "review_priority": 1101,
+    "high_support_not_auto_accept": 926,
+    "intermediate_support": 375
+  },
+  "manual_validation": {
+    "manual_input": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv",
+    "manual_label_column": "manual_A_leaf_label",
+    "n_labeled_matched": 524,
+    "manual_label_counts": {
+      "correct": 202,
+      "partial": 187,
+      "incorrect": 135
+    },
+    "manual_binary_metrics": {
+      "signal_only": {
+        "high_support_as_correct": {
+          "tp": 85,
+          "fp": 109,
+          "tn": 213,
+          "fn": 117,
+          "precision": 0.4381443298969072,
+          "recall": 0.4207920792079208,
+          "accuracy": 0.5687022900763359,
+          "f1": 0.42929292929292934
+        },
+        "review_priority_as_partial_or_incorrect": {
+          "tp": 182,
+          "fp": 77,
+          "tn": 125,
+          "fn": 140,
+          "precision": 0.7027027027027027,
+          "recall": 0.5652173913043478,
+          "accuracy": 0.5858778625954199,
+          "f1": 0.6265060240963856
+        },
+        "review_priority_as_incorrect_only": {
+          "tp": 84,
+          "fp": 175,
+          "tn": 214,
+          "fn": 51,
+          "precision": 0.32432432432432434,
+          "recall": 0.6222222222222222,
+          "accuracy": 0.5687022900763359,
+          "f1": 0.4263959390862945
+        }
+      },
+      "operational": {
+        "high_support_as_correct": {
+          "tp": 74,
+          "fp": 77,
+          "tn": 245,
+          "fn": 128,
+          "precision": 0.4900662251655629,
+          "recall": 0.36633663366336633,
+          "accuracy": 0.6087786259541985,
+          "f1": 0.4192634560906516
+        },
+        "review_priority_as_partial_or_incorrect": {
+          "tp": 213,
+          "fp": 88,
+          "tn": 114,
+          "fn": 109,
+          "precision": 0.707641196013289,
+          "recall": 0.6614906832298136,
+          "accuracy": 0.6240458015267175,
+          "f1": 0.6837881219903692
+        },
+        "review_priority_as_incorrect_only": {
+          "tp": 96,
+          "fp": 205,
+          "tn": 184,
+          "fn": 39,
+          "precision": 0.31893687707641194,
+          "recall": 0.7111111111111111,
+          "accuracy": 0.5343511450381679,
+          "f1": 0.4403669724770642
+        }
+      }
+    },
+    "outputs": {
+      "manual_error_by_variant_and_risk": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\ablation_signal_only_vs_operational\\manual_error_by_variant_and_risk.csv",
+      "manual_review_priority_detection_by_variant": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\ablation_signal_only_vs_operational\\manual_review_priority_detection_by_variant.csv",
+      "manual_risk_coverage_by_variant": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\ablation_signal_only_vs_operational\\manual_risk_coverage_by_variant.csv",
+      "manual_ablation_merged_labeled": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\ablation_signal_only_vs_operational\\manual_ablation_merged_labeled.csv"
+    }
+  }
+}

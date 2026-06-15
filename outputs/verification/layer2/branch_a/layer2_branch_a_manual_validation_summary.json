@@ -1,0 +1,36 @@
+{
+  "description": "Validation of Layer 2 Branch A risk score against manual semantic clause labels.",
+  "score_input": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+  "manual_input": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv",
+  "manual_label_column_detected": "manual_A_leaf_label",
+  "n_scores_total": 2402,
+  "n_manual_labeled_unique": 524,
+  "n_scored_with_manual_label": 524,
+  "manual_label_counts": {
+    "correct": 202,
+    "partial": 187,
+    "incorrect": 135
+  },
+  "risk_label_counts_among_labeled": {
+    "review_priority": 301,
+    "high_support_not_auto_accept": 151,
+    "intermediate_support": 72
+  },
+  "manual_error_definition": "partial_or_incorrect",
+  "manual_error_rate_overall": 0.6145038167938931,
+  "auroc_detecting_partial_or_incorrect": 0.6329330914457906,
+  "auprc_detecting_partial_or_incorrect": 0.709712785894399,
+  "high_support_error_rate": 0.5099337748344371,
+  "intermediate_support_error_rate": 0.4444444444444444,
+  "review_priority_error_rate": 0.707641196013289,
+  "review_priority_has_higher_error_than_high_support": true,
+  "outputs": {
+    "merged": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_manual_validation_merged.csv",
+    "risk_manual_crosstab": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_risk_manual_crosstab.csv",
+    "error_by_risk_label": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_error_by_risk_label.csv",
+    "risk_coverage_table": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_risk_coverage_table.csv",
+    "threshold_sensitivity_table": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_threshold_sensitivity_table.csv",
+    "high_support_error_examples": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_validation_examples_high_support_error.csv",
+    "review_priority_correct_examples": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_validation_examples_review_priority_correct.csv"
+  }
+}

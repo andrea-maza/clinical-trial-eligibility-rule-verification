@@ -1,0 +1,4 @@
+﻿semantic_grounding_risk_label,n,correct_n,partial_n,incorrect_n,manual_error_n_partial_or_incorrect,correct_rate,partial_rate,incorrect_rate,manual_error_rate_partial_or_incorrect,manual_incorrect_only_rate,mean_semantic_grounding_support,mean_execution_support
+reference_high_support_not_auto_accept,217,204,10,3,13,0.940092,0.046083,0.013825,0.059908,0.013825,0.926498,0.761521
+reference_intermediate_support,157,149,8,0,8,0.949045,0.050955,0.0,0.050955,0.0,0.779936,0.591401
+reference_review_priority,150,135,12,3,15,0.9,0.08,0.02,0.1,0.02,0.441667,0.669667

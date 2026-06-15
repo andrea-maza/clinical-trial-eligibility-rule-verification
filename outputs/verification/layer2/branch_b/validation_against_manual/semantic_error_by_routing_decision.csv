@@ -1,0 +1,5 @@
+﻿final_routing_decision,n,correct_n,partial_n,incorrect_n,manual_error_n_partial_or_incorrect,correct_rate,partial_rate,incorrect_rate,manual_error_rate_partial_or_incorrect,manual_incorrect_only_rate,mean_semantic_grounding_support,mean_execution_support
+optional_llm_verifier_or_review,190,182,8,0,8,0.957895,0.042105,0.0,0.042105,0.0,0.725263,0.623947
+llm_verifier,117,102,12,3,15,0.871795,0.102564,0.025641,0.128205,0.025641,0.435043,0.638889
+computability_review,115,103,10,2,12,0.895652,0.086957,0.017391,0.104348,0.017391,0.93087,0.55
+keep_without_layer2_action,102,101,0,1,1,0.990196,0.0,0.009804,0.009804,0.009804,0.921569,1.0

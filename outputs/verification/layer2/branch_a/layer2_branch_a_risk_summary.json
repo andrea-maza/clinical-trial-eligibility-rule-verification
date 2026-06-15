@@ -1,0 +1,193 @@
+{
+  "description": "Layer 2 Branch A support scoring from support-signal inventory. The labels are routing/prioritization labels, not calibrated correctness classes.",
+  "score_version": "layer2_branch_a_v1_heuristic_support",
+  "input_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_support_inventory_leaf_level.csv",
+  "output_risk_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_a\\layer2_branch_a_leaf_risk_scores.csv",
+  "thresholds": {
+    "review_priority_if_leaf_support_below": 0.6,
+    "high_support_reference_if_leaf_support_at_least": 0.85,
+    "intermediate_support_if_leaf_support_between": [
+      0.6,
+      0.85
+    ]
+  },
+  "threshold_source": {
+    "type": "predefined_heuristic_review_prioritization_cutoffs",
+    "review_priority_threshold": 0.6,
+    "high_support_reference_threshold": 0.85,
+    "not_calibrated_probability": true,
+    "not_learned_from_manual_labels": true,
+    "interpretation": "leaf_support below 0.60 is prioritized for review/rescue. leaf_support at or above 0.85 is only a high-support reference group, not automatic acceptance.",
+    "required_validation": "Validate against manual semantic labels using error enrichment, AUROC/AUPRC, and threshold sensitivity."
+  },
+  "method_note": "The score is a post-hoc support score, not a calibrated probability. It uses a conservative minimum over support components. The thresholds are heuristic routing cutoffs and are evaluated against manual semantic labels in the validation script.",
+  "total_leaves": 2402,
+  "risk_label_counts": {
+    "review_priority": 1101,
+    "intermediate_support": 375,
+    "high_support_not_auto_accept": 926
+  },
+  "risk_label_rates": {
+    "review_priority": 0.458368,
+    "intermediate_support": 0.15612,
+    "high_support_not_auto_accept": 0.385512
+  },
+  "leaf_support_summary": {
+    "mean": 0.635635,
+    "median": 0.6,
+    "min": 0.25,
+    "max": 0.998026
+  },
+  "risk_score_summary": {
+    "mean": 0.364365,
+    "median": 0.4,
+    "min": 0.001974,
+    "max": 0.75
+  },
+  "component_support_summary": {
+    "entity_support": {
+      "mean": 0.801608,
+      "median": 0.984278,
+      "min": 0.25,
+      "max": 0.998026
+    },
+    "operator_value_support": {
+      "mean": 0.976103,
+      "median": 1.0,
+      "min": 0.3,
+      "max": 1.0
+    },
+    "quantitative_completeness_support": {
+      "mean": 0.911511,
+      "median": 1.0,
+      "min": 0.35,
+      "max": 1.0
+    },
+    "temporal_support": {
+      "mean": 0.937136,
+      "median": 1.0,
+      "min": 0.4,
+      "max": 1.0
+    },
+    "history_support": {
+      "mean": 0.961615,
+      "median": 1.0,
+      "min": 0.5,
+      "max": 1.0
+    },
+    "context_support": {
+      "mean": 0.99055,
+      "median": 1.0,
+      "min": 0.3,
+      "max": 1.0
+    },
+    "computability_support": {
+      "mean": 0.942756,
+      "median": 1.0,
+      "min": 0.7,
+      "max": 1.0
+    },
+    "layer1_support": {
+      "mean": 0.88749,
+      "median": 1.0,
+      "min": 0.45,
+      "max": 1.0
+    }
+  },
+  "risk_reason_counts": {
+    "no_bert_anchor": 663,
+    "layer1_policy_mandatory_rescue_or_review": 424,
+    "computability_partial": 359,
+    "quantitative_cue_not_represented": 327,
+    "entity_not_grounded_in_evidence_or_item": 286,
+    "layer1_inventory_flag": 243,
+    "temporal_marker_without_temporal_context": 224,
+    "computability_non_computable": 149,
+    "history_marker_without_history_context": 115,
+    "layer1d_pass1_pass2_logic_flag": 42,
+    "entity_type_not_supported_by_best_anchor": 42,
+    "entity_not_in_leaf_evidence_but_in_item": 37,
+    "operator_value_not_structurally_supported": 35,
+    "condition_or_exception_marker_without_context": 23,
+    "operator_value_supported_but_value_not_found_in_evidence": 22,
+    "generic_entity_text": 14,
+    "computable_with_unhandled_condition_or_exception": 11,
+    "layer1_policy_computability_review": 9
+  },
+  "risk_bottleneck_component_counts": {
+    "entity_support": 1330,
+    "quantitative_completeness_support": 292,
+    "layer1_support": 238,
+    "history_support": 220,
+    "temporal_support": 155,
+    "operator_value_support": 144,
+    "context_support": 30,
+    "computability_support": 6
+  },
+  "risk_by_operator_category": {
+    "existence": {
+      "review_priority": 937,
+      "intermediate_support": 338,
+      "high_support_not_auto_accept": 807
+    },
+    "comparison": {
+      "review_priority": 128,
+      "high_support_not_auto_accept": 116,
+      "intermediate_support": 30
+    },
+    "range": {
+      "intermediate_support": 7,
+      "review_priority": 9,
+      "high_support_not_auto_accept": 3
+    },
+    "list": {
+      "review_priority": 27
+    }
+  },
+  "risk_by_entity_type": {
+    "demographic": {
+      "review_priority": 47,
+      "intermediate_support": 59
+    },
+    "condition": {
+      "review_priority": 343,
+      "high_support_not_auto_accept": 625,
+      "intermediate_support": 67
+    },
+    "procedure": {
+      "review_priority": 105,
+      "intermediate_support": 16,
+      "high_support_not_auto_accept": 66
+    },
+    "lab": {
+      "high_support_not_auto_accept": 146,
+      "intermediate_support": 9,
+      "review_priority": 141
+    },
+    "other": {
+      "intermediate_support": 217,
+      "review_priority": 341,
+      "high_support_not_auto_accept": 1
+    },
+    "drug": {
+      "high_support_not_auto_accept": 88,
+      "review_priority": 124,
+      "intermediate_support": 7
+    }
+  },
+  "risk_by_computability": {
+    "computable": {
+      "review_priority": 795,
+      "intermediate_support": 173,
+      "high_support_not_auto_accept": 926
+    },
+    "non_computable": {
+      "intermediate_support": 60,
+      "review_priority": 89
+    },
+    "partial": {
+      "intermediate_support": 142,
+      "review_priority": 217
+    }
+  }
+}

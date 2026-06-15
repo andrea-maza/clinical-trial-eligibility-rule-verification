@@ -1,0 +1,4 @@
+﻿execution_risk_label,n,correct_n,partial_n,incorrect_n,manual_error_n_partial_or_incorrect,correct_rate,partial_rate,incorrect_rate,manual_error_rate_partial_or_incorrect,manual_incorrect_only_rate,mean_semantic_grounding_support,mean_execution_support
+reference_intermediate_support,291,257,29,5,34,0.883162,0.099656,0.017182,0.116838,0.017182,0.711856,0.6
+reference_high_support_not_auto_accept,160,158,1,1,2,0.9875,0.00625,0.00625,0.0125,0.00625,0.7825,0.99
+reference_review_priority,73,73,0,0,0,1.0,0.0,0.0,0.0,0.0,0.786301,0.35

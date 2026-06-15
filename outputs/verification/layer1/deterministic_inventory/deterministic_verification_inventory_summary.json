@@ -1,0 +1,281 @@
+{
+  "stage": "deterministic_verification_inventory",
+  "description": "Layer 1 deterministic verification inventory. Layer 1A checks hard rules_v3 field consistency constraints. Layer 1B checks rule tree-level integrity warnings. Layer 1C checks deterministic source-text consistency warnings. No BERT support signals, probabilistic risk scores, LLM rescue, or rule-tree modification are used.",
+  "inputs": {
+    "schema": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\schemas\\rules_v3.json",
+    "branches": {
+      "A_bert_rules": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+      "B_llm_pass2": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl"
+    }
+  },
+  "outputs": {
+    "leaf_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_leaf_level.csv",
+    "ast_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_ast_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer1\\deterministic_inventory\\deterministic_verification_inventory_summary.json"
+  },
+  "branches": {
+    "A_bert_rules": {
+      "branch": "A_bert_rules",
+      "ast_path": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_a\\rules_v3\\chia_text_only_200_rules_v3_ast_A.jsonl",
+      "n_documents": 100,
+      "n_documents_with_schema_errors": 0,
+      "n_leaves": 2402,
+      "leaf_flag_summary": {
+        "n_total_leaves": 2402,
+        "n_layer1a_hard_issue_leaves": 54,
+        "pct_layer1a_hard_issue_leaves": 2.25,
+        "n_layer1c_warning_leaves": 370,
+        "pct_layer1c_warning_leaves": 15.4,
+        "n_any_layer1a_or_layer1c_flagged_leaves": 416,
+        "pct_any_layer1a_or_layer1c_flagged_leaves": 17.32,
+        "n_both_layer1a_and_layer1c_flagged_leaves": 8,
+        "pct_both_layer1a_and_layer1c_flagged_leaves": 0.33,
+        "n_layer1b_ast_warning_rows": 215
+      },
+      "layer1a_hard_leaf_issue_counts": {
+        "entity_text_empty": 0,
+        "evidence_text_empty": 0,
+        "operator_missing": 0,
+        "comparison_without_scalar_value": 1,
+        "equality_without_value": 0,
+        "pattern_operator_without_scalar_value": 0,
+        "between_without_range_value": 0,
+        "range_with_both_bounds_missing": 7,
+        "range_with_missing_bound": 0,
+        "list_operator_without_list_value": 27,
+        "existence_operator_with_non_null_value": 0,
+        "null_value_type_with_non_null_value": 0,
+        "scalar_value_type_with_complex_value": 0,
+        "list_value_type_without_list_value": 0,
+        "range_value_type_without_dict_value": 0,
+        "temporal_context_missing_relation": 0,
+        "temporal_context_invalid_relation": 0,
+        "temporal_context_missing_anchor_event": 0,
+        "temporal_context_invalid_anchor_event": 0,
+        "temporal_context_invalid_unit": 0,
+        "temporal_context_missing_value": 0,
+        "temporal_context_missing_unit": 0,
+        "computable_with_non_computable_reason": 0,
+        "non_computable_without_reason": 0,
+        "computable_with_exception_context": 21,
+        "unit_present_without_value": 0,
+        "entity_type_invalid_enum": 0,
+        "history_context_invalid_enum": 0,
+        "criterion_id_missing": 0,
+        "criterion_id_malformed": 0,
+        "operator_invalid_enum": 0,
+        "value_type_invalid_enum": 0,
+        "computability_invalid_enum": 0,
+        "normalized_concept_invalid_system": 0,
+        "normalized_concept_system_without_code": 0,
+        "range_min_greater_than_max": 0,
+        "comparison_value_is_numeric_string": 0
+      },
+      "layer1b_ast_integrity_issue_counts": {
+        "duplicate_criterion_id": 0,
+        "duplicate_identical_leaf": 215
+      },
+      "layer1c_source_text_warning_counts": {
+        "comparison_with_non_quantitative_entity": 83,
+        "comparison_entity_mismatch_from_source": 8,
+        "categorical_value_missing": 50,
+        "temporal_marker_without_temporal_context": 71,
+        "duration_marker_missing_from_temporal_context": 68,
+        "critical_qualifier_missing_from_entity": 107,
+        "requirement_object_inversion": 5,
+        "condition_context_present_without_handling": 12,
+        "temporal_anchor_mismatch_from_source": 6,
+        "existence_operator_on_quantitative_phrase": 55,
+        "entity_text_too_generic": 10
+      },
+      "leaf_action_category_counts": {
+        "no_action": 2348,
+        "conservative_rewrite_candidate": 33,
+        "safe_normalization_candidate": 21
+      },
+      "ast_action_category_counts": {
+        "flag_only": 215
+      },
+      "action_category_counts": {
+        "no_action": 2348,
+        "flag_only": 215,
+        "conservative_rewrite_candidate": 33,
+        "safe_normalization_candidate": 21
+      },
+      "layer1c_action_counts": {
+        "no_action": 2032,
+        "flag_only": 370
+      }
+    },
+    "B_llm_pass2": {
+      "branch": "B_llm_pass2",
+      "ast_path": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\rules_v3_llm_pass2\\chia_text_only_200_rules_v3_ast_B.jsonl",
+      "n_documents": 100,
+      "n_documents_with_schema_errors": 0,
+      "n_leaves": 2402,
+      "leaf_flag_summary": {
+        "n_total_leaves": 2402,
+        "n_layer1a_hard_issue_leaves": 72,
+        "pct_layer1a_hard_issue_leaves": 3.0,
+        "n_layer1c_warning_leaves": 181,
+        "pct_layer1c_warning_leaves": 7.54,
+        "n_any_layer1a_or_layer1c_flagged_leaves": 243,
+        "pct_any_layer1a_or_layer1c_flagged_leaves": 10.12,
+        "n_both_layer1a_and_layer1c_flagged_leaves": 10,
+        "pct_both_layer1a_and_layer1c_flagged_leaves": 0.42,
+        "n_layer1b_ast_warning_rows": 11
+      },
+      "layer1a_hard_leaf_issue_counts": {
+        "entity_text_empty": 0,
+        "evidence_text_empty": 0,
+        "operator_missing": 0,
+        "comparison_without_scalar_value": 0,
+        "equality_without_value": 0,
+        "pattern_operator_without_scalar_value": 0,
+        "between_without_range_value": 0,
+        "range_with_both_bounds_missing": 0,
+        "range_with_missing_bound": 0,
+        "list_operator_without_list_value": 0,
+        "existence_operator_with_non_null_value": 68,
+        "null_value_type_with_non_null_value": 0,
+        "scalar_value_type_with_complex_value": 0,
+        "list_value_type_without_list_value": 0,
+        "range_value_type_without_dict_value": 0,
+        "temporal_context_missing_relation": 0,
+        "temporal_context_invalid_relation": 0,
+        "temporal_context_missing_anchor_event": 0,
+        "temporal_context_invalid_anchor_event": 0,
+        "temporal_context_invalid_unit": 0,
+        "temporal_context_missing_value": 4,
+        "temporal_context_missing_unit": 3,
+        "computable_with_non_computable_reason": 0,
+        "non_computable_without_reason": 0,
+        "computable_with_exception_context": 0,
+        "unit_present_without_value": 0,
+        "entity_type_invalid_enum": 0,
+        "history_context_invalid_enum": 0,
+        "criterion_id_missing": 0,
+        "criterion_id_malformed": 0,
+        "operator_invalid_enum": 0,
+        "value_type_invalid_enum": 0,
+        "computability_invalid_enum": 0,
+        "normalized_concept_invalid_system": 0,
+        "normalized_concept_system_without_code": 0,
+        "range_min_greater_than_max": 0,
+        "comparison_value_is_numeric_string": 0
+      },
+      "layer1b_ast_integrity_issue_counts": {
+        "duplicate_criterion_id": 0,
+        "duplicate_identical_leaf": 11
+      },
+      "layer1c_source_text_warning_counts": {
+        "comparison_with_non_quantitative_entity": 14,
+        "comparison_entity_mismatch_from_source": 8,
+        "categorical_value_missing": 15,
+        "temporal_marker_without_temporal_context": 17,
+        "duration_marker_missing_from_temporal_context": 12,
+        "critical_qualifier_missing_from_entity": 40,
+        "requirement_object_inversion": 15,
+        "condition_context_present_without_handling": 37,
+        "temporal_anchor_mismatch_from_source": 24,
+        "existence_operator_on_quantitative_phrase": 22,
+        "entity_text_too_generic": 0
+      },
+      "leaf_action_category_counts": {
+        "no_action": 2330,
+        "flag_only": 72
+      },
+      "ast_action_category_counts": {
+        "flag_only": 11
+      },
+      "action_category_counts": {
+        "no_action": 2330,
+        "flag_only": 83
+      },
+      "layer1c_action_counts": {
+        "no_action": 2221,
+        "flag_only": 181
+      }
+    }
+  },
+  "combined": {
+    "leaf_flag_summary": {
+      "n_total_leaves": 4804,
+      "n_layer1a_hard_issue_leaves": 126,
+      "pct_layer1a_hard_issue_leaves": 2.62,
+      "n_layer1c_warning_leaves": 551,
+      "pct_layer1c_warning_leaves": 11.47,
+      "n_any_layer1a_or_layer1c_flagged_leaves": 659,
+      "pct_any_layer1a_or_layer1c_flagged_leaves": 13.72,
+      "n_both_layer1a_and_layer1c_flagged_leaves": 18,
+      "pct_both_layer1a_and_layer1c_flagged_leaves": 0.37,
+      "n_layer1b_ast_warning_rows": 226
+    },
+    "layer1a_hard_leaf_issue_counts": {
+      "existence_operator_with_non_null_value": 68,
+      "list_operator_without_list_value": 27,
+      "computable_with_exception_context": 21,
+      "range_with_both_bounds_missing": 7,
+      "temporal_context_missing_value": 4,
+      "temporal_context_missing_unit": 3,
+      "comparison_without_scalar_value": 1,
+      "entity_text_empty": 0,
+      "evidence_text_empty": 0,
+      "operator_missing": 0,
+      "equality_without_value": 0,
+      "pattern_operator_without_scalar_value": 0,
+      "between_without_range_value": 0,
+      "range_with_missing_bound": 0,
+      "null_value_type_with_non_null_value": 0,
+      "scalar_value_type_with_complex_value": 0,
+      "list_value_type_without_list_value": 0,
+      "range_value_type_without_dict_value": 0,
+      "temporal_context_missing_relation": 0,
+      "temporal_context_invalid_relation": 0,
+      "temporal_context_missing_anchor_event": 0,
+      "temporal_context_invalid_anchor_event": 0,
+      "temporal_context_invalid_unit": 0,
+      "computable_with_non_computable_reason": 0,
+      "non_computable_without_reason": 0,
+      "unit_present_without_value": 0,
+      "entity_type_invalid_enum": 0,
+      "history_context_invalid_enum": 0,
+      "criterion_id_missing": 0,
+      "criterion_id_malformed": 0,
+      "operator_invalid_enum": 0,
+      "value_type_invalid_enum": 0,
+      "computability_invalid_enum": 0,
+      "normalized_concept_invalid_system": 0,
+      "normalized_concept_system_without_code": 0,
+      "range_min_greater_than_max": 0,
+      "comparison_value_is_numeric_string": 0
+    },
+    "layer1b_ast_integrity_issue_counts": {
+      "duplicate_identical_leaf": 226,
+      "duplicate_criterion_id": 0
+    },
+    "layer1c_source_text_warning_counts": {
+      "critical_qualifier_missing_from_entity": 147,
+      "comparison_with_non_quantitative_entity": 97,
+      "temporal_marker_without_temporal_context": 88,
+      "duration_marker_missing_from_temporal_context": 80,
+      "existence_operator_on_quantitative_phrase": 77,
+      "categorical_value_missing": 65,
+      "condition_context_present_without_handling": 49,
+      "temporal_anchor_mismatch_from_source": 30,
+      "requirement_object_inversion": 20,
+      "comparison_entity_mismatch_from_source": 16,
+      "entity_text_too_generic": 10
+    },
+    "action_category_counts": {
+      "no_action": 4678,
+      "flag_only": 298,
+      "conservative_rewrite_candidate": 33,
+      "safe_normalization_candidate": 21
+    },
+    "layer1c_action_counts": {
+      "no_action": 4253,
+      "flag_only": 551
+    }
+  }
+}

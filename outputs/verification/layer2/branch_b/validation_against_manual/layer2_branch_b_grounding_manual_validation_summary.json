@@ -1,0 +1,495 @@
+{
+  "description": "Validation of the Branch B Layer 2 grounding and routing screen against manual_B_leaf_label. Manual labels evaluate semantic correctness, while execution and computability support are reported separately.",
+  "inputs": {
+    "grounding_screen_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_leaf_level.csv",
+    "manual_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv"
+  },
+  "outputs": {
+    "matched_rows_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\layer2_branch_b_grounding_manual_matched_rows.csv",
+    "semantic_error_by_risk_label_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\semantic_error_by_risk_label.csv",
+    "semantic_error_by_routing_decision_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\semantic_error_by_routing_decision.csv",
+    "execution_risk_vs_manual_label_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\execution_risk_vs_manual_label.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\layer2_branch_b_grounding_manual_validation_summary.json",
+    "semantic_grounding_threshold_sensitivity_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\validation_against_manual\\semantic_grounding_threshold_sensitivity.csv"
+  },
+  "detected_columns": {
+    "manual_label_col": "manual_B_leaf_label",
+    "join_col": "criterion_id"
+  },
+  "n_grounding_rows": 2402,
+  "n_manual_rows": 2402,
+  "n_matched_labeled_rows": 524,
+  "manual_label_counts": {
+    "correct": 488,
+    "partial": 30,
+    "incorrect": 6
+  },
+  "manual_error_rate_partial_or_incorrect": 0.068702,
+  "manual_incorrect_only_rate": 0.01145,
+  "semantic_risk_counts_among_labeled": {
+    "reference_review_priority": 150,
+    "reference_high_support_not_auto_accept": 217,
+    "reference_intermediate_support": 157
+  },
+  "execution_risk_counts_among_labeled": {
+    "reference_high_support_not_auto_accept": 160,
+    "reference_review_priority": 73,
+    "reference_intermediate_support": 291
+  },
+  "routing_counts_among_labeled": {
+    "llm_verifier": 117,
+    "keep_without_layer2_action": 102,
+    "optional_llm_verifier_or_review": 190,
+    "computability_review": 115
+  },
+  "metrics_detecting_partial_or_incorrect": {
+    "semantic_intermediate_or_review_priority_as_positive": {
+      "n": 524,
+      "tp": 23,
+      "fp": 284,
+      "tn": 204,
+      "fn": 13,
+      "precision_positive_predictive_value": 0.074919,
+      "recall_sensitivity": 0.638889,
+      "specificity": 0.418033,
+      "negative_predictive_value": 0.940092,
+      "accuracy": 0.433206,
+      "f1": 0.134111
+    },
+    "semantic_review_priority_only_as_positive": {
+      "n": 524,
+      "tp": 15,
+      "fp": 135,
+      "tn": 353,
+      "fn": 21,
+      "precision_positive_predictive_value": 0.1,
+      "recall_sensitivity": 0.416667,
+      "specificity": 0.723361,
+      "negative_predictive_value": 0.94385,
+      "accuracy": 0.70229,
+      "f1": 0.16129
+    },
+    "routing_llm_or_optional_as_positive": {
+      "n": 524,
+      "tp": 23,
+      "fp": 284,
+      "tn": 204,
+      "fn": 13,
+      "precision_positive_predictive_value": 0.074919,
+      "recall_sensitivity": 0.638889,
+      "specificity": 0.418033,
+      "negative_predictive_value": 0.940092,
+      "accuracy": 0.433206,
+      "f1": 0.134111
+    }
+  },
+  "metrics_detecting_incorrect_only": {
+    "semantic_intermediate_or_review_priority_as_positive": {
+      "n": 524,
+      "tp": 3,
+      "fp": 304,
+      "tn": 214,
+      "fn": 3,
+      "precision_positive_predictive_value": 0.009772,
+      "recall_sensitivity": 0.5,
+      "specificity": 0.413127,
+      "negative_predictive_value": 0.986175,
+      "accuracy": 0.414122,
+      "f1": 0.019169
+    },
+    "semantic_review_priority_only_as_positive": {
+      "n": 524,
+      "tp": 3,
+      "fp": 147,
+      "tn": 371,
+      "fn": 3,
+      "precision_positive_predictive_value": 0.02,
+      "recall_sensitivity": 0.5,
+      "specificity": 0.716216,
+      "negative_predictive_value": 0.991979,
+      "accuracy": 0.71374,
+      "f1": 0.038462
+    },
+    "routing_llm_or_optional_as_positive": {
+      "n": 524,
+      "tp": 3,
+      "fp": 304,
+      "tn": 214,
+      "fn": 3,
+      "precision_positive_predictive_value": 0.009772,
+      "recall_sensitivity": 0.5,
+      "specificity": 0.413127,
+      "negative_predictive_value": 0.986175,
+      "accuracy": 0.414122,
+      "f1": 0.019169
+    }
+  },
+  "semantic_error_by_risk_label": [
+    {
+      "semantic_grounding_risk_label": "reference_high_support_not_auto_accept",
+      "n": 217,
+      "correct_n": 204,
+      "partial_n": 10,
+      "incorrect_n": 3,
+      "manual_error_n_partial_or_incorrect": 13,
+      "correct_rate": 0.940092,
+      "partial_rate": 0.046083,
+      "incorrect_rate": 0.013825,
+      "manual_error_rate_partial_or_incorrect": 0.059908,
+      "manual_incorrect_only_rate": 0.013825,
+      "mean_semantic_grounding_support": 0.926498,
+      "mean_execution_support": 0.761521
+    },
+    {
+      "semantic_grounding_risk_label": "reference_intermediate_support",
+      "n": 157,
+      "correct_n": 149,
+      "partial_n": 8,
+      "incorrect_n": 0,
+      "manual_error_n_partial_or_incorrect": 8,
+      "correct_rate": 0.949045,
+      "partial_rate": 0.050955,
+      "incorrect_rate": 0.0,
+      "manual_error_rate_partial_or_incorrect": 0.050955,
+      "manual_incorrect_only_rate": 0.0,
+      "mean_semantic_grounding_support": 0.779936,
+      "mean_execution_support": 0.591401
+    },
+    {
+      "semantic_grounding_risk_label": "reference_review_priority",
+      "n": 150,
+      "correct_n": 135,
+      "partial_n": 12,
+      "incorrect_n": 3,
+      "manual_error_n_partial_or_incorrect": 15,
+      "correct_rate": 0.9,
+      "partial_rate": 0.08,
+      "incorrect_rate": 0.02,
+      "manual_error_rate_partial_or_incorrect": 0.1,
+      "manual_incorrect_only_rate": 0.02,
+      "mean_semantic_grounding_support": 0.441667,
+      "mean_execution_support": 0.669667
+    }
+  ],
+  "semantic_error_by_routing_decision": [
+    {
+      "final_routing_decision": "optional_llm_verifier_or_review",
+      "n": 190,
+      "correct_n": 182,
+      "partial_n": 8,
+      "incorrect_n": 0,
+      "manual_error_n_partial_or_incorrect": 8,
+      "correct_rate": 0.957895,
+      "partial_rate": 0.042105,
+      "incorrect_rate": 0.0,
+      "manual_error_rate_partial_or_incorrect": 0.042105,
+      "manual_incorrect_only_rate": 0.0,
+      "mean_semantic_grounding_support": 0.725263,
+      "mean_execution_support": 0.623947
+    },
+    {
+      "final_routing_decision": "llm_verifier",
+      "n": 117,
+      "correct_n": 102,
+      "partial_n": 12,
+      "incorrect_n": 3,
+      "manual_error_n_partial_or_incorrect": 15,
+      "correct_rate": 0.871795,
+      "partial_rate": 0.102564,
+      "incorrect_rate": 0.025641,
+      "manual_error_rate_partial_or_incorrect": 0.128205,
+      "manual_incorrect_only_rate": 0.025641,
+      "mean_semantic_grounding_support": 0.435043,
+      "mean_execution_support": 0.638889
+    },
+    {
+      "final_routing_decision": "computability_review",
+      "n": 115,
+      "correct_n": 103,
+      "partial_n": 10,
+      "incorrect_n": 2,
+      "manual_error_n_partial_or_incorrect": 12,
+      "correct_rate": 0.895652,
+      "partial_rate": 0.086957,
+      "incorrect_rate": 0.017391,
+      "manual_error_rate_partial_or_incorrect": 0.104348,
+      "manual_incorrect_only_rate": 0.017391,
+      "mean_semantic_grounding_support": 0.93087,
+      "mean_execution_support": 0.55
+    },
+    {
+      "final_routing_decision": "keep_without_layer2_action",
+      "n": 102,
+      "correct_n": 101,
+      "partial_n": 0,
+      "incorrect_n": 1,
+      "manual_error_n_partial_or_incorrect": 1,
+      "correct_rate": 0.990196,
+      "partial_rate": 0.0,
+      "incorrect_rate": 0.009804,
+      "manual_error_rate_partial_or_incorrect": 0.009804,
+      "manual_incorrect_only_rate": 0.009804,
+      "mean_semantic_grounding_support": 0.921569,
+      "mean_execution_support": 1.0
+    }
+  ],
+  "execution_risk_vs_manual_label": [
+    {
+      "execution_risk_label": "reference_intermediate_support",
+      "n": 291,
+      "correct_n": 257,
+      "partial_n": 29,
+      "incorrect_n": 5,
+      "manual_error_n_partial_or_incorrect": 34,
+      "correct_rate": 0.883162,
+      "partial_rate": 0.099656,
+      "incorrect_rate": 0.017182,
+      "manual_error_rate_partial_or_incorrect": 0.116838,
+      "manual_incorrect_only_rate": 0.017182,
+      "mean_semantic_grounding_support": 0.711856,
+      "mean_execution_support": 0.6
+    },
+    {
+      "execution_risk_label": "reference_high_support_not_auto_accept",
+      "n": 160,
+      "correct_n": 158,
+      "partial_n": 1,
+      "incorrect_n": 1,
+      "manual_error_n_partial_or_incorrect": 2,
+      "correct_rate": 0.9875,
+      "partial_rate": 0.00625,
+      "incorrect_rate": 0.00625,
+      "manual_error_rate_partial_or_incorrect": 0.0125,
+      "manual_incorrect_only_rate": 0.00625,
+      "mean_semantic_grounding_support": 0.7825,
+      "mean_execution_support": 0.99
+    },
+    {
+      "execution_risk_label": "reference_review_priority",
+      "n": 73,
+      "correct_n": 73,
+      "partial_n": 0,
+      "incorrect_n": 0,
+      "manual_error_n_partial_or_incorrect": 0,
+      "correct_rate": 1.0,
+      "partial_rate": 0.0,
+      "incorrect_rate": 0.0,
+      "manual_error_rate_partial_or_incorrect": 0.0,
+      "manual_incorrect_only_rate": 0.0,
+      "mean_semantic_grounding_support": 0.786301,
+      "mean_execution_support": 0.35
+    }
+  ],
+  "confusion_manual_by_semantic_risk": [
+    {
+      "semantic_grounding_risk_label": "reference_high_support_not_auto_accept",
+      "All": 217,
+      "correct": 204,
+      "incorrect": 3,
+      "partial": 10
+    },
+    {
+      "semantic_grounding_risk_label": "reference_intermediate_support",
+      "All": 157,
+      "correct": 149,
+      "incorrect": 0,
+      "partial": 8
+    },
+    {
+      "semantic_grounding_risk_label": "reference_review_priority",
+      "All": 150,
+      "correct": 135,
+      "incorrect": 3,
+      "partial": 12
+    }
+  ],
+  "confusion_manual_by_routing": [
+    {
+      "final_routing_decision": "computability_review",
+      "All": 115,
+      "correct": 103,
+      "incorrect": 2,
+      "partial": 10
+    },
+    {
+      "final_routing_decision": "keep_without_layer2_action",
+      "All": 102,
+      "correct": 101,
+      "incorrect": 1,
+      "partial": 0
+    },
+    {
+      "final_routing_decision": "llm_verifier",
+      "All": 117,
+      "correct": 102,
+      "incorrect": 3,
+      "partial": 12
+    },
+    {
+      "final_routing_decision": "optional_llm_verifier_or_review",
+      "All": 190,
+      "correct": 182,
+      "incorrect": 0,
+      "partial": 8
+    }
+  ],
+  "method_note": "A good screen should ideally have high recall for partial/incorrect leaves when using semantic intermediate/review-priority or semantic review routing as positive. Precision may be low because Branch B has few incorrect labels and the screen is conservative.",
+  "semantic_grounding_threshold_sensitivity": [
+    {
+      "semantic_support_threshold": 0.4,
+      "prioritized_if_support_below_threshold_n": 24,
+      "not_prioritized_n": 500,
+      "coverage_prioritized_among_labeled": 0.045802,
+      "partial_or_incorrect_in_prioritized_n": 5,
+      "partial_or_incorrect_rate_in_prioritized": 0.208333,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.062,
+      "partial_or_incorrect_recall_in_prioritized": 0.138889,
+      "incorrect_only_in_prioritized_n": 1,
+      "incorrect_only_rate_in_prioritized": 0.041667,
+      "incorrect_only_rate_in_not_prioritized": 0.01
+    },
+    {
+      "semantic_support_threshold": 0.45,
+      "prioritized_if_support_below_threshold_n": 53,
+      "not_prioritized_n": 471,
+      "coverage_prioritized_among_labeled": 0.101145,
+      "partial_or_incorrect_in_prioritized_n": 9,
+      "partial_or_incorrect_rate_in_prioritized": 0.169811,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.057325,
+      "partial_or_incorrect_recall_in_prioritized": 0.25,
+      "incorrect_only_in_prioritized_n": 1,
+      "incorrect_only_rate_in_prioritized": 0.018868,
+      "incorrect_only_rate_in_not_prioritized": 0.010616
+    },
+    {
+      "semantic_support_threshold": 0.5,
+      "prioritized_if_support_below_threshold_n": 103,
+      "not_prioritized_n": 421,
+      "coverage_prioritized_among_labeled": 0.196565,
+      "partial_or_incorrect_in_prioritized_n": 13,
+      "partial_or_incorrect_rate_in_prioritized": 0.126214,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.054632,
+      "partial_or_incorrect_recall_in_prioritized": 0.361111,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.029126,
+      "incorrect_only_rate_in_not_prioritized": 0.007126
+    },
+    {
+      "semantic_support_threshold": 0.55,
+      "prioritized_if_support_below_threshold_n": 145,
+      "not_prioritized_n": 379,
+      "coverage_prioritized_among_labeled": 0.276718,
+      "partial_or_incorrect_in_prioritized_n": 15,
+      "partial_or_incorrect_rate_in_prioritized": 0.103448,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.055409,
+      "partial_or_incorrect_recall_in_prioritized": 0.416667,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.02069,
+      "incorrect_only_rate_in_not_prioritized": 0.007916
+    },
+    {
+      "semantic_support_threshold": 0.6,
+      "prioritized_if_support_below_threshold_n": 150,
+      "not_prioritized_n": 374,
+      "coverage_prioritized_among_labeled": 0.28626,
+      "partial_or_incorrect_in_prioritized_n": 15,
+      "partial_or_incorrect_rate_in_prioritized": 0.1,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.05615,
+      "partial_or_incorrect_recall_in_prioritized": 0.416667,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.02,
+      "incorrect_only_rate_in_not_prioritized": 0.008021
+    },
+    {
+      "semantic_support_threshold": 0.65,
+      "prioritized_if_support_below_threshold_n": 150,
+      "not_prioritized_n": 374,
+      "coverage_prioritized_among_labeled": 0.28626,
+      "partial_or_incorrect_in_prioritized_n": 15,
+      "partial_or_incorrect_rate_in_prioritized": 0.1,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.05615,
+      "partial_or_incorrect_recall_in_prioritized": 0.416667,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.02,
+      "incorrect_only_rate_in_not_prioritized": 0.008021
+    },
+    {
+      "semantic_support_threshold": 0.7,
+      "prioritized_if_support_below_threshold_n": 171,
+      "not_prioritized_n": 353,
+      "coverage_prioritized_among_labeled": 0.326336,
+      "partial_or_incorrect_in_prioritized_n": 17,
+      "partial_or_incorrect_rate_in_prioritized": 0.099415,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.053824,
+      "partial_or_incorrect_recall_in_prioritized": 0.472222,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.017544,
+      "incorrect_only_rate_in_not_prioritized": 0.008499
+    },
+    {
+      "semantic_support_threshold": 0.75,
+      "prioritized_if_support_below_threshold_n": 171,
+      "not_prioritized_n": 353,
+      "coverage_prioritized_among_labeled": 0.326336,
+      "partial_or_incorrect_in_prioritized_n": 17,
+      "partial_or_incorrect_rate_in_prioritized": 0.099415,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.053824,
+      "partial_or_incorrect_recall_in_prioritized": 0.472222,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.017544,
+      "incorrect_only_rate_in_not_prioritized": 0.008499
+    },
+    {
+      "semantic_support_threshold": 0.8,
+      "prioritized_if_support_below_threshold_n": 171,
+      "not_prioritized_n": 353,
+      "coverage_prioritized_among_labeled": 0.326336,
+      "partial_or_incorrect_in_prioritized_n": 17,
+      "partial_or_incorrect_rate_in_prioritized": 0.099415,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.053824,
+      "partial_or_incorrect_recall_in_prioritized": 0.472222,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.017544,
+      "incorrect_only_rate_in_not_prioritized": 0.008499
+    },
+    {
+      "semantic_support_threshold": 0.85,
+      "prioritized_if_support_below_threshold_n": 307,
+      "not_prioritized_n": 217,
+      "coverage_prioritized_among_labeled": 0.585878,
+      "partial_or_incorrect_in_prioritized_n": 23,
+      "partial_or_incorrect_rate_in_prioritized": 0.074919,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.059908,
+      "partial_or_incorrect_recall_in_prioritized": 0.638889,
+      "incorrect_only_in_prioritized_n": 3,
+      "incorrect_only_rate_in_prioritized": 0.009772,
+      "incorrect_only_rate_in_not_prioritized": 0.013825
+    },
+    {
+      "semantic_support_threshold": 0.9,
+      "prioritized_if_support_below_threshold_n": 312,
+      "not_prioritized_n": 212,
+      "coverage_prioritized_among_labeled": 0.59542,
+      "partial_or_incorrect_in_prioritized_n": 25,
+      "partial_or_incorrect_rate_in_prioritized": 0.080128,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.051887,
+      "partial_or_incorrect_recall_in_prioritized": 0.694444,
+      "incorrect_only_in_prioritized_n": 4,
+      "incorrect_only_rate_in_prioritized": 0.012821,
+      "incorrect_only_rate_in_not_prioritized": 0.009434
+    },
+    {
+      "semantic_support_threshold": 0.95,
+      "prioritized_if_support_below_threshold_n": 433,
+      "not_prioritized_n": 91,
+      "coverage_prioritized_among_labeled": 0.826336,
+      "partial_or_incorrect_in_prioritized_n": 34,
+      "partial_or_incorrect_rate_in_prioritized": 0.078522,
+      "partial_or_incorrect_rate_in_not_prioritized": 0.021978,
+      "partial_or_incorrect_recall_in_prioritized": 0.944444,
+      "incorrect_only_in_prioritized_n": 6,
+      "incorrect_only_rate_in_prioritized": 0.013857,
+      "incorrect_only_rate_in_not_prioritized": 0.0
+    }
+  ]
+}

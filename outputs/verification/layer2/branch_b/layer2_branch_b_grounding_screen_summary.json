@@ -1,0 +1,127 @@
+{
+  "description": "Branch B Layer 2 Stage 1 grounding screen. The screen separates semantic grounding risk from execution/computability risk. Branch A/BERT diagnostics are retained in the CSV but are not used in the main scores.",
+  "branch": "B",
+  "input_inventory_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\layer2_branch_b_support_inventory_leaf_level.csv",
+  "outputs": {
+    "leaf_level_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_leaf_level.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer2\\branch_b\\layer2_branch_b_grounding_screen_summary.json"
+  },
+  "n_leaves": 2402,
+  "semantic_grounding_risk_label_counts": {
+    "reference_high_support_not_auto_accept": 1195,
+    "reference_intermediate_support": 640,
+    "reference_review_priority": 567
+  },
+  "execution_risk_label_counts": {
+    "reference_intermediate_support": 1242,
+    "reference_high_support_not_auto_accept": 850,
+    "reference_review_priority": 310
+  },
+  "final_routing_decision_counts": {
+    "optional_llm_verifier_or_review": 774,
+    "computability_review": 641,
+    "keep_without_layer2_action": 554,
+    "llm_verifier": 433
+  },
+  "mean_semantic_grounding_support": 0.769005,
+  "median_semantic_grounding_support": 0.8,
+  "mean_execution_support": 0.707868,
+  "median_execution_support": 0.6,
+  "llm_verifier_candidate_count": 433,
+  "llm_verifier_candidate_rate": 0.180266,
+  "computability_review_candidate_count": 641,
+  "computability_review_candidate_rate": 0.266861,
+  "semantic_component_means": {
+    "entity_source_support": 0.892756,
+    "value_source_support": 0.992444,
+    "unit_source_support": 0.993464,
+    "operator_value_support": 1.0,
+    "quantitative_representation_support": 0.969484,
+    "temporal_context_support": 0.982827,
+    "history_context_support": 0.928393,
+    "condition_exception_context_support": 0.986511,
+    "layer1_semantic_support": 0.95254,
+    "critical_modifier_support": 0.969775,
+    "allowance_polarity_support": 0.99567
+  },
+  "execution_component_means": {
+    "computability_support": 0.709284,
+    "layer1_execution_support": 0.989009
+  },
+  "top_semantic_grounding_reasons": {
+    "entity_supported_by_source_token_overlap": 653,
+    "layer1_policy:hard_semantic_or_structural_issue": 204,
+    "entity_partially_supported_by_source_token_overlap": 136,
+    "temporal_context_without_clear_marker": 110,
+    "quantitative_cue_not_represented": 84,
+    "entity_not_grounded_in_evidence_or_item": 63,
+    "layer1_policy:soft_semantic_warning": 60,
+    "history_marker_without_history_context": 58,
+    "condition_or_exception_marker_without_context": 54,
+    "entity_weakly_supported_by_source_token_overlap": 49,
+    "critical_modifier_missing:current": 48,
+    "unit_not_grounded_in_evidence_or_item": 44,
+    "exists_operator_with_quantitative_cue": 34,
+    "value_not_grounded_in_evidence_or_item": 33,
+    "temporal_marker_without_temporal_context": 20,
+    "critical_modifier_missing:severe": 16,
+    "entity_not_in_evidence_but_in_item": 14,
+    "critical_modifier_missing:current|currently": 14,
+    "critical_modifier_missing:requiring": 13,
+    "allowance_or_polarity_clause:is allowed": 12,
+    "critical_modifier_missing:current|recurrent": 10,
+    "critical_modifier_missing:active": 9,
+    "critical_modifier_missing:uncontrolled": 5,
+    "critical_modifier_missing:symptomatic": 3,
+    "critical_modifier_missing:comorbid": 3,
+    "critical_modifier_missing:planned": 3,
+    "critical_modifier_missing:ongoing": 3,
+    "allowance_or_polarity_clause:are allowed": 2,
+    "unit_supported_by_source_token_overlap": 2,
+    "critical_modifier_missing:active|current|recurrent": 2
+  },
+  "top_execution_reasons": {
+    "computability_partial": 1242,
+    "computability_non_computable": 310
+  },
+  "top_routing_reasons": {
+    "semantic_grounding_reference_intermediate_support": 622,
+    "high_semantic_and_execution_support_reference": 554,
+    "execution_support_reference_intermediate_support": 525,
+    "hard_semantic_grounding_uncertainty": 229,
+    "layer1_policy_mandatory_verifier": 204,
+    "execution_support_reference_review_priority": 116,
+    "semantic_grounding_reference_review_priority": 111,
+    "layer1_policy_soft_warning": 41
+  },
+  "top_semantic_bottleneck_components": {
+    "entity_source_support": 701,
+    "critical_modifier_support": 121,
+    "quantitative_representation_support": 116,
+    "layer1_semantic_support": 113,
+    "condition_exception_context_support": 49,
+    "history_context_support": 42,
+    "unit_source_support": 34,
+    "value_source_support": 27,
+    "temporal_context_support": 20,
+    "allowance_polarity_support": 16
+  },
+  "top_execution_bottleneck_components": {
+    "computability_support": 1552
+  },
+  "reference_bins": {
+    "reference_review_priority_if_support_below": 0.6,
+    "reference_high_support_if_support_at_least": 0.85,
+    "reference_intermediate_support_if_between": [
+      0.6,
+      0.85
+    ]
+  },
+  "threshold_source": {
+    "type": "predefined_reference_bins_not_branch_b_calibrated",
+    "not_learned_from_branch_a": true,
+    "not_learned_from_manual_B_labels": true,
+    "required_validation": "Evaluate against manual_B_leaf_label in using error enrichment and threshold sensitivity."
+  },
+  "method_note": "This is not a calibrated probability. It is an auditable support/routing screen. Semantic grounding risk should be validated against manual_B_leaf_label. Execution risk should be interpreted separately as computability/usability risk, not as semantic extraction error."
+}
