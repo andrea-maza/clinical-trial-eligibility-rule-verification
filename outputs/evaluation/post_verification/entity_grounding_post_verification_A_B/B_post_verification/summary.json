@@ -1,0 +1,28 @@
+{
+  "evaluation_stage": "entity_grounding_post_verification_A_B",
+  "branch": "B_post_verification",
+  "input_pass2_inputs": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\pass2_inputs\\chia_text_only_200_pass2_inputs.jsonl",
+  "input_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_B.jsonl",
+  "n_items_evaluated": 1159,
+  "n_total_clauses": 2402,
+  "entity_nonempty_rate": 1.0,
+  "entity_in_evidence_rate": 0.6291,
+  "anchor_present_rate": 0.724,
+  "no_anchor_rate": 0.276,
+  "any_bert_candidate_present_rate": 0.851,
+  "no_bert_candidate_rate": 0.149,
+  "entity_in_evidence_rate_when_anchor_present": 0.6734,
+  "entity_in_evidence_rate_when_no_anchor": 0.5128,
+  "entity_overlaps_any_anchor_rate_when_anchor_present": 0.9747,
+  "entity_overlaps_best_anchor_rate_when_anchor_present": 0.82,
+  "entity_overlaps_any_anchor_rate": 0.7057,
+  "entity_overlaps_best_anchor_rate": 0.5937,
+  "best_anchor_type_match_rate": 0.6797,
+  "generic_entity_rate": 0.0,
+  "issue_counts": {
+    "entity_type_disagrees_with_best_anchor": 557,
+    "no_anchor_for_clause": 663,
+    "entity_not_in_evidence": 891,
+    "entity_not_aligned_with_any_anchor": 44
+  }
+}

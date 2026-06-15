@@ -1,0 +1,43 @@
+{
+  "stage": "prepare_post_verification_pass2_leaves",
+  "description": "Converts post-rescue logical rule trees into Pass 2 leaf JSONL files so that pre- and post-verification evaluations use the same input format.",
+  "inputs": {
+    "branch_a_post_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+    "branch_b_post_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+    "pass1_flat": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\pass1_flat\\chia_text_only_200_pass1_flat.jsonl",
+    "pass2_inputs": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\pass2_inputs\\chia_text_only_200_pass2_inputs.jsonl"
+  },
+  "outputs": {
+    "branch_a_post_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_A.jsonl",
+    "branch_b_post_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_B.jsonl",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\post_verification_pass2_leaves_summary.json"
+  },
+  "branch_summaries": {
+    "A": {
+      "branch": "A_post_verification",
+      "input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_A_layer3_candidate_selection_rescue.jsonl",
+      "output_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_A.jsonl",
+      "input_ast_documents": 100,
+      "output_items": 1159,
+      "leaves_total": 2402,
+      "missing_item_uid": 0,
+      "missing_clause_id": 0
+    },
+    "B": {
+      "branch": "B_post_verification",
+      "input_ast": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+      "output_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_B.jsonl",
+      "input_ast_documents": 100,
+      "output_items": 1159,
+      "leaves_total": 2402,
+      "missing_item_uid": 0,
+      "missing_clause_id": 0
+    }
+  },
+  "method_notes": [
+    "This is only a format conversion.",
+    "No rule content is changed.",
+    "This script does not call the LLM.",
+    "This script does not use manual labels."
+  ]
+}

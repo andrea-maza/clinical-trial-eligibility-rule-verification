@@ -1,0 +1,226 @@
+{
+  "evaluation_stage": "level_a_gold_nodes_fair_leaf_proxy_pre_verification_A_B",
+  "branch": "B_llm_pass2",
+  "pass2_leaves_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\extraction\\branch_b\\pass2_leaves_llm\\chia_text_only_200_pass2_leaves_llm.jsonl",
+  "method_note": "Fair Level A proxy. Uses final Pass 2 leaf entity_text/entity_type/evidence_text only. Does not use BERT anchors and does not fall back to whole clause span for the main metric.",
+  "comparable_gold_types": [
+    "Condition",
+    "Device",
+    "Drug",
+    "Measurement",
+    "Observation",
+    "Procedure"
+  ],
+  "pred_to_gold_type_map": {
+    "condition": "Condition",
+    "drug": "Drug",
+    "procedure": "Procedure",
+    "lab": "Measurement",
+    "observation": "Observation"
+  },
+  "coverage": {
+    "stats": {
+      "total_leaves": 2402,
+      "comparable_leaves": 1904,
+      "span_not_recoverable_comparable_leaves": 711,
+      "span_recoverable_comparable_leaves": 1193,
+      "non_comparable_leaves": 498
+    },
+    "pred_entity_type_counts": {
+      "condition": 885,
+      "lab": 140,
+      "observation": 411,
+      "other": 207,
+      "demographic": 144,
+      "procedure": 223,
+      "drug": 245,
+      "therapy": 81,
+      "vital": 48,
+      "line_of_therapy": 5,
+      "biomarker": 7,
+      "stage": 6
+    },
+    "non_comparable_entity_type_counts": {
+      "other": 207,
+      "demographic": 144,
+      "therapy": 81,
+      "vital": 48,
+      "line_of_therapy": 5,
+      "biomarker": 7,
+      "stage": 6
+    },
+    "span_source_counts": {
+      "span_not_recoverable": 711,
+      "entity_in_evidence": 1193
+    }
+  },
+  "n_common_documents": 100,
+  "n_total_pred_comparable_nodes": 1904,
+  "n_total_gold_nodes": 2264,
+  "micro_exact_mention": {
+    "precision": 0.3682,
+    "recall": 0.3096,
+    "f1": 0.3364
+  },
+  "micro_soft_mention": {
+    "precision": 0.5704,
+    "recall": 0.4797,
+    "f1": 0.5211
+  },
+  "micro_exact_typed": {
+    "precision": 0.3241,
+    "recall": 0.2725,
+    "f1": 0.2961
+  },
+  "micro_soft_typed": {
+    "precision": 0.4769,
+    "recall": 0.4011,
+    "f1": 0.4357
+  },
+  "per_type_metrics": {
+    "Condition": {
+      "n_pred": 885,
+      "n_gold": 1084,
+      "exact_mention": {
+        "precision": 0.4147,
+        "recall": 0.3386,
+        "f1": 0.3728
+      },
+      "soft_mention": {
+        "precision": 0.6056,
+        "recall": 0.4945,
+        "f1": 0.5444
+      },
+      "exact_typed": {
+        "precision": 0.4147,
+        "recall": 0.3386,
+        "f1": 0.3728
+      },
+      "soft_typed": {
+        "precision": 0.6056,
+        "recall": 0.4945,
+        "f1": 0.5444
+      }
+    },
+    "Device": {
+      "n_pred": 0,
+      "n_gold": 28,
+      "exact_mention": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "soft_mention": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "exact_typed": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "soft_typed": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      }
+    },
+    "Drug": {
+      "n_pred": 245,
+      "n_gold": 367,
+      "exact_mention": {
+        "precision": 0.4286,
+        "recall": 0.2861,
+        "f1": 0.3431
+      },
+      "soft_mention": {
+        "precision": 0.5918,
+        "recall": 0.3951,
+        "f1": 0.4738
+      },
+      "exact_typed": {
+        "precision": 0.4286,
+        "recall": 0.2861,
+        "f1": 0.3431
+      },
+      "soft_typed": {
+        "precision": 0.5918,
+        "recall": 0.3951,
+        "f1": 0.4738
+      }
+    },
+    "Measurement": {
+      "n_pred": 140,
+      "n_gold": 281,
+      "exact_mention": {
+        "precision": 0.4857,
+        "recall": 0.242,
+        "f1": 0.323
+      },
+      "soft_mention": {
+        "precision": 0.5857,
+        "recall": 0.2918,
+        "f1": 0.3895
+      },
+      "exact_typed": {
+        "precision": 0.4857,
+        "recall": 0.242,
+        "f1": 0.323
+      },
+      "soft_typed": {
+        "precision": 0.5857,
+        "recall": 0.2918,
+        "f1": 0.3895
+      }
+    },
+    "Observation": {
+      "n_pred": 411,
+      "n_gold": 198,
+      "exact_mention": {
+        "precision": 0.0438,
+        "recall": 0.0909,
+        "f1": 0.0591
+      },
+      "soft_mention": {
+        "precision": 0.0998,
+        "recall": 0.2071,
+        "f1": 0.1347
+      },
+      "exact_typed": {
+        "precision": 0.0438,
+        "recall": 0.0909,
+        "f1": 0.0591
+      },
+      "soft_typed": {
+        "precision": 0.0998,
+        "recall": 0.2071,
+        "f1": 0.1347
+      }
+    },
+    "Procedure": {
+      "n_pred": 223,
+      "n_gold": 306,
+      "exact_mention": {
+        "precision": 0.2646,
+        "recall": 0.1928,
+        "f1": 0.2231
+      },
+      "soft_mention": {
+        "precision": 0.4664,
+        "recall": 0.3399,
+        "f1": 0.3932
+      },
+      "exact_typed": {
+        "precision": 0.2646,
+        "recall": 0.1928,
+        "f1": 0.2231
+      },
+      "soft_typed": {
+        "precision": 0.4664,
+        "recall": 0.3399,
+        "f1": 0.3932
+      }
+    }
+  }
+}

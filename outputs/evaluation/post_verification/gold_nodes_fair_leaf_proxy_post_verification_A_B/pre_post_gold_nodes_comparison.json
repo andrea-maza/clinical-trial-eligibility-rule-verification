@@ -1,0 +1,201 @@
+{
+  "A_post_verification": {
+    "pre_branch": "A_bert_rules",
+    "post_branch": "A_post_verification",
+    "pre": {
+      "total_leaves": 2402,
+      "comparable_leaves": 1737,
+      "span_recoverable_comparable_leaves": 1681,
+      "span_not_recoverable_comparable_leaves": 56,
+      "n_total_pred_comparable_nodes": 1737,
+      "n_total_gold_nodes": 2264,
+      "micro_exact_mention": {
+        "precision": 0.7156,
+        "recall": 0.549,
+        "f1": 0.6213
+      },
+      "micro_soft_mention": {
+        "precision": 0.825,
+        "recall": 0.633,
+        "f1": 0.7164
+      },
+      "micro_exact_typed": {
+        "precision": 0.7058,
+        "recall": 0.5415,
+        "f1": 0.6128
+      },
+      "micro_soft_typed": {
+        "precision": 0.795,
+        "recall": 0.61,
+        "f1": 0.6903
+      }
+    },
+    "post": {
+      "total_leaves": 2402,
+      "comparable_leaves": 1791,
+      "non_comparable_leaves": 611,
+      "span_recoverable_comparable_leaves": 1626,
+      "span_not_recoverable_comparable_leaves": 165,
+      "n_total_pred_comparable_nodes": 1791,
+      "n_total_gold_nodes": 2264,
+      "micro_exact_mention": {
+        "precision": 0.6415,
+        "recall": 0.5075,
+        "f1": 0.5667
+      },
+      "micro_soft_mention": {
+        "precision": 0.7822,
+        "recall": 0.6188,
+        "f1": 0.691
+      },
+      "micro_exact_typed": {
+        "precision": 0.617,
+        "recall": 0.4881,
+        "f1": 0.545
+      },
+      "micro_soft_typed": {
+        "precision": 0.727,
+        "recall": 0.5751,
+        "f1": 0.6422
+      },
+      "pred_entity_type_counts": {
+        "therapy": 28,
+        "condition": 1036,
+        "other": 446,
+        "drug": 212,
+        "procedure": 190,
+        "lab": 253,
+        "line_of_therapy": 2,
+        "observation": 100,
+        "demographic": 115,
+        "vital": 16,
+        "biomarker": 4
+      },
+      "non_comparable_entity_type_counts": {
+        "therapy": 28,
+        "other": 446,
+        "line_of_therapy": 2,
+        "demographic": 115,
+        "vital": 16,
+        "biomarker": 4
+      },
+      "span_source_counts": {
+        "entity_in_evidence": 1626,
+        "span_not_recoverable": 165
+      },
+      "pass2_leaves_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_A.jsonl"
+    },
+    "delta": {
+      "total_leaves": 0,
+      "comparable_leaves": 54,
+      "span_recoverable_comparable_leaves": -55,
+      "span_not_recoverable_comparable_leaves": 109,
+      "exact_mention_f1": -0.05459999999999998,
+      "soft_mention_f1": -0.02540000000000009,
+      "exact_typed_f1": -0.06779999999999997,
+      "soft_typed_f1": -0.04810000000000003
+    },
+    "interpretation_note": "This is a Level A CHIA-style proxy. It measures entity span/type alignment, not full semantic correctness."
+  },
+  "B_post_verification": {
+    "pre_branch": "B_llm_pass2",
+    "post_branch": "B_post_verification",
+    "pre": {
+      "total_leaves": 2402,
+      "comparable_leaves": 1904,
+      "span_recoverable_comparable_leaves": 1193,
+      "span_not_recoverable_comparable_leaves": 711,
+      "n_total_pred_comparable_nodes": 1904,
+      "n_total_gold_nodes": 2264,
+      "micro_exact_mention": {
+        "precision": 0.3682,
+        "recall": 0.3096,
+        "f1": 0.3364
+      },
+      "micro_soft_mention": {
+        "precision": 0.5704,
+        "recall": 0.4797,
+        "f1": 0.5211
+      },
+      "micro_exact_typed": {
+        "precision": 0.3241,
+        "recall": 0.2725,
+        "f1": 0.2961
+      },
+      "micro_soft_typed": {
+        "precision": 0.4769,
+        "recall": 0.4011,
+        "f1": 0.4357
+      }
+    },
+    "post": {
+      "total_leaves": 2402,
+      "comparable_leaves": 1903,
+      "non_comparable_leaves": 499,
+      "span_recoverable_comparable_leaves": 1212,
+      "span_not_recoverable_comparable_leaves": 691,
+      "n_total_pred_comparable_nodes": 1903,
+      "n_total_gold_nodes": 2264,
+      "micro_exact_mention": {
+        "precision": 0.3652,
+        "recall": 0.307,
+        "f1": 0.3336
+      },
+      "micro_soft_mention": {
+        "precision": 0.577,
+        "recall": 0.485,
+        "f1": 0.527
+      },
+      "micro_exact_typed": {
+        "precision": 0.3216,
+        "recall": 0.2703,
+        "f1": 0.2937
+      },
+      "micro_soft_typed": {
+        "precision": 0.4808,
+        "recall": 0.4042,
+        "f1": 0.4392
+      },
+      "pred_entity_type_counts": {
+        "therapy": 81,
+        "condition": 883,
+        "observation": 408,
+        "drug": 245,
+        "procedure": 224,
+        "line_of_therapy": 5,
+        "demographic": 145,
+        "lab": 143,
+        "other": 207,
+        "vital": 48,
+        "stage": 6,
+        "biomarker": 7
+      },
+      "non_comparable_entity_type_counts": {
+        "therapy": 81,
+        "line_of_therapy": 5,
+        "demographic": 145,
+        "other": 207,
+        "vital": 48,
+        "stage": 6,
+        "biomarker": 7
+      },
+      "span_source_counts": {
+        "entity_in_evidence": 1212,
+        "span_not_recoverable": 690,
+        "evidence_not_in_item": 1
+      },
+      "pass2_leaves_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_B.jsonl"
+    },
+    "delta": {
+      "total_leaves": 0,
+      "comparable_leaves": -1,
+      "span_recoverable_comparable_leaves": 19,
+      "span_not_recoverable_comparable_leaves": -20,
+      "exact_mention_f1": -0.002799999999999969,
+      "soft_mention_f1": 0.005900000000000016,
+      "exact_typed_f1": -0.0023999999999999577,
+      "soft_typed_f1": 0.003500000000000003
+    },
+    "interpretation_note": "This is a Level A CHIA-style proxy. It measures entity span/type alignment, not full semantic correctness."
+  }
+}

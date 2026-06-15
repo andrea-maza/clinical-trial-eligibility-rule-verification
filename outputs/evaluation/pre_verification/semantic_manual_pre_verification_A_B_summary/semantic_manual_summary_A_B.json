@@ -1,0 +1,517 @@
+{
+  "stage": "semantic_manual_summary_A_B",
+  "inputs": {
+    "pass1_logic_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B\\semantic_pass1_logic_sheet.csv",
+    "A_B_clause_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B\\semantic_clause_sheet_A_B.csv"
+  },
+  "outputs": {
+    "reviewed_clause_labels": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv",
+    "invalid_or_incomplete_rows": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B_summary\\invalid_or_incomplete_manual_rows_A_B.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B_summary\\semantic_manual_summary_A_B.json"
+  },
+  "interpretation_note": "Clause-level labels compare Pass 2 leaf semantics between Branch A and Branch B. Pass 1 logic labels evaluate the shared decomposition/logic once. The inferred best branch is based only on label scores and may differ from the manually selected best branch.",
+  "pass1_logic_summary": {
+    "n_total_items": 1159,
+    "n_labeled_items": 228,
+    "n_unlabeled_items": 931,
+    "label_coverage_pct": 19.67,
+    "label_counts": {
+      "correct": 197,
+      "partial": 23,
+      "incorrect": 8
+    },
+    "label_percentages_among_labeled": {
+      "correct": 86.4,
+      "partial": 10.09,
+      "incorrect": 3.51
+    },
+    "issue_counts_among_partial_or_incorrect": {
+      "wrong_connector": 15,
+      "bad_evidence_scope": 8,
+      "oversplit": 4,
+      "missing_clause": 3,
+      "wrong_negation_scope": 2,
+      "wrong_modifier": 1
+    },
+    "partial_or_incorrect_rows_missing_issue_type": 0
+  },
+  "pass1_logic_by_stratum": {
+    "exception": {
+      "n_total_items": 25,
+      "n_labeled_items": 6,
+      "coverage_pct": 24.0,
+      "label_counts": {
+        "correct": 2,
+        "partial": 2,
+        "incorrect": 2
+      },
+      "label_percentages_among_labeled": {
+        "correct": 33.33,
+        "partial": 33.33,
+        "incorrect": 33.33
+      }
+    },
+    "multi_clause": {
+      "n_total_items": 341,
+      "n_labeled_items": 57,
+      "coverage_pct": 16.72,
+      "label_counts": {
+        "correct": 50,
+        "partial": 4,
+        "incorrect": 3
+      },
+      "label_percentages_among_labeled": {
+        "correct": 87.72,
+        "partial": 7.02,
+        "incorrect": 5.26
+      }
+    },
+    "negation": {
+      "n_total_items": 45,
+      "n_labeled_items": 10,
+      "coverage_pct": 22.22,
+      "label_counts": {
+        "correct": 6,
+        "partial": 2,
+        "incorrect": 2
+      },
+      "label_percentages_among_labeled": {
+        "correct": 60.0,
+        "partial": 20.0,
+        "incorrect": 20.0
+      }
+    },
+    "non_computable": {
+      "n_total_items": 150,
+      "n_labeled_items": 36,
+      "coverage_pct": 24.0,
+      "label_counts": {
+        "correct": 33,
+        "partial": 3,
+        "incorrect": 0
+      },
+      "label_percentages_among_labeled": {
+        "correct": 91.67,
+        "partial": 8.33,
+        "incorrect": 0.0
+      }
+    },
+    "quantifier": {
+      "n_total_items": 12,
+      "n_labeled_items": 3,
+      "coverage_pct": 25.0,
+      "label_counts": {
+        "correct": 2,
+        "partial": 1,
+        "incorrect": 0
+      },
+      "label_percentages_among_labeled": {
+        "correct": 66.67,
+        "partial": 33.33,
+        "incorrect": 0.0
+      }
+    },
+    "simple": {
+      "n_total_items": 394,
+      "n_labeled_items": 60,
+      "coverage_pct": 15.23,
+      "label_counts": {
+        "correct": 54,
+        "partial": 6,
+        "incorrect": 0
+      },
+      "label_percentages_among_labeled": {
+        "correct": 90.0,
+        "partial": 10.0,
+        "incorrect": 0.0
+      }
+    },
+    "temporal": {
+      "n_total_items": 192,
+      "n_labeled_items": 56,
+      "coverage_pct": 29.17,
+      "label_counts": {
+        "correct": 50,
+        "partial": 5,
+        "incorrect": 1
+      },
+      "label_percentages_among_labeled": {
+        "correct": 89.29,
+        "partial": 8.93,
+        "incorrect": 1.79
+      }
+    }
+  },
+  "pass2_leaf_semantic_summary": {
+    "A": {
+      "branch": "A",
+      "n_total_rows": 2402,
+      "n_labeled_rows": 524,
+      "n_unlabeled_rows": 1878,
+      "label_coverage_pct": 21.82,
+      "label_counts": {
+        "correct": 202,
+        "partial": 187,
+        "incorrect": 135,
+        "unsupported": 0
+      },
+      "label_percentages_among_labeled": {
+        "correct": 38.55,
+        "partial": 35.69,
+        "incorrect": 25.76,
+        "unsupported": 0.0
+      },
+      "issue_counts_among_non_correct": {
+        "wrong_entity": 62,
+        "wrong_computability": 53,
+        "too_broad_entity": 42,
+        "wrong_operator": 35,
+        "wrong_temporal_context": 30,
+        "bad_entity_type": 26,
+        "too_narrow_entity": 15,
+        "missing_temporal_context": 14,
+        "missing_modifier": 14,
+        "missing_clause": 13,
+        "missing_value": 9,
+        "missing_threshold": 8,
+        "wrong_negation": 7,
+        "wrong_value": 3,
+        "wrong_unit": 3,
+        "missing_history": 2,
+        "underspecified": 1,
+        "missing_location": 1,
+        "missing_operator": 1,
+        "missing_temporal": 1,
+        "missing_unit": 1,
+        "missing_frequency": 1
+      },
+      "non_correct_rows_missing_issue_type": 0
+    },
+    "B": {
+      "branch": "B",
+      "n_total_rows": 2402,
+      "n_labeled_rows": 524,
+      "n_unlabeled_rows": 1878,
+      "label_coverage_pct": 21.82,
+      "label_counts": {
+        "correct": 488,
+        "partial": 30,
+        "incorrect": 6,
+        "unsupported": 0
+      },
+      "label_percentages_among_labeled": {
+        "correct": 93.13,
+        "partial": 5.73,
+        "incorrect": 1.15,
+        "unsupported": 0.0
+      },
+      "issue_counts_among_non_correct": {
+        "wrong_computability": 7,
+        "missing_threshold": 5,
+        "wrong_temporal_context": 5,
+        "too_broad_entity": 3,
+        "bad_entity_type": 3,
+        "missing_clause": 3,
+        "wrong_operator": 3,
+        "wrong_condition_scope": 2,
+        "missing_modifier": 2,
+        "wrong_entity": 1,
+        "underspecified": 1,
+        "too_narrow_entity": 1
+      },
+      "non_correct_rows_missing_issue_type": 0
+    }
+  },
+  "pass2_leaf_semantic_by_stratum": {
+    "A": {
+      "exception": {
+        "n_total_rows": 123,
+        "n_labeled_rows": 14,
+        "coverage_pct": 11.38,
+        "label_counts": {
+          "correct": 0,
+          "partial": 3,
+          "incorrect": 11,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 0.0,
+          "partial": 21.43,
+          "incorrect": 78.57,
+          "unsupported": 0.0
+        }
+      },
+      "multi_clause": {
+        "n_total_rows": 989,
+        "n_labeled_rows": 181,
+        "coverage_pct": 18.3,
+        "label_counts": {
+          "correct": 79,
+          "partial": 70,
+          "incorrect": 32,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 43.65,
+          "partial": 38.67,
+          "incorrect": 17.68,
+          "unsupported": 0.0
+        }
+      },
+      "negation": {
+        "n_total_rows": 114,
+        "n_labeled_rows": 36,
+        "coverage_pct": 31.58,
+        "label_counts": {
+          "correct": 17,
+          "partial": 8,
+          "incorrect": 11,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 47.22,
+          "partial": 22.22,
+          "incorrect": 30.56,
+          "unsupported": 0.0
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 322,
+        "n_labeled_rows": 73,
+        "coverage_pct": 22.67,
+        "label_counts": {
+          "correct": 27,
+          "partial": 15,
+          "incorrect": 31,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 36.99,
+          "partial": 20.55,
+          "incorrect": 42.47,
+          "unsupported": 0.0
+        }
+      },
+      "quantifier": {
+        "n_total_rows": 35,
+        "n_labeled_rows": 8,
+        "coverage_pct": 22.86,
+        "label_counts": {
+          "correct": 4,
+          "partial": 1,
+          "incorrect": 3,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 50.0,
+          "partial": 12.5,
+          "incorrect": 37.5,
+          "unsupported": 0.0
+        }
+      },
+      "simple": {
+        "n_total_rows": 394,
+        "n_labeled_rows": 60,
+        "coverage_pct": 15.23,
+        "label_counts": {
+          "correct": 24,
+          "partial": 31,
+          "incorrect": 5,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 40.0,
+          "partial": 51.67,
+          "incorrect": 8.33,
+          "unsupported": 0.0
+        }
+      },
+      "temporal": {
+        "n_total_rows": 425,
+        "n_labeled_rows": 152,
+        "coverage_pct": 35.76,
+        "label_counts": {
+          "correct": 51,
+          "partial": 59,
+          "incorrect": 42,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 33.55,
+          "partial": 38.82,
+          "incorrect": 27.63,
+          "unsupported": 0.0
+        }
+      }
+    },
+    "B": {
+      "exception": {
+        "n_total_rows": 123,
+        "n_labeled_rows": 14,
+        "coverage_pct": 11.38,
+        "label_counts": {
+          "correct": 11,
+          "partial": 3,
+          "incorrect": 0,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 78.57,
+          "partial": 21.43,
+          "incorrect": 0.0,
+          "unsupported": 0.0
+        }
+      },
+      "multi_clause": {
+        "n_total_rows": 989,
+        "n_labeled_rows": 181,
+        "coverage_pct": 18.3,
+        "label_counts": {
+          "correct": 174,
+          "partial": 6,
+          "incorrect": 1,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 96.13,
+          "partial": 3.31,
+          "incorrect": 0.55,
+          "unsupported": 0.0
+        }
+      },
+      "negation": {
+        "n_total_rows": 114,
+        "n_labeled_rows": 36,
+        "coverage_pct": 31.58,
+        "label_counts": {
+          "correct": 28,
+          "partial": 6,
+          "incorrect": 2,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 77.78,
+          "partial": 16.67,
+          "incorrect": 5.56,
+          "unsupported": 0.0
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 322,
+        "n_labeled_rows": 73,
+        "coverage_pct": 22.67,
+        "label_counts": {
+          "correct": 69,
+          "partial": 3,
+          "incorrect": 1,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 94.52,
+          "partial": 4.11,
+          "incorrect": 1.37,
+          "unsupported": 0.0
+        }
+      },
+      "quantifier": {
+        "n_total_rows": 35,
+        "n_labeled_rows": 8,
+        "coverage_pct": 22.86,
+        "label_counts": {
+          "correct": 7,
+          "partial": 1,
+          "incorrect": 0,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 87.5,
+          "partial": 12.5,
+          "incorrect": 0.0,
+          "unsupported": 0.0
+        }
+      },
+      "simple": {
+        "n_total_rows": 394,
+        "n_labeled_rows": 60,
+        "coverage_pct": 15.23,
+        "label_counts": {
+          "correct": 56,
+          "partial": 4,
+          "incorrect": 0,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 93.33,
+          "partial": 6.67,
+          "incorrect": 0.0,
+          "unsupported": 0.0
+        }
+      },
+      "temporal": {
+        "n_total_rows": 425,
+        "n_labeled_rows": 152,
+        "coverage_pct": 35.76,
+        "label_counts": {
+          "correct": 143,
+          "partial": 7,
+          "incorrect": 2,
+          "unsupported": 0
+        },
+        "label_percentages_among_labeled": {
+          "correct": 94.08,
+          "partial": 4.61,
+          "incorrect": 1.32,
+          "unsupported": 0.0
+        }
+      }
+    }
+  },
+  "branch_comparison": {
+    "B_vs_A": {
+      "n_comparable_rows": 524,
+      "counts": {
+        "B_same_as_A": 209,
+        "B_better_than_A": 302,
+        "B_worse_than_A": 13
+      },
+      "percentages": {
+        "B_same_as_A": 39.89,
+        "B_better_than_A": 57.63,
+        "B_worse_than_A": 2.48
+      }
+    },
+    "manual_best_branch_A_B": {
+      "n_rows_with_manual_best": 524,
+      "counts": {
+        "tie": 204,
+        "B": 303,
+        "A": 14,
+        "none": 3
+      },
+      "percentages": {
+        "tie": 38.93,
+        "B": 57.82,
+        "A": 2.67,
+        "none": 0.57
+      }
+    },
+    "inferred_best_branch_from_labels": {
+      "n_rows_with_both_branch_labels": 524,
+      "counts": {
+        "tie": 206,
+        "B": 302,
+        "A": 13,
+        "none": 3
+      },
+      "percentages": {
+        "tie": 39.31,
+        "B": 57.63,
+        "A": 2.48,
+        "none": 0.57
+      }
+    }
+  },
+  "quality_checks": {
+    "n_invalid_or_incomplete_rows": 0
+  }
+}

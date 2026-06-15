@@ -1,0 +1,49 @@
+{
+  "A_bert_rules": {
+    "n_items_evaluated": 1159,
+    "n_total_clauses": 2402,
+    "entity_nonempty_rate": 1.0,
+    "entity_in_evidence_rate": 0.8655,
+    "anchor_present_rate": 0.724,
+    "no_anchor_rate": 0.276,
+    "any_bert_candidate_present_rate": 0.851,
+    "no_bert_candidate_rate": 0.149,
+    "entity_overlaps_any_anchor_rate": 0.724,
+    "entity_overlaps_best_anchor_rate": 0.5962,
+    "best_anchor_type_match_rate": 0.9494,
+    "entity_in_evidence_rate_when_anchor_present": 0.9735,
+    "entity_in_evidence_rate_when_no_anchor": 0.5822,
+    "entity_overlaps_any_anchor_rate_when_anchor_present": 1.0,
+    "entity_overlaps_best_anchor_rate_when_anchor_present": 0.8235,
+    "generic_entity_rate": 0.0,
+    "issue_counts": {
+      "entity_not_in_evidence": 323,
+      "no_anchor_for_clause": 663,
+      "entity_type_disagrees_with_best_anchor": 88
+    }
+  },
+  "B_llm_pass2": {
+    "n_items_evaluated": 1159,
+    "n_total_clauses": 2402,
+    "entity_nonempty_rate": 1.0,
+    "entity_in_evidence_rate": 0.6157,
+    "anchor_present_rate": 0.724,
+    "no_anchor_rate": 0.276,
+    "any_bert_candidate_present_rate": 0.851,
+    "no_bert_candidate_rate": 0.149,
+    "entity_overlaps_any_anchor_rate": 0.7065,
+    "entity_overlaps_best_anchor_rate": 0.5916,
+    "best_anchor_type_match_rate": 0.6786,
+    "entity_in_evidence_rate_when_anchor_present": 0.6642,
+    "entity_in_evidence_rate_when_no_anchor": 0.4887,
+    "entity_overlaps_any_anchor_rate_when_anchor_present": 0.9758,
+    "entity_overlaps_best_anchor_rate_when_anchor_present": 0.8171,
+    "generic_entity_rate": 0.0,
+    "issue_counts": {
+      "entity_type_disagrees_with_best_anchor": 559,
+      "no_anchor_for_clause": 663,
+      "entity_not_in_evidence": 923,
+      "entity_not_aligned_with_any_anchor": 42
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "stage": "semantic_manual_pre_verification_A_B",
+  "description": "Manual semantic review sheets for Branch A and Branch B. Pass 1 logic is shared and reviewed separately.",
+  "n_items": 1159,
+  "n_clauses": 2402,
+  "branch_paths": {
+    "A": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass2_leaves\\chia_text_only_200_pass2_leaves.jsonl",
+    "B": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass2_leaves_llm\\chia_text_only_200_pass2_leaves_llm.jsonl"
+  },
+  "outputs": {
+    "pass1_logic_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B\\semantic_pass1_logic_sheet.csv",
+    "A_B_clause_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B\\semantic_clause_sheet_A_B.csv"
+  },
+  "manual_leaf_label_values": [
+    "correct",
+    "partial",
+    "incorrect"
+  ],
+  "manual_best_values": [
+    "A",
+    "B",
+    "tie",
+    "none"
+  ],
+  "important_note": "Branch comparison is clause/leaf-level because Branch A and Branch B share Pass 1. Pass 1 logic should be evaluated once using the logic sheet."
+}

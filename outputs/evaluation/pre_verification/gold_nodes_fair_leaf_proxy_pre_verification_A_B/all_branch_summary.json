@@ -1,0 +1,58 @@
+{
+  "A_bert_rules": {
+    "total_leaves": 2402,
+    "comparable_leaves": 1737,
+    "span_recoverable_comparable_leaves": 1681,
+    "span_not_recoverable_comparable_leaves": 56,
+    "n_total_pred_comparable_nodes": 1737,
+    "n_total_gold_nodes": 2264,
+    "micro_exact_mention": {
+      "precision": 0.7156,
+      "recall": 0.549,
+      "f1": 0.6213
+    },
+    "micro_soft_mention": {
+      "precision": 0.825,
+      "recall": 0.633,
+      "f1": 0.7164
+    },
+    "micro_exact_typed": {
+      "precision": 0.7058,
+      "recall": 0.5415,
+      "f1": 0.6128
+    },
+    "micro_soft_typed": {
+      "precision": 0.795,
+      "recall": 0.61,
+      "f1": 0.6903
+    }
+  },
+  "B_llm_pass2": {
+    "total_leaves": 2402,
+    "comparable_leaves": 1904,
+    "span_recoverable_comparable_leaves": 1193,
+    "span_not_recoverable_comparable_leaves": 711,
+    "n_total_pred_comparable_nodes": 1904,
+    "n_total_gold_nodes": 2264,
+    "micro_exact_mention": {
+      "precision": 0.3682,
+      "recall": 0.3096,
+      "f1": 0.3364
+    },
+    "micro_soft_mention": {
+      "precision": 0.5704,
+      "recall": 0.4797,
+      "f1": 0.5211
+    },
+    "micro_exact_typed": {
+      "precision": 0.3241,
+      "recall": 0.2725,
+      "f1": 0.2961
+    },
+    "micro_soft_typed": {
+      "precision": 0.4769,
+      "recall": 0.4011,
+      "f1": 0.4357
+    }
+  }
+}

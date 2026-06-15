@@ -1,0 +1,29 @@
+{
+  "evaluation_stage": "structural_post_verification_A_B",
+  "branch": "B_post_verification",
+  "input_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\verification\\layer3\\applied_candidate_selection_rescue\\chia_text_only_200_rules_v3_ast_B_layer3_candidate_selection_rescue.jsonl",
+  "schema_file": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\schemas\\rules_v3.json",
+  "n_documents_total": 100,
+  "n_documents_ok_rows": 100,
+  "n_documents_error_rows": 0,
+  "schema_valid_document_rate": 1.0,
+  "total_groups": 870,
+  "total_leaves": 2402,
+  "avg_groups_per_doc": 8.7,
+  "avg_leaves_per_doc": 24.02,
+  "evidence_nonempty_rate": 1.0,
+  "entity_text_nonempty_rate": 1.0,
+  "mean_document_comparison_consistency_rate": 1.0,
+  "computability_counts": {
+    "computable": 861,
+    "partial": 1231,
+    "non_computable": 310
+  },
+  "total_issues": 18,
+  "issue_counts": {
+    "range_with_both_bounds_missing": 1,
+    "within_temporal_missing_unit": 14,
+    "within_temporal_missing_value": 3
+  },
+  "document_errors": []
+}
