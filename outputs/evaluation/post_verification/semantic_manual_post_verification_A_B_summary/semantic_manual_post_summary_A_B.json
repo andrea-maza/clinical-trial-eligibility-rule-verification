@@ -1,0 +1,713 @@
+{
+  "stage": "semantic_manual_post_verification_A_B_summary",
+  "inputs": {
+    "post_manual_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\semantic_manual_post_verification_A_B\\semantic_clause_sheet_A_B_post_verification.csv",
+    "pre_reviewed_manual_labels": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\pre_verification\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv"
+  },
+  "outputs": {
+    "merged_post_labels_csv": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\semantic_manual_post_verification_A_B_summary\\merged_semantic_post_labels_A_B.csv",
+    "summary_json": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\clinical-trial-eligibility-rule-verification\\outputs\\evaluation\\post_verification\\semantic_manual_post_verification_A_B_summary\\semantic_manual_post_summary_A_B.json"
+  },
+  "interpretation_note": "Manual labels evaluate post-verification Pass 2 leaf semantics. Pre-verification labels may be reused when a branch-specific leaf is unchanged. Changed leaves require independent post-verification review.",
+  "valid_manual_labels": [
+    "correct",
+    "partial",
+    "incorrect"
+  ],
+  "row_counts": {
+    "total_clause_rows": 2402
+  },
+  "post_leaf_semantic_summary": {
+    "A": {
+      "branch": "A",
+      "n_total_rows": 2402,
+      "n_labeled_rows": 524,
+      "n_unlabeled_rows": 1878,
+      "label_coverage_pct": 21.82,
+      "label_counts": {
+        "partial": 117,
+        "incorrect": 86,
+        "correct": 321
+      },
+      "label_percentages_among_labeled": {
+        "correct": 61.26,
+        "partial": 22.33,
+        "incorrect": 16.41
+      },
+      "issue_counts_among_partial_or_incorrect": {
+        "wrong_entity": 49,
+        "wrong_computability": 37,
+        "too_broad_entity": 34,
+        "wrong_operator": 17,
+        "too_narrow_entity": 14,
+        "missing_modifier": 13,
+        "wrong_temporal_context": 8,
+        "missing_threshold": 6,
+        "bad_entity_type": 6,
+        "missing_value": 6,
+        "missing_clause": 4,
+        "missing_temporal_context": 4,
+        "wrong_value": 3,
+        "wrong_unit": 3,
+        "wrong_negation": 3,
+        "underspecified": 2,
+        "missing_location": 1,
+        "missing_temporal": 1,
+        "missing_history": 1,
+        "missing_unit": 1,
+        "wrong_condition_scope": 1,
+        "missing_frequency": 1
+      },
+      "partial_or_incorrect_rows_missing_issue_type": 0
+    },
+    "B": {
+      "branch": "B",
+      "n_total_rows": 2402,
+      "n_labeled_rows": 524,
+      "n_unlabeled_rows": 1878,
+      "label_coverage_pct": 21.82,
+      "label_counts": {
+        "partial": 28,
+        "correct": 492,
+        "incorrect": 4
+      },
+      "label_percentages_among_labeled": {
+        "correct": 93.89,
+        "partial": 5.34,
+        "incorrect": 0.76
+      },
+      "issue_counts_among_partial_or_incorrect": {
+        "missing_threshold": 6,
+        "wrong_computability": 6,
+        "too_broad_entity": 3,
+        "bad_entity_type": 3,
+        "missing_clause": 3,
+        "missing_modifier": 3,
+        "wrong_operator": 2,
+        "wrong_temporal_context": 2,
+        "wrong_condition_scope": 1,
+        "wrong_entity": 1,
+        "underspecified": 1,
+        "too_narrow_entity": 1
+      },
+      "partial_or_incorrect_rows_missing_issue_type": 0
+    }
+  },
+  "post_leaf_semantic_by_stratum": {
+    "A": {
+      "exception": {
+        "n_total_rows": 123,
+        "n_labeled_rows": 14,
+        "coverage_pct": 11.38,
+        "label_counts": {
+          "incorrect": 8,
+          "correct": 3,
+          "partial": 3
+        },
+        "label_percentages_among_labeled": {
+          "correct": 21.43,
+          "partial": 21.43,
+          "incorrect": 57.14
+        }
+      },
+      "multi_clause": {
+        "n_total_rows": 1000,
+        "n_labeled_rows": 192,
+        "coverage_pct": 19.2,
+        "label_counts": {
+          "incorrect": 22,
+          "correct": 125,
+          "partial": 45
+        },
+        "label_percentages_among_labeled": {
+          "correct": 65.1,
+          "partial": 23.44,
+          "incorrect": 11.46
+        }
+      },
+      "negation": {
+        "n_total_rows": 114,
+        "n_labeled_rows": 36,
+        "coverage_pct": 31.58,
+        "label_counts": {
+          "correct": 21,
+          "incorrect": 7,
+          "partial": 8
+        },
+        "label_percentages_among_labeled": {
+          "correct": 58.33,
+          "partial": 22.22,
+          "incorrect": 19.44
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 309,
+        "n_labeled_rows": 60,
+        "coverage_pct": 19.42,
+        "label_counts": {
+          "partial": 8,
+          "correct": 36,
+          "incorrect": 16
+        },
+        "label_percentages_among_labeled": {
+          "correct": 60.0,
+          "partial": 13.33,
+          "incorrect": 26.67
+        }
+      },
+      "quantifier": {
+        "n_total_rows": 35,
+        "n_labeled_rows": 8,
+        "coverage_pct": 22.86,
+        "label_counts": {
+          "partial": 1,
+          "correct": 4,
+          "incorrect": 3
+        },
+        "label_percentages_among_labeled": {
+          "correct": 50.0,
+          "partial": 12.5,
+          "incorrect": 37.5
+        }
+      },
+      "simple": {
+        "n_total_rows": 398,
+        "n_labeled_rows": 64,
+        "coverage_pct": 16.08,
+        "label_counts": {
+          "partial": 30,
+          "incorrect": 6,
+          "correct": 28
+        },
+        "label_percentages_among_labeled": {
+          "correct": 43.75,
+          "partial": 46.88,
+          "incorrect": 9.38
+        }
+      },
+      "temporal": {
+        "n_total_rows": 423,
+        "n_labeled_rows": 150,
+        "coverage_pct": 35.46,
+        "label_counts": {
+          "correct": 104,
+          "partial": 22,
+          "incorrect": 24
+        },
+        "label_percentages_among_labeled": {
+          "correct": 69.33,
+          "partial": 14.67,
+          "incorrect": 16.0
+        }
+      }
+    },
+    "B": {
+      "exception": {
+        "n_total_rows": 123,
+        "n_labeled_rows": 14,
+        "coverage_pct": 11.38,
+        "label_counts": {
+          "correct": 12,
+          "partial": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 85.71,
+          "partial": 14.29,
+          "incorrect": 0.0
+        }
+      },
+      "multi_clause": {
+        "n_total_rows": 1000,
+        "n_labeled_rows": 192,
+        "coverage_pct": 19.2,
+        "label_counts": {
+          "correct": 185,
+          "partial": 6,
+          "incorrect": 1
+        },
+        "label_percentages_among_labeled": {
+          "correct": 96.35,
+          "partial": 3.12,
+          "incorrect": 0.52
+        }
+      },
+      "negation": {
+        "n_total_rows": 114,
+        "n_labeled_rows": 36,
+        "coverage_pct": 31.58,
+        "label_counts": {
+          "partial": 6,
+          "correct": 28,
+          "incorrect": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 77.78,
+          "partial": 16.67,
+          "incorrect": 5.56
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 309,
+        "n_labeled_rows": 60,
+        "coverage_pct": 19.42,
+        "label_counts": {
+          "correct": 59,
+          "partial": 1
+        },
+        "label_percentages_among_labeled": {
+          "correct": 98.33,
+          "partial": 1.67,
+          "incorrect": 0.0
+        }
+      },
+      "quantifier": {
+        "n_total_rows": 35,
+        "n_labeled_rows": 8,
+        "coverage_pct": 22.86,
+        "label_counts": {
+          "partial": 1,
+          "correct": 7
+        },
+        "label_percentages_among_labeled": {
+          "correct": 87.5,
+          "partial": 12.5,
+          "incorrect": 0.0
+        }
+      },
+      "simple": {
+        "n_total_rows": 398,
+        "n_labeled_rows": 64,
+        "coverage_pct": 16.08,
+        "label_counts": {
+          "partial": 7,
+          "correct": 57
+        },
+        "label_percentages_among_labeled": {
+          "correct": 89.06,
+          "partial": 10.94,
+          "incorrect": 0.0
+        }
+      },
+      "temporal": {
+        "n_total_rows": 423,
+        "n_labeled_rows": 150,
+        "coverage_pct": 35.46,
+        "label_counts": {
+          "correct": 144,
+          "partial": 5,
+          "incorrect": 1
+        },
+        "label_percentages_among_labeled": {
+          "correct": 96.0,
+          "partial": 3.33,
+          "incorrect": 0.67
+        }
+      }
+    }
+  },
+  "post_leaf_semantic_by_final_decision": {
+    "A": {
+      "accept": {
+        "n_total_rows": 1044,
+        "n_labeled_rows": 179,
+        "coverage_pct": 17.15,
+        "label_counts": {
+          "correct": 99,
+          "partial": 57,
+          "incorrect": 23
+        },
+        "label_percentages_among_labeled": {
+          "correct": 55.31,
+          "partial": 31.84,
+          "incorrect": 12.85
+        }
+      },
+      "human_review": {
+        "n_total_rows": 635,
+        "n_labeled_rows": 163,
+        "coverage_pct": 25.67,
+        "label_counts": {
+          "partial": 40,
+          "correct": 80,
+          "incorrect": 43
+        },
+        "label_percentages_among_labeled": {
+          "correct": 49.08,
+          "partial": 24.54,
+          "incorrect": 26.38
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 138,
+        "n_labeled_rows": 34,
+        "coverage_pct": 24.64,
+        "label_counts": {
+          "correct": 33,
+          "incorrect": 1
+        },
+        "label_percentages_among_labeled": {
+          "correct": 97.06,
+          "partial": 0.0,
+          "incorrect": 2.94
+        }
+      },
+      "partial": {
+        "n_total_rows": 585,
+        "n_labeled_rows": 148,
+        "coverage_pct": 25.3,
+        "label_counts": {
+          "incorrect": 19,
+          "partial": 20,
+          "correct": 109
+        },
+        "label_percentages_among_labeled": {
+          "correct": 73.65,
+          "partial": 13.51,
+          "incorrect": 12.84
+        }
+      }
+    },
+    "B": {
+      "accept": {
+        "n_total_rows": 565,
+        "n_labeled_rows": 103,
+        "coverage_pct": 18.23,
+        "label_counts": {
+          "correct": 103
+        },
+        "label_percentages_among_labeled": {
+          "correct": 100.0,
+          "partial": 0.0,
+          "incorrect": 0.0
+        }
+      },
+      "human_review": {
+        "n_total_rows": 533,
+        "n_labeled_rows": 142,
+        "coverage_pct": 26.64,
+        "label_counts": {
+          "correct": 131,
+          "partial": 9,
+          "incorrect": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 92.25,
+          "partial": 6.34,
+          "incorrect": 1.41
+        }
+      },
+      "non_computable": {
+        "n_total_rows": 262,
+        "n_labeled_rows": 60,
+        "coverage_pct": 22.9,
+        "label_counts": {
+          "correct": 60
+        },
+        "label_percentages_among_labeled": {
+          "correct": 100.0,
+          "partial": 0.0,
+          "incorrect": 0.0
+        }
+      },
+      "partial": {
+        "n_total_rows": 1042,
+        "n_labeled_rows": 219,
+        "coverage_pct": 21.02,
+        "label_counts": {
+          "partial": 19,
+          "correct": 198,
+          "incorrect": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 90.41,
+          "partial": 8.68,
+          "incorrect": 0.91
+        }
+      }
+    }
+  },
+  "post_leaf_semantic_by_rescue_status": {
+    "A": {
+      "applied": {
+        "n_total_rows": 576,
+        "n_labeled_rows": 175,
+        "coverage_pct": 30.38,
+        "label_counts": {
+          "correct": 162,
+          "partial": 10,
+          "incorrect": 3
+        },
+        "label_percentages_among_labeled": {
+          "correct": 92.57,
+          "partial": 5.71,
+          "incorrect": 1.71
+        }
+      },
+      "no_change": {
+        "n_total_rows": 8,
+        "n_labeled_rows": 4,
+        "coverage_pct": 50.0,
+        "label_counts": {
+          "correct": 4
+        },
+        "label_percentages_among_labeled": {
+          "correct": 100.0,
+          "partial": 0.0,
+          "incorrect": 0.0
+        }
+      },
+      "not_rescued": {
+        "n_total_rows": 1607,
+        "n_labeled_rows": 287,
+        "coverage_pct": 17.86,
+        "label_counts": {
+          "partial": 93,
+          "incorrect": 58,
+          "correct": 136
+        },
+        "label_percentages_among_labeled": {
+          "correct": 47.39,
+          "partial": 32.4,
+          "incorrect": 20.21
+        }
+      },
+      "skipped": {
+        "n_total_rows": 211,
+        "n_labeled_rows": 58,
+        "coverage_pct": 27.49,
+        "label_counts": {
+          "incorrect": 25,
+          "partial": 14,
+          "correct": 19
+        },
+        "label_percentages_among_labeled": {
+          "correct": 32.76,
+          "partial": 24.14,
+          "incorrect": 43.1
+        }
+      }
+    },
+    "B": {
+      "applied": {
+        "n_total_rows": 84,
+        "n_labeled_rows": 23,
+        "coverage_pct": 27.38,
+        "label_counts": {
+          "correct": 21,
+          "partial": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 91.3,
+          "partial": 8.7,
+          "incorrect": 0.0
+        }
+      },
+      "no_change": {
+        "n_total_rows": 2,
+        "n_labeled_rows": 0,
+        "coverage_pct": 0.0,
+        "label_counts": {},
+        "label_percentages_among_labeled": {
+          "correct": null,
+          "partial": null,
+          "incorrect": null
+        }
+      },
+      "not_rescued": {
+        "n_total_rows": 1972,
+        "n_labeled_rows": 409,
+        "coverage_pct": 20.74,
+        "label_counts": {
+          "partial": 18,
+          "correct": 389,
+          "incorrect": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 95.11,
+          "partial": 4.4,
+          "incorrect": 0.49
+        }
+      },
+      "skipped": {
+        "n_total_rows": 344,
+        "n_labeled_rows": 92,
+        "coverage_pct": 26.74,
+        "label_counts": {
+          "correct": 82,
+          "partial": 8,
+          "incorrect": 2
+        },
+        "label_percentages_among_labeled": {
+          "correct": 89.13,
+          "partial": 8.7,
+          "incorrect": 2.17
+        }
+      }
+    }
+  },
+  "pre_post_transition_reference_only": {
+    "A_all_labeled": {
+      "branch": "A",
+      "changed_only": false,
+      "n_rows_with_pre_and_post_labels": 524,
+      "transition_counts": {
+        "correct_to_correct": 198,
+        "partial_to_partial": 113,
+        "incorrect_to_incorrect": 84,
+        "partial_to_correct": 73,
+        "incorrect_to_correct": 50,
+        "correct_to_partial": 3,
+        "incorrect_to_partial": 1,
+        "partial_to_incorrect": 1,
+        "correct_to_incorrect": 1
+      },
+      "direction_counts": {
+        "same": 395,
+        "improved": 124,
+        "worsened": 5
+      },
+      "direction_percentages": {
+        "same": 75.38,
+        "improved": 23.66,
+        "worsened": 0.95
+      },
+      "important_note": "Pre labels are used as reference labels. The changed_only version is the main one for evaluating Layer 3 effect, because unchanged rows may have copied labels."
+    },
+    "B_all_labeled": {
+      "branch": "B",
+      "changed_only": false,
+      "n_rows_with_pre_and_post_labels": 524,
+      "transition_counts": {
+        "correct_to_correct": 487,
+        "partial_to_partial": 27,
+        "incorrect_to_incorrect": 4,
+        "partial_to_correct": 3,
+        "incorrect_to_correct": 2,
+        "correct_to_partial": 1
+      },
+      "direction_counts": {
+        "same": 518,
+        "improved": 5,
+        "worsened": 1
+      },
+      "direction_percentages": {
+        "same": 98.85,
+        "improved": 0.95,
+        "worsened": 0.19
+      },
+      "important_note": "Pre labels are used as reference labels. The changed_only version is the main one for evaluating Layer 3 effect, because unchanged rows may have copied labels."
+    },
+    "A_changed_only": {
+      "branch": "A",
+      "changed_only": true,
+      "n_rows_with_pre_and_post_labels": 181,
+      "transition_counts": {
+        "partial_to_correct": 73,
+        "incorrect_to_correct": 50,
+        "correct_to_correct": 44,
+        "partial_to_partial": 8,
+        "correct_to_partial": 3,
+        "partial_to_incorrect": 1,
+        "correct_to_incorrect": 1,
+        "incorrect_to_incorrect": 1
+      },
+      "direction_counts": {
+        "improved": 123,
+        "same": 53,
+        "worsened": 5
+      },
+      "direction_percentages": {
+        "improved": 67.96,
+        "same": 29.28,
+        "worsened": 2.76
+      },
+      "important_note": "Pre labels are used as reference labels. The changed_only version is the main one for evaluating Layer 3 effect, because unchanged rows may have copied labels."
+    },
+    "B_changed_only": {
+      "branch": "B",
+      "changed_only": true,
+      "n_rows_with_pre_and_post_labels": 26,
+      "transition_counts": {
+        "correct_to_correct": 19,
+        "partial_to_correct": 3,
+        "partial_to_partial": 2,
+        "incorrect_to_correct": 1,
+        "correct_to_partial": 1
+      },
+      "direction_counts": {
+        "same": 21,
+        "improved": 4,
+        "worsened": 1
+      },
+      "direction_percentages": {
+        "same": 80.77,
+        "improved": 15.38,
+        "worsened": 3.85
+      },
+      "important_note": "Pre labels are used as reference labels. The changed_only version is the main one for evaluating Layer 3 effect, because unchanged rows may have copied labels."
+    }
+  },
+  "branch_comparison_A_vs_B_post": {
+    "B_vs_A": {
+      "n_rows_with_A_and_B_post_labels": 524,
+      "counts": {
+        "B_same_as_A": 339,
+        "B_better_than_A": 179,
+        "B_worse_than_A": 6
+      },
+      "percentages": {
+        "B_same_as_A": 64.69,
+        "B_better_than_A": 34.16,
+        "B_worse_than_A": 1.15
+      }
+    },
+    "inferred_best_A_B": {
+      "n_rows_with_A_and_B_post_labels": 524,
+      "counts": {
+        "tie": 335,
+        "B": 179,
+        "A": 6,
+        "none": 4
+      },
+      "percentages": {
+        "tie": 63.93,
+        "B": 34.16,
+        "A": 1.15,
+        "none": 0.76
+      }
+    }
+  },
+  "cross_branch_choice_summary": {
+    "chosen_branch_counts": {
+      "B": 1700,
+      "A": 702
+    },
+    "chosen_decision_counts": {
+      "accept": 1150,
+      "partial": 702,
+      "human_review": 356,
+      "non_computable": 194
+    },
+    "n_rows_with_manual_label_for_chosen_branch": 524,
+    "manual_label_counts_for_chosen_branch": {
+      "correct": 417,
+      "partial": 78,
+      "incorrect": 29
+    },
+    "manual_label_percentages_for_chosen_branch": {
+      "correct": 79.58,
+      "partial": 14.89,
+      "incorrect": 5.53
+    }
+  },
+  "quality_checks": {
+    "A_post_partial_or_incorrect_missing_issue_type": 0,
+    "B_post_partial_or_incorrect_missing_issue_type": 0
+  },
+  "method_notes": [
+    "Pass 1 logic is not relabeled because Pass 1 did not change.",
+    "Unchanged branch-specific leaves may reuse pre-verification labels.",
+    "Changed leaves require independent post-verification labels.",
+    "Changed-only transitions provide the main estimate of the Layer 3 effect."
+  ]
+}

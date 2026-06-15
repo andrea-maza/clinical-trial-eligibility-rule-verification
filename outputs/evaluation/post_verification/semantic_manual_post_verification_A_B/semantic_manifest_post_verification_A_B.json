@@ -1,0 +1,74 @@
+{
+  "stage": "semantic_manual_post_verification_A_B",
+  "description": "Manual semantic review sheet for post-verification Branch A and Branch B. Pass 1 logic is not relabeled because Pass 1 did not change. Pre-verification manual labels are included as reference only.",
+  "n_items": 1159,
+  "n_clauses": 2402,
+  "inputs": {
+    "pass1_flat": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\extraction\\chen\\pass1_flat\\chia_text_only_200_pass1_flat.jsonl",
+    "post_A_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_A.jsonl",
+    "post_B_pass2_leaves": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\post_verification_pass2_leaves\\chia_text_only_200_post_verification_pass2_leaves_B.jsonl",
+    "branch_A_final_decisions": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06h_layer3_final_decision\\layer3_final_decision_branch_a.csv",
+    "branch_B_final_decisions": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06h_layer3_final_decision\\layer3_final_decision_branch_b.csv",
+    "cross_branch_final_decisions": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06h_layer3_final_decision\\layer3_final_decision_cross_branch_by_criterion.csv",
+    "rescue_audit": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\verification\\chen\\06f2b_layer3_applied_candidate_selection_rescue\\layer3_candidate_selection_apply_audit.csv",
+    "pre_reviewed_manual_labels": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_pre_verification_A_B_summary\\reviewed_semantic_clause_labels_A_B.csv"
+  },
+  "outputs": {
+    "post_manual_sheet": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_post_verification_A_B\\semantic_clause_sheet_A_B_post_verification.csv",
+    "manifest": "C:\\Users\\JUlloa\\Documents\\MSc Statistics and Data Science\\Master Thesis\\thesis-eligibility-ai\\outputs\\eval\\chen\\semantic_manual_post_verification_A_B\\semantic_manifest_post_verification_A_B.json"
+  },
+  "manual_leaf_label_values": [
+    "correct",
+    "partial",
+    "incorrect"
+  ],
+  "manual_issue_type_examples": [
+    "wrong_entity",
+    "wrong_entity_type",
+    "wrong_operator",
+    "wrong_value",
+    "wrong_unit",
+    "wrong_temporal_context",
+    "wrong_history_context",
+    "wrong_negation",
+    "wrong_computability",
+    "missing_context",
+    "overbroad",
+    "underspecified",
+    "unsupported"
+  ],
+  "counts": {
+    "missing_counts": {},
+    "A_final_decision_counts": {
+      "human_review": 635,
+      "partial": 585,
+      "accept": 1044,
+      "non_computable": 138
+    },
+    "B_final_decision_counts": {
+      "partial": 1042,
+      "accept": 565,
+      "human_review": 533,
+      "non_computable": 262
+    },
+    "rescue_apply_status_counts": {
+      "applied": 660,
+      "skipped": 555,
+      "no_change": 10
+    },
+    "manual_label_prefill_counts": {
+      "A_copied": 343,
+      "B_copied": 498,
+      "A_changed": 601,
+      "B_changed": 101,
+      "A_unchanged_but_old_label_missing": 1458,
+      "B_unchanged_but_old_label_missing": 1803
+    }
+  },
+  "important_notes": [
+    "Pre-verification labels are carried forward only when the branch-specific compact leaf is unchanged.",
+    "Changed leaves remain blank and must be manually labeled.",
+    "Branch C is intentionally excluded.",
+    "The post sheet is clause/leaf-level because Branch A and Branch B share Pass 1."
+  ]
+}
