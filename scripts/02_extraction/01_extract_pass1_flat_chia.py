@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from jsonschema import Draft7Validator, ValidationError
 from openai import AzureOpenAI
 
-s
+
 def split_top_level_items_with_offsets(text: str) -> list[dict]:
     """
     Split one CHIA row text into top-level items and keep char offsets

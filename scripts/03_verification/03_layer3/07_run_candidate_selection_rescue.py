@@ -2072,10 +2072,7 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# all b branch python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --branch B --overwrite --branch-b-keep-threshold 4.5 --branch-b-candidate-threshold 4.0 --branch-b-min-improvement 0.25
-#python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --overwrite --branch-b-judge-threshold 4.2 --branch-b-min-improvement 0.10
-# relax --> python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --overwrite --branch-b-judge-threshold 4.0 --branch-b-min-improvement 0.05
-#python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --limit 5 --dry-run
-#python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --branch B --limit 5 --overwrite
-#python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --overwrite
-# only branch a python scripts/04_verification/06f2_layer3_run_candidate_selection_rescue.py --branch A
+# Run from the repository root:
+# python scripts/03_verification/03_layer3/07_run_candidate_selection_rescue.py --limit 5 --dry-run
+# python scripts/03_verification/03_layer3/07_run_candidate_selection_rescue.py --branch B --limit 5 --overwrite
+# python scripts/03_verification/03_layer3/07_run_candidate_selection_rescue.py --overwrite
